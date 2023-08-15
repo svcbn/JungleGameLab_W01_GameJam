@@ -1,4 +1,6 @@
-public class PlayerController
+using UnityEngine;
+
+public class PlayerController : MonoBehaviour
 {
     public bool HasSheild { get; set; }
     public int Hp { get; set; }

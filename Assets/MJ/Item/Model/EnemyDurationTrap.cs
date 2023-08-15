@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 /// <summary>
 /// [MJ] 지속 시간을 가지는 아이템의 추상 클래스 입니다.
@@ -12,9 +13,7 @@ public abstract class EnemyDurationTrap : Item<EnemyController>
     /// </summary>
     protected Action Action { private get; set; }
     
-    /// <summary>
-    /// 해당 아이템의 지속 시간을 설정
-    /// </summary>
+    [Tooltip("해당 아이템의 지속 시간을 설정")]
     public int duration;
     
     protected EnemyDurationTrap() : base("Enemy")

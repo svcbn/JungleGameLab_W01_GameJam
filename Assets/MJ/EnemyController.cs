@@ -1,4 +1,6 @@
-public class EnemyController
+using UnityEngine;
+
+public class EnemyController : MonoBehaviour
 {
     public void Stun()
     {}

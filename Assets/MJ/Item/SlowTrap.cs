@@ -6,6 +6,7 @@ using UnityEngine;
 /// </summary>
 public class SlowTrap : EnemyDurationTrap
 {
+    [Tooltip("감소 시킬 값을 입력")]
     public int speedDownValue;
 
     public SlowTrap()

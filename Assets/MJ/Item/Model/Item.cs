@@ -3,7 +3,7 @@ using UnityEngine;
 /// <summary>
 /// [MJ] 아이템 추상 베이스 클래스 
 /// </summary>
-public abstract class Item<T> : MonoBehaviour
+public abstract class Item<T>  : MonoBehaviour where T: MonoBehaviour
 {
     private GameManager _gameManager { get; }
     private string TargetTag { get; }
