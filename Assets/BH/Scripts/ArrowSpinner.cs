@@ -9,9 +9,9 @@ using UnityEngine;
 
 public class ArrowSpinner : MonoBehaviour
 {
-    int originRotateDirection = 1;
-    float originRotateSpeed = 200f;
-    int originSpinnerSize = 5;
+    [SerializeField] int originRotateDirection = 1;
+    [SerializeField] float originRotateSpeed = 200f;
+    [SerializeField] int originSpinnerSize = 5;
 
     int rotateDirection;
     float rotateSpeed;
