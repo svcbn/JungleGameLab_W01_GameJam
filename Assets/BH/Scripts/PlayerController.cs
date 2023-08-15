@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
         set
         {
             _hp = value;
+            UIManager.instance.UpdatePlayerHp(_hp);
         }
     }
 
