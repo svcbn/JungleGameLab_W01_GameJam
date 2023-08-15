@@ -17,13 +17,13 @@ public class SlowGround : MonoBehaviour
         if (obj.tag.Equals("Player"))
         {
             var player = obj.GetComponent<PlayerController>();
-            player.Speed -= value;
+            player.maxSpeed = 4;
         }
         else if (obj.tag.Equals("Enemy"))
         {
             var enemy  = obj.GetComponent<EnemyController>(); 
-            enemy.Speed -= value;
-        }
+            enemy.moveSpeed -= value;
+        } 
     }
 
     public void OnTriggerExit2D(Collider2D target)
@@ -32,12 +32,12 @@ public class SlowGround : MonoBehaviour
         if (obj.tag.Equals("Player"))
         {
             var player = obj.GetComponent<PlayerController>();
-            player.Speed += value;
+            player.maxSpeed = 8;
         }
         else if (obj.tag.Equals("Enemy"))
         {
             var enemy  = obj.GetComponent<EnemyController>(); 
-            enemy.Speed += value;
+            enemy.moveSpeed += value;
         }
     }
 }

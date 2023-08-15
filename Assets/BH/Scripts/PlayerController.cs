@@ -26,13 +26,13 @@ public class PlayerController : MonoBehaviour
     Vector2 direction;
     Rigidbody2D playerRb;
     [SerializeField] float speed = 1000f;
-    [SerializeField] float maxSpeed = 8f;
+    [SerializeField] public float maxSpeed = 8f;
     [SerializeField] float warpSpeed = 0.05f;
     /*[SerializeField]*/ float knockBackPower = 7f;
 
     [SerializeField] Collider2D[] enemyInRange;
 
-    int HP
+    public int HP
     {
         get
         {
@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
         isImmune = false;
     }
 
-    // ÀÓ½Ã
+    // ìž„ì‹œ
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Enemy"))

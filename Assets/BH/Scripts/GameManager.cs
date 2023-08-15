@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
     void PastRound()
     {
         Camera.main.transform.SetParent(null);
-        Camera.main.transform.position = new Vector3(0, 0, -10); //ÇöÀç ½ºÅ×ÀÌÁöÀÇ Ä«¸Ş¶ó À§Ä¡
+        Camera.main.transform.position = new Vector3(0, 0, -10); //í˜„ì¬ ìŠ¤í…Œì´ì§€ì˜ ì¹´ë©”ë¼ ìœ„ì¹˜
         Camera.main.orthographicSize = 10f;
 
     }

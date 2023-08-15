@@ -3,17 +3,20 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public float moveSpeed = 3.0f; // ÀÌµ¿ ¼Óµµ
+    public float moveSpeed = 3.0f; // ì´ë™ ì†ë„
 
-    private GameObject player; // ÇÃ·¹ÀÌ¾î ¿ÀºêÁ§Æ®
+    private GameObject player; // í”Œë ˆì´ì–´ ì˜¤ë¸Œì íŠ¸
+    
+    public bool Stop { get; set; }
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");      
+        player = GameObject.FindGameObjectWithTag("Player");
+        Stop = false;
     }
 
 
-    //ÇÃ·¹ÀÌ¾î¿ÍÀÇ Ãæµ¹½Ã, µ¥¹ÌÁö ¸Ş¼­µå È£Ãâ. Àç È®ÀÎ ÇÊ¿ä
+    //í”Œë ˆì´ì–´ì™€ì˜ ì¶©ëŒì‹œ, ë°ë¯¸ì§€ ë©”ì„œë“œ í˜¸ì¶œ. ì¬ í™•ì¸ í•„ìš”
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -26,16 +29,19 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    //ÄÚ·çÆ¾À¸·Î ÇÃ·¹ÀÌ¾î Ãß°İ
+    //ì½”ë£¨í‹´ìœ¼ë¡œ í”Œë ˆì´ì–´ ì¶”ê²©
     public IEnumerator ChasePlayer(Transform enemyTransform)
     {
         while (true)
         {
-            if (player != null && enemyTransform != null)
+            if (!Stop)
             {
-                Vector2 targetPosition = player.transform.position;
-                Vector2 newPosition = Vector2.MoveTowards(enemyTransform.position, targetPosition, moveSpeed * Time.deltaTime);
-                enemyTransform.position = newPosition;
+                if (player != null && enemyTransform != null)
+                {
+                    Vector2 targetPosition = player.transform.position;
+                    Vector2 newPosition = Vector2.MoveTowards(enemyTransform.position, targetPosition, moveSpeed * Time.deltaTime);
+                    enemyTransform.position = newPosition;
+                }
             }
 
             yield return null;

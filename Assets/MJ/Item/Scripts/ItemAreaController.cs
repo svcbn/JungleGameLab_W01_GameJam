@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using static GameManager;
 
 /// <summary>
 /// [MJ] 아이템 설치 영역 설정을 위한 컨트롤러 스크립트

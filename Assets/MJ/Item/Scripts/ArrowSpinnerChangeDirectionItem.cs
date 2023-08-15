@@ -5,6 +5,6 @@ public class ArrowSpinnerChangeDirectionItem : ArrowSpinnerItem
 {
     protected override void Execute(ArrowSpinner target)
     {
-        target.ChangeSpinnerDirection();
+        target.ChangeRotateDirection();
     }
 }

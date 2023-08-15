@@ -9,6 +9,6 @@ public class HpUpItem : PlayerItem
     public int value;
     protected override void Execute(PlayerController target)
     {
-        target.Hp += value;
+        target.HP += value;
     }
 }
