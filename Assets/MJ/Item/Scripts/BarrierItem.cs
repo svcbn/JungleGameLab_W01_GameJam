@@ -4,6 +4,10 @@
 /// </summary>
 public class BarrierItem : PlayerItem
 {
+    public BarrierItem()
+    {
+        Type = ItemType.PlayerBarrier;
+    }
     protected override void Execute()
     {
         Target.OnBarrier();

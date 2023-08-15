@@ -8,6 +8,7 @@ public class MoveReverseDurationTrap : EnemyDurationTrap
 {
     public MoveReverseDurationTrap()
     {
+        Type = ItemType.EnemyMoveReserve;
         Action = () =>
         {
             Target.gameObject.transform.rotation = new Quaternion(0, 0, 180, 0);

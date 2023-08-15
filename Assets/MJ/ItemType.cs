@@ -21,12 +21,12 @@ public enum ItemType
     EnemyMoveReserve,
     
     // 유틸 프리팹 아이템
-    [Description("ArrowSpinnerChangeDirectionItem")]
-    CompassChangeDirection,
+    [Description("ViewEnlargarItem")]
+    CameraZoomOut,
     [Description("ArrowSpinnerSpeedUpItem")]
     CompassArrowSpeedUp,
     [Description("ArrowSpinnerSizeUpItem")]
     CompassArrowSizeUp,
-    [Description("ViewEnlargarItem")]
-    CameraZoomOut,
+    [Description("ArrowSpinnerChangeDirectionItem")]
+    CompassChangeDirection,
 }

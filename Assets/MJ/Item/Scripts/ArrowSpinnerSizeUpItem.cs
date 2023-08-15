@@ -7,6 +7,12 @@ public class ArrowSpinnerSizeUpItem : ArrowSpinnerItem
 {
     [Tooltip("증가시킬 배수를 입력 (=기존 나침반 반경 * value)")]
     public int value;
+
+    public ArrowSpinnerSizeUpItem()
+    {
+        Type = ItemType.CompassArrowSizeUp;
+    }
+    
     protected override void Execute()
     {
         Target.ChangeSpinnerSize(value);

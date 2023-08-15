@@ -3,6 +3,11 @@
 /// </summary>
 public class ArrowSpinnerChangeDirectionItem : ArrowSpinnerItem
 {
+    public ArrowSpinnerChangeDirectionItem()
+    {
+        Type = ItemType.CompassChangeDirection;
+    }
+    
     protected override void Execute()
     {
         Target.ChangeRotateDirection();

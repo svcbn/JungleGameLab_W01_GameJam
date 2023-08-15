@@ -11,6 +11,7 @@ using UnityEngine.Rendering.PostProcessing;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public InventoryManager Inventory { get; private set; }
 
     public int currentStage = 0;
 
@@ -25,7 +26,6 @@ public class GameManager : MonoBehaviour
             Destroy(this);
         }
 
-        //ResourceManager.Init();
     }
 
     public enum GameState
@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ResourceManager.Init();
+        Inventory = new InventoryManager();
         vignette = GetComponent<PostProcessVolume>().profile.GetSetting<Vignette>();
     }
 
@@ -139,16 +141,5 @@ public class GameManager : MonoBehaviour
         }
         
         Camera.main.orthographicSize = size;
-    }
-
-    void AddItem()
-    {
-
-    }
-
-
-    public void BuyItem(ItemType item)
-    {
-        
     }
 }

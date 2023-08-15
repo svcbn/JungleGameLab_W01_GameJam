@@ -7,6 +7,11 @@ public class FieldOfViewEnlargerItem : PlayerItem
 {
     [Tooltip("증가시킬 배수를 입력 (기존 나침반 속도 * value)")]
     public int value;
+
+    public FieldOfViewEnlargerItem()
+    {
+        Type = ItemType.CameraZoomOut;
+    }
     protected override void Execute()
     {
         var cameraObj = GameObject.Find("MainCamera");

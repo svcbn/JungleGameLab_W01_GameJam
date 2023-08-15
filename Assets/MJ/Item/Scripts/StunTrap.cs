@@ -5,6 +5,7 @@ public class StunTrap : EnemyDurationTrap
 {
     public StunTrap()
     {
+        Type = ItemType.EnemyStun;
         Action = () => { Target.Stop = true; };
     }
 

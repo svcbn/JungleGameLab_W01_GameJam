@@ -6,6 +6,12 @@ using System.Reflection;
 /// </summary>
 public static class Util
 {
+    /// <summary>
+    /// 열거형에서 Description 속성을 string 값으로 반환하는 메서드
+    /// </summary>
+    /// <param name="source"></param>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
     public static string ToDescription<T>(this T source)
     {
         FieldInfo fi = source.GetType().GetField(source.ToString());

@@ -1,6 +1,7 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
 /// <summary>
@@ -12,8 +13,7 @@ public abstract class Item<T>  : MonoBehaviour where T: MonoBehaviour
     protected T Target { get; private set; }
     private string TargetTag { get; }
 
-    [Tooltip("반드시 선언된 열거자 중 일치하는 타입을 설정해주세요 ")]
-    public ItemType _type;
+    public ItemType Type { get; protected set; }
     
     public Item(string tag)
     {
@@ -45,10 +45,12 @@ public abstract class Item<T>  : MonoBehaviour where T: MonoBehaviour
     
     public void OnMouseUp()
     {
-        if (_gameManager.state == GameManager.GameState.Shop)
+        // (_gameManager.state == GameManager.GameState.Shop)
         {
-            if(_gameManager.Inventory.Coin >= 1)
-                {_gameManager.Inventory.BuyItem(_type);}
+            if (_gameManager.Inventory.Coin >= 1)
+            {
+                _gameManager.Inventory.BuyItem(Type);
+            }
             else
             {
                 UIManager.instance.ShowBuyFailText();

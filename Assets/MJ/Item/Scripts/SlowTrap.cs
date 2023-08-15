@@ -11,6 +11,7 @@ public class SlowTrap : EnemyDurationTrap
 
     public SlowTrap()
     {
+        Type = ItemType.EnemySlow;
         Action = () => { Target.moveSpeed -= speedDownValue; };
     }
 

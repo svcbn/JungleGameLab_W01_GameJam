@@ -7,6 +7,11 @@ public class HpUpItem : PlayerItem
 {
     [Tooltip("증가시킬 체력을 입력")]
     public int value;
+
+    public HpUpItem()
+    {
+        Type = ItemType.PlayerHpUp;
+    }
     protected override void Execute()
     {
         Target.HP += value;
