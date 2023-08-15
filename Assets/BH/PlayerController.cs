@@ -7,10 +7,18 @@ using UnityEngine;
 /// </summary>
 /// 
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent (typeof(CircleCollider2D))]
+
 public class PlayerController : MonoBehaviour
 {
     public GameObject warpPos;
-    int _hp = 5;
+    [SerializeField] int _hp = 5;
+
+    float inputX;
+    float inputY;
+    Vector2 direction;
+    Rigidbody2D playerRb;
 
     int HP
     {
@@ -42,7 +50,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        inputX = Input.GetAxis("Horizontal");
+        inputY = Input.GetAxis("Vertical");
+        direction = new Vector2(inputX, inputY);
 
+        playerRb.
+        
 
         if (Input.GetKeyDown(KeyCode.J))
         {
@@ -55,7 +68,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void OnBarrier()
     {
-
+        
     }
 
     /// <summary>
