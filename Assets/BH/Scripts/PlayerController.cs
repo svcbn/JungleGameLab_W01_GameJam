@@ -28,9 +28,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float speed = 1000f;
     [SerializeField] public float maxSpeed = 8f;
     [SerializeField] float warpSpeed = 0.05f;
-    /*[SerializeField]*/ float knockBackPower = 7f;
-
+    [SerializeField] float knockBackPower = 7f;
+    [SerializeField] float knockBackRadius = 7.5f;
     [SerializeField] Collider2D[] enemyInRange;
+
+    public bool canSetItem = true;
+
 
     public int HP
     {
@@ -58,8 +61,10 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
+        knockBackArea.transform.localScale = Vector3.one * knockBackRadius * 2;
         knockBackArea.SetActive(false);
         playerSprite = GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
@@ -93,7 +98,6 @@ public class PlayerController : MonoBehaviour
         if (playerRb.velocity.y < -maxSpeed) playerRb.velocity = new Vector2(playerRb.velocity.x, -maxSpeed);
     }
 
-    float knockBackRadius = 5f;
     void InRangeCheck()
     {
         enemyInRange = Physics2D.OverlapCircleAll(transform.position, knockBackRadius, ~LayerMask.GetMask("Player"));
@@ -167,4 +171,19 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(canSetItem && collision.gameObject.CompareTag("ItemArea"))
+        {
+            canSetItem = false;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(!canSetItem && collision.gameObject.CompareTag("ItemArea"))
+        {
+            canSetItem = true;
+        }
+    }
 }
