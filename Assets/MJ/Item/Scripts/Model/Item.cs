@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 /// <summary>
@@ -5,18 +6,22 @@ using UnityEngine;
 /// </summary>
 public abstract class Item<T>  : MonoBehaviour where T: MonoBehaviour
 {
-    private GameManager _gameManager { get; }
+    private GameManager _gameManager { get; set; }
     private string TargetTag { get; }
     
     public Item(string tag)
     {
-        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         TargetTag = tag;
+    }
+
+    public void Start()
+    {
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     public void OnTriggerEnter2D(Collider2D target)
     {
-        if (_gameManager.Mode == Mode.Current)
+        if (_gameManager.GameState == GameState.Current)
         {
             var obj = target.gameObject;
             if (obj.tag.Equals(TargetTag))
