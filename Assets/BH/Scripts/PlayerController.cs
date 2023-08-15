@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     Vector2 direction;
     Rigidbody2D playerRb;
     [SerializeField] float speed = 1000f;
-    [SerializeField] public float maxSpeed = 8f;
+    public float maxSpeed = 8f;
     [SerializeField] float warpSpeed = 0.05f;
     [SerializeField] float knockBackPower = 7f;
     [SerializeField] float knockBackRadius = 7.5f;
@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         set
         {
             _hp = value;
-            UIManager.instance.UpdatePlayerHp(_hp);
+            //UIManager.instance.UpdatePlayerHp(_hp);
         }
     }
 
@@ -70,13 +70,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Move();
 
         LimitMoveSpeed();
 
         InRangeCheck();
 
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J)) // 키 뭘로바꾸지???
         {
             Warp();
         }
@@ -100,7 +101,7 @@ public class PlayerController : MonoBehaviour
 
     void InRangeCheck()
     {
-        enemyInRange = Physics2D.OverlapCircleAll(transform.position, knockBackRadius, ~LayerMask.GetMask("Player"));
+        enemyInRange = Physics2D.OverlapCircleAll(transform.position, knockBackRadius, LayerMask.GetMask("Enemy"));
     }
 
     void Warp()
