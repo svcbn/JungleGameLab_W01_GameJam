@@ -1,6 +1,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -9,14 +10,15 @@ using UnityEngine;
 public static class ResourceManager
 {
     public static Dictionary<ItemType, GameObject> ItemPrefabDict { get; private set; }
+    public static Dictionary<ItemType, Sprite> ItemSpriteDict { get; private set; }
     
     /// <summary>
     /// 각종 리소스들을 로드
     /// </summary>
     public static void Init()
     {
-        // Load Item-Related Prefabs 
-        ItemPrefabDict = new Dictionary<ItemType, GameObject>();
+        // Load Item Prefabs 
+        ItemPrefabDict = new();
         for (int index = 0, cnt = Enum.GetNames(typeof(ItemType)).Length; index < cnt; index++)
         {
             var type = (ItemType)index;
@@ -25,7 +27,17 @@ public static class ResourceManager
             {
                 ItemPrefabDict.Add(type, (obj as GameObject));
             }
-        }   
+        }
+        
+        // Load Item Sprites
+        ItemSpriteDict = new();
+        var sprites = Resources.LoadAll<Sprite>($"Sprites/mapIcons").ToList();
+        for(int index = 1, cnt = sprites.Count ; index <= cnt; index++ )
+        {
+            ItemSpriteDict.Add((ItemType)index, sprites[index - 1]);
+        }
+
+        
     }
 }
 

@@ -7,8 +7,14 @@ public class ArrowSpinnerSpeedUpItem : ArrowSpinnerItem
 {
     [Tooltip("증가시킬 배수를 입력 (=기존 나침반 속도 * value)")]
     public float value;
-    protected override void Execute(ArrowSpinner target)
+
+    public ArrowSpinnerSpeedUpItem()
     {
-        target.ChangeSpinnerSpeed(value);
+        Type = ItemType.CompassArrowSpeedUp;
+    }
+    
+    protected override void Execute()
+    {
+        Target.ChangeSpinnerSpeed(value);
     }
 }

@@ -12,6 +12,7 @@ using UnityEngine.Rendering.PostProcessing;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public InventoryManager Inventory { get; private set; }
 
     [SerializeField] int difficulty = 1;
     [SerializeField] int keys = 10;
@@ -31,7 +32,6 @@ public class GameManager : MonoBehaviour
             Destroy(this);
         }
 
-        ResourceManager.Init();
     }
 
     public enum GameState
@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ResourceManager.Init();
+        Inventory = new InventoryManager();
         vignette = GetComponent<PostProcessVolume>().profile.GetSetting<Vignette>();
     }
 
@@ -185,16 +187,5 @@ public class GameManager : MonoBehaviour
 
             //box.GetComponent<ItemBox>().item.Append();
         }
-    }
-
-    void AddItem()
-    {
-
-    }
-
-
-    public void BuyItem(ItemType item)
-    {
-        
     }
 }

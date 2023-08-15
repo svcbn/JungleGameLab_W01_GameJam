@@ -5,12 +5,13 @@ public class StunTrap : EnemyDurationTrap
 {
     public StunTrap()
     {
-        Action = () => { _target.Stop = true; };
+        Type = ItemType.EnemyStun;
+        Action = () => { Target.Stop = true; };
     }
 
     protected override void ExpireDuration()
     {
-        _target.Stop = false;
+        Target.Stop = false;
         base.ExpireDuration();
     }
 }
