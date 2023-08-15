@@ -25,7 +25,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     #region Item Managing Method
-    private List<
+    //private List<
     
     /// <summary>
     /// 상점에서 호출 가능한 아이템 구매 메서드

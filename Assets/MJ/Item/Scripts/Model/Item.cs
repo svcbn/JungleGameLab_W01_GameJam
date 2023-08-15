@@ -25,7 +25,7 @@ public abstract class Item<T>  : MonoBehaviour where T: MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D target)
     {
-        if (_gameManager.state == GameManager.GameState.Night)
+        if (_gameManager.State == GameManager.GameState.Night)
         {
             var obj = target.gameObject;
             if (obj.tag.Equals(TargetTag))
@@ -40,7 +40,7 @@ public abstract class Item<T>  : MonoBehaviour where T: MonoBehaviour
 
     public void OnMouseUp()
     {
-        if (_gameManager.state == GameManager.GameState.Shop)
+        if (_gameManager.State == GameManager.GameState.Shop)
         {
             _gameManager.BuyItem(_type);
         }
