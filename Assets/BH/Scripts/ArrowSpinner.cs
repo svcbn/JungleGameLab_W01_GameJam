@@ -11,14 +11,13 @@ public class ArrowSpinner : MonoBehaviour
 {
     [SerializeField] int originRotateDirection = 1;
     [SerializeField] float originRotateSpeed = 200f;
-    [SerializeField] int originSpinnerSize = 5;
+    [SerializeField] float originSpinnerSize = 1f;
 
     int rotateDirection;
     float rotateSpeed;
-    int spinnerSize;
+    float spinnerSize;
 
-    [HideInInspector] public GameObject Spinner;
-    [HideInInspector] public GameObject Arrow;
+    public GameObject arrow;
 
     
     void Start()
@@ -29,7 +28,8 @@ public class ArrowSpinner : MonoBehaviour
     
     void Update()
     {
-        Arrow.transform.RotateAround(transform.position, Vector3.forward, rotateDirection * rotateSpeed * Time.deltaTime);
+        arrow.transform.RotateAround(transform.position, Vector3.forward, rotateDirection * rotateSpeed * Time.deltaTime);
+
     }
 
     void OriginSetting()
@@ -45,7 +45,6 @@ public class ArrowSpinner : MonoBehaviour
     public void ChangeRotateDirection()
     {
         rotateDirection *= -1;
-
     }
 
     /// <summary>
@@ -53,7 +52,8 @@ public class ArrowSpinner : MonoBehaviour
     /// </summary>
     public void ChangeSpinnerSize(float size)
     {
-        Spinner.transform.localScale = Vector3.one * size;
+        spinnerSize *= size;
+        transform.localScale = Vector3.one * spinnerSize;
     }
 
     /// <summary>
