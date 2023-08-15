@@ -7,7 +7,7 @@ public class FieldOfViewEnlargerItem : PlayerItem
 {
     [Tooltip("증가시킬 배수를 입력 (기존 나침반 속도 * value)")]
     public int value;
-    protected override void Execute(PlayerController target)
+    protected override void Execute()
     {
         var cameraObj = GameObject.Find("MainCamera");
         cameraObj.transform.position -= new Vector3(0, 0, value);

@@ -4,8 +4,8 @@
 /// </summary>
 public class BarrierItem : PlayerItem
 {
-    protected override void Execute(PlayerController target)
+    protected override void Execute()
     {
-        target.OnBarrier();
+        Target.OnBarrier();
     }
 }

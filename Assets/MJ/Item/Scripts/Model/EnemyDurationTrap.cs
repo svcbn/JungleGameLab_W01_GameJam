@@ -6,8 +6,6 @@ using UnityEngine;
 /// </summary>
 public abstract class EnemyDurationTrap : Item<EnemyController>
 {
-    protected EnemyController _target;
-    
     /// <summary>
     /// 해당 아이템의 동작을 설정
     /// </summary>
@@ -21,9 +19,8 @@ public abstract class EnemyDurationTrap : Item<EnemyController>
         
     }
 
-    protected override void Execute(EnemyController target)
+    protected override void Execute()
     {
-        _target = target;
         Action?.Invoke();
         Invoke(nameof(ExpireDuration), duration);
     }

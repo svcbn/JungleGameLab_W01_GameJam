@@ -3,8 +3,8 @@
 /// </summary>
 public class ArrowSpinnerChangeDirectionItem : ArrowSpinnerItem
 {
-    protected override void Execute(ArrowSpinner target)
+    protected override void Execute()
     {
-        target.ChangeRotateDirection();
+        Target.ChangeRotateDirection();
     }
 }

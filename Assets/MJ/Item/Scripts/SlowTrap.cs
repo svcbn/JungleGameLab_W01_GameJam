@@ -11,12 +11,12 @@ public class SlowTrap : EnemyDurationTrap
 
     public SlowTrap()
     {
-        Action = () => { _target.moveSpeed -= speedDownValue; };
+        Action = () => { Target.moveSpeed -= speedDownValue; };
     }
 
     protected override void ExpireDuration()
     {
-        _target.moveSpeed += speedDownValue;
+        Target.moveSpeed += speedDownValue;
         base.ExpireDuration();
     }
 }

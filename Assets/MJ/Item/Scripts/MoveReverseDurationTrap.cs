@@ -10,13 +10,13 @@ public class MoveReverseDurationTrap : EnemyDurationTrap
     {
         Action = () =>
         {
-            _target.gameObject.transform.rotation = new Quaternion(0, 0, 180, 0);
+            Target.gameObject.transform.rotation = new Quaternion(0, 0, 180, 0);
         };
     }
 
     protected override void ExpireDuration()
     {
-        _target.gameObject.transform.rotation = new Quaternion();
+        Target.gameObject.transform.rotation = new Quaternion();
         // 대상의 이동 초기화
         base.ExpireDuration();
     }

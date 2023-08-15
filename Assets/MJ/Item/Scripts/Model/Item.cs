@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -8,6 +9,7 @@ using UnityEngine.UIElements;
 public abstract class Item<T>  : MonoBehaviour where T: MonoBehaviour
 {
     private GameManager _gameManager { get; set; }
+    protected T Target { get; private set; }
     private string TargetTag { get; }
 
     [Tooltip("반드시 선언된 열거자 중 일치하는 타입을 설정해주세요 ")]
@@ -30,19 +32,27 @@ public abstract class Item<T>  : MonoBehaviour where T: MonoBehaviour
             var obj = target.gameObject;
             if (obj.tag.Equals(TargetTag))
             {
-                Execute(obj.GetComponent<T>());
+                Target = obj.GetComponent<T>();
+                Execute();
+                
                 Destroy(obj);
+                Target = null;
             }
         }
     }
 
-    protected abstract void Execute(T target);
-
+    protected abstract void Execute();
+    
     public void OnMouseUp()
     {
         if (_gameManager.state == GameManager.GameState.Shop)
         {
-            _gameManager.BuyItem(_type);
+            if(_gameManager.Inventory.Coin >= 1)
+                {_gameManager.Inventory.BuyItem(_type);}
+            else
+            {
+                UIManager.instance.ShowBuyFailText();
+            }
         }
     }
 }
