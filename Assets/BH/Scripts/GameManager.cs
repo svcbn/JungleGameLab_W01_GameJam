@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     {
         Title,
         Tutorial,
+        Shop,
         Past,
         Current,
         Die
@@ -89,5 +90,11 @@ public class GameManager : MonoBehaviour
     {
         Camera.main.transform.SetParent(GameObject.FindWithTag("Player").gameObject.transform, false);
         Camera.main.orthographicSize = 5f;
+    }
+
+
+    public void BuyItem(ItemType item)
+    {
+        
     }
 }
