@@ -21,7 +21,7 @@ public abstract class Item<T>  : MonoBehaviour where T: MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D target)
     {
-        if (_gameManager.state == GameManager.GameState.Current)
+        if (_gameManager.state == GameManager.GameState.Night)
         {
             var obj = target.gameObject;
             if (obj.tag.Equals(TargetTag))

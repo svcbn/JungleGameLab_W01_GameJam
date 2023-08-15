@@ -51,7 +51,7 @@ public class ItemAreaController : MonoBehaviour
     public void ChangeMode(GameState gameState)
     {
         unbuildableAreaObj.SetActive(false);
-        unbuildableAreaCol.enabled =  gameState == GameState.Past;
+        unbuildableAreaCol.enabled =  gameState == GameState.Day;
     }
     
 }
