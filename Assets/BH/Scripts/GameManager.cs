@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Resources;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
@@ -12,7 +13,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    [SerializeField] int difficulty = 1;
+    [SerializeField] int keys = 10;
+    public int maxKeys;
     public int currentStage = 0;
+
+    public List<GameObject> boxes = new List<GameObject>();
 
     private void Awake()
     {
@@ -25,7 +31,7 @@ public class GameManager : MonoBehaviour
             Destroy(this);
         }
 
-        //ResourceManager.Init();
+        ResourceManager.Init();
     }
 
     public enum GameState
@@ -38,8 +44,7 @@ public class GameManager : MonoBehaviour
         Die
     }
 
-    public GameState state;
-
+    public GameState State { get; private set; }
 
     [SerializeField] float dayTime = 30f;
     float timeLeft;
@@ -58,16 +63,39 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            ChangeState(GameState.Day);
+            ChangeState(GameState.Title);
+            Debug.Log("Title");
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
+            ChangeState(GameState.Tutorial);
+            Debug.Log("Tutorial");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            ChangeState(GameState.Shop);
+            Debug.Log("Shop");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            ChangeState(GameState.Day);
+            Debug.Log("Day");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
             ChangeState(GameState.Night);
+            Debug.Log("Night");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            ChangeState(GameState.Die);
+            Debug.Log("Die");
         }
     }
 
     void ChangeState(GameState state)
     {
+        State = state;
         switch (state)
         {
             case GameState.Title:
@@ -97,6 +125,7 @@ public class GameManager : MonoBehaviour
 
     void Tutorial()
     {
+
         CameraSetting(false, null, 25f);
     }
 
@@ -122,11 +151,16 @@ public class GameManager : MonoBehaviour
             timer = Mathf.CeilToInt(timeLeft).ToString();
             yield return null;
         }
+
+        ChangeState(GameState.Night);
     }
 
     void NightPhase()
     {
         CameraSetting(true, GameObject.FindWithTag("Player").gameObject.transform, 10f, true);
+
+        RandomBoxSetting(difficulty, keys);
+
     }
 
     void CameraSetting(bool isVignette, Transform transform, float size, bool isAttached = false)
@@ -139,6 +173,18 @@ public class GameManager : MonoBehaviour
         }
         
         Camera.main.orthographicSize = size;
+    }
+
+    void RandomBoxSetting(int difficulty, int keys)
+    {
+        maxKeys = difficulty * keys;
+       
+        foreach (var box in boxes)
+        {
+            //GameObject itemPrefab = 
+
+            //box.GetComponent<ItemBox>().item.Append();
+        }
     }
 
     void AddItem()
