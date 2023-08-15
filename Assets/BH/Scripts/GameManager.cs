@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Resources;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 /// <summary>
 /// ByeongHan
@@ -9,6 +11,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
+    public int currentStage = 0;
 
     private void Awake()
     {
@@ -20,27 +24,33 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
+
+        //ResourceManager.Init();
     }
 
     public enum GameState
     {
         Title,
         Tutorial,
-        Past,
-        Current,
+        Shop,
+        Day,
+        Night,
         Die
     }
 
     public GameState state;
 
-    int currentRound = 0;
-    float pastTimer = 30f;
+
+    [SerializeField] float dayTime = 30f;
     float timeLeft;
+    public string timer = "";
+
+    Vignette vignette;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        vignette = GetComponent<PostProcessVolume>().profile.GetSetting<Vignette>();
     }
 
     // Update is called once per frame
@@ -48,13 +58,11 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Debug.Log("Past State");
-            ChangeState(GameState.Past);
+            ChangeState(GameState.Day);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Debug.Log("Current State");
-            ChangeState(GameState.Current);
+            ChangeState(GameState.Night);
         }
     }
 
@@ -63,31 +71,78 @@ public class GameManager : MonoBehaviour
         switch (state)
         {
             case GameState.Title:
+                Title();
                 break;
             case GameState.Tutorial:
+                Tutorial();
                 break;
-            case GameState.Past:
-                PastRound();
+            case GameState.Shop:
+                ShopPhase();
                 break;
-            case GameState.Current:
-                CurrentRound();
+            case GameState.Day:
+                DayPhase();
+                break;
+            case GameState.Night:
+                NightPhase();
                 break;
             case GameState.Die:
                 break;
         }
     }
 
-    void PastRound()
+    void Title()
     {
-        Camera.main.transform.SetParent(null);
-        Camera.main.transform.position = new Vector3(0, 0, -10); //현재 스테이지의 카메라 위치
-        Camera.main.orthographicSize = 10f;
-
+        
     }
 
-    void CurrentRound()
+    void Tutorial()
     {
-        Camera.main.transform.SetParent(GameObject.FindWithTag("Player").gameObject.transform, false);
-        Camera.main.orthographicSize = 5f;
+        CameraSetting(false, null, 25f);
+    }
+
+    void ShopPhase()
+    {
+        
+    }
+
+    void DayPhase()
+    {
+        CameraSetting(false, null, 40f);
+
+        StartCoroutine(DayTimer());
+    }
+
+    IEnumerator DayTimer()
+    {
+        timeLeft = dayTime;
+
+        while(timeLeft > 0)
+        {
+            timeLeft -= Time.deltaTime;
+            timer = Mathf.CeilToInt(timeLeft).ToString();
+            yield return null;
+        }
+    }
+
+    void NightPhase()
+    {
+        CameraSetting(true, GameObject.FindWithTag("Player").gameObject.transform, 10f, true);
+    }
+
+    void CameraSetting(bool isVignette, Transform transform, float size, bool isAttached = false)
+    {
+        vignette.active = isVignette;
+        Camera.main.transform.SetParent(transform, false);
+        if (!isAttached)
+        {
+            Camera.main.transform.position = new Vector3(0, 0, -10); // 현재 스테이지 카메라 위치로 변경할것
+        }
+        
+        Camera.main.orthographicSize = size;
+    }
+
+    void AddItem()
+    {
+
     }
 }
