@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3157003241	Test			\Default Work Unit\Test	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	317007985	Test	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\Theme1 13-Screech Pad_C7B3DCE6.wem		\Actor-Mixer Hierarchy\Default Work Unit\Test		6771584
+
