@@ -136,23 +136,68 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{C08E2D37-A3C9-76C9-348B-24122C96FB1A}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{5E51C41D-05EC-A265-379F-2E96A5706375}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
-				<File Id="317007985" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Theme1 13-Screech Pad.wav</ShortName>
-					<CachePath>SFX/Theme1 13-Screech Pad_C7B3DCE6.wem</CachePath>
+				<File Id="75577207" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MUS_Etc.wav</ShortName>
+					<CachePath>SFX/MUS_Etc_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="504254709" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ESM_Explainer_Video_One_Shot_Positive_Notification_Alert_Texting_UI_Message_Sent_1_Award.wav</ShortName>
+					<CachePath>SFX/ESM_Explainer_Video_One_Shot_Positive_Notification_Alert_Texting_UI_Message_Sent_1_Award_10C4C929.wem</CachePath>
+				</File>
+				<File Id="577482382" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Flashing.wav</ShortName>
+					<CachePath>SFX/SFX_Flashing_10C4C929.wem</CachePath>
+				</File>
+				<File Id="685244288" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DataTextTyping_BWU.447.wav</ShortName>
+					<CachePath>SFX/DataTextTyping_BWU.447_E1217EFE.wem</CachePath>
+				</File>
+				<File Id="862821521" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CameraShutter_SFXB.4034.wav</ShortName>
+					<CachePath>SFX/CameraShutter_SFXB.4034_10C4C929.wem</CachePath>
+				</File>
+				<File Id="941962014" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BookPaperback_S08FO.177.wav</ShortName>
+					<CachePath>SFX/BookPaperback_S08FO.177_10C4C929.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
-				<Event Id="3157003241" Name="Test" DurationType="OneShot" DurationMin="38.387104" DurationMax="38.387104">
+				<Event Id="3132895340" Name="MUS_Default" DurationType="Infinite">
 					<MediaRefs>
-						<MediaRef Id="317007985"/>
+						<MediaRef Id="75577207"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="119314287" Name="PLY_Flashing" DurationType="OneShot" DurationMin="1.4755555" DurationMax="1.4755555">
+					<MediaRefs>
+						<MediaRef Id="577482382"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3876674778" Name="TUO_Letter" DurationType="OneShot" DurationMin="0.6666667" DurationMax="0.6666667">
+					<MediaRefs>
+						<MediaRef Id="941962014"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2967469105" Name="UI_Arrow" DurationType="OneShot" DurationMin="0.83341664" DurationMax="0.83341664">
+					<MediaRefs>
+						<MediaRef Id="504254709"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2505162442" Name="UI_Button" DurationType="OneShot" DurationMin="0.27733332" DurationMax="0.27733332">
+					<MediaRefs>
+						<MediaRef Id="862821521"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3469071695" Name="UI_Text" DurationType="OneShot" DurationMin="0.34729785" DurationMax="0.34729785">
+					<MediaRefs>
+						<MediaRef Id="685244288"/>
 					</MediaRefs>
 				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{B8406324-F9E1-06AC-8C7D-B5A422518988}</FileHash>
+	<FileHash>{04FE3C37-1627-1AD6-AC46-81A9843D8D51}</FileHash>
 </SoundBanksInfo>
