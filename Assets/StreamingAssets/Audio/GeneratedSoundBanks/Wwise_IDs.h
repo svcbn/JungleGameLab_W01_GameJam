@@ -13,11 +13,14 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID MUS_DEFAULT = 3132895340U;
+        static const AkUniqueID MUS_DAY = 1210181189U;
+        static const AkUniqueID MUS_NIGHT = 3826194393U;
+        static const AkUniqueID MUS_TUT = 872068900U;
         static const AkUniqueID PLY_FLASHING = 119314287U;
         static const AkUniqueID TUO_LETTER = 3876674778U;
         static const AkUniqueID UI_ARROW = 2967469105U;
         static const AkUniqueID UI_BUTTON = 2505162442U;
+        static const AkUniqueID UI_NOTICE = 2529527178U;
         static const AkUniqueID UI_TEXT = 3469071695U;
     } // namespace EVENTS
 

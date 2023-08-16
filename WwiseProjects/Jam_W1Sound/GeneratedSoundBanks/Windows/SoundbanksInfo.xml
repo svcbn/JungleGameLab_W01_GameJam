@@ -136,10 +136,14 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{5E51C41D-05EC-A265-379F-2E96A5706375}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{50A14A32-9540-D522-CBD5-2676C5485E63}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
+				<File Id="70823677" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MUS_Nomal.wav</ShortName>
+					<CachePath>SFX/MUS_Nomal_D79FB2B7.wem</CachePath>
+				</File>
 				<File Id="75577207" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MUS_Etc.wav</ShortName>
 					<CachePath>SFX/MUS_Etc_D79FB2B7.wem</CachePath>
@@ -150,11 +154,11 @@
 				</File>
 				<File Id="577482382" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Flashing.wav</ShortName>
-					<CachePath>SFX/SFX_Flashing_10C4C929.wem</CachePath>
+					<CachePath>SFX/SFX_Flashing_D95FCC5B.wem</CachePath>
 				</File>
 				<File Id="685244288" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>DataTextTyping_BWU.447.wav</ShortName>
-					<CachePath>SFX/DataTextTyping_BWU.447_E1217EFE.wem</CachePath>
+					<CachePath>SFX/DataTextTyping_BWU.447_014E4A07.wem</CachePath>
 				</File>
 				<File Id="862821521" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CameraShutter_SFXB.4034.wav</ShortName>
@@ -164,14 +168,32 @@
 					<ShortName>BookPaperback_S08FO.177.wav</ShortName>
 					<CachePath>SFX/BookPaperback_S08FO.177_10C4C929.wem</CachePath>
 				</File>
+				<File Id="1066179899" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BRS_Camera_D50_Focus_Beep_2.wav</ShortName>
+					<CachePath>SFX/BRS_Camera_D50_Focus_Beep_2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1072286818" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MUS_Chase.wav</ShortName>
+					<CachePath>SFX/MUS_Chase_D79FB2B7.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
-				<Event Id="3132895340" Name="MUS_Default" DurationType="Infinite">
+				<Event Id="1210181189" Name="MUS_Day" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="75577207"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="119314287" Name="PLY_Flashing" DurationType="OneShot" DurationMin="1.4755555" DurationMax="1.4755555">
+				<Event Id="3826194393" Name="MUS_Night" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="1072286818"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="872068900" Name="MUS_Tut" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="70823677"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="119314287" Name="PLY_Flashing" DurationType="OneShot" DurationMin="0.5546753" DurationMax="0.5546753">
 					<MediaRefs>
 						<MediaRef Id="577482382"/>
 					</MediaRefs>
@@ -191,6 +213,11 @@
 						<MediaRef Id="862821521"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2529527178" Name="UI_Notice" DurationType="OneShot" DurationMin="0.4643991" DurationMax="0.4643991">
+					<MediaRefs>
+						<MediaRef Id="1066179899"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3469071695" Name="UI_Text" DurationType="OneShot" DurationMin="0.34729785" DurationMax="0.34729785">
 					<MediaRefs>
 						<MediaRef Id="685244288"/>
@@ -199,5 +226,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{04FE3C37-1627-1AD6-AC46-81A9843D8D51}</FileHash>
+	<FileHash>{BF7B2188-45C3-E3F5-70E8-85E2CE95D51E}</FileHash>
 </SoundBanksInfo>
