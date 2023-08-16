@@ -145,7 +145,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{B349EB56-4476-0177-98B2-C6EB901BDF0B}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{3D785B29-0D37-42F8-32D6-D3B4B805D1FB}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -217,21 +217,6 @@
 						<MediaRef Id="1034740535"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1210181189" Name="MUS_Day" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
-					<ActionSetSwitch>
-						<ActionSetSwitchEntry GroupId="3991942870" Id="311764537" Name="Day"/>
-					</ActionSetSwitch>
-				</Event>
-				<Event Id="3826194393" Name="MUS_Night" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
-					<ActionSetSwitch>
-						<ActionSetSwitchEntry GroupId="3991942870" Id="1011622525" Name="night"/>
-					</ActionSetSwitch>
-				</Event>
-				<Event Id="872068900" Name="MUS_Tut" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
-					<ActionSetSwitch>
-						<ActionSetSwitchEntry GroupId="3991942870" Id="782826392" Name="Default"/>
-					</ActionSetSwitch>
-				</Event>
 				<Event Id="1969559964" Name="PlayMUS" DurationType="Infinite">
 					<SwitchContainers>
 						<SwitchContainer>
@@ -250,12 +235,6 @@
 							<SwitchValue GroupType="Switch" GroupId="3991942870" Id="782826392"/>
 							<MediaRefs>
 								<MediaRef Id="70823677"/>
-							</MediaRefs>
-						</SwitchContainer>
-						<SwitchContainer>
-							<SwitchValue GroupType="Switch" GroupId="3991942870" Id="0"/>
-							<MediaRefs>
-								<MediaRef Id="75577207"/>
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -317,5 +296,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{3E19B689-0AF7-F961-30A8-A658B2AAD720}</FileHash>
+	<FileHash>{C49D7F08-BA10-ED07-99E9-298A99B5490E}</FileHash>
 </SoundBanksInfo>

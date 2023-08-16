@@ -1,8 +1,6 @@
 Event	ID	Name			Wwise Object Path	Notes
 	45699584	SFX_Box			\Default Work Unit\SFX_Box	
 	119314287	PLY_Flashing			\Default Work Unit\PLY_Flashing	
-	872068900	MUS_Tut			\Default Work Unit\MUS_Tut	
-	1210181189	MUS_Day			\Default Work Unit\MUS_Day	
 	1222624712	Item			\Default Work Unit\Item	
 	1969559964	PlayMUS			\Default Work Unit\PlayMUS	
 	2505162442	UI_Button			\Default Work Unit\UI_Button	
@@ -12,7 +10,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	3254962040	Trap			\Default Work Unit\Trap	
 	3469071695	UI_Text			\Default Work Unit\UI_Text	
 	3803999823	Slime			\Default Work Unit\Slime	
-	3826194393	MUS_Night			\Default Work Unit\MUS_Night	
 	3876674778	TUO_Letter			\Default Work Unit\TUO_Letter	
 
 Switch Group	ID	Name			Wwise Object Path	Notes

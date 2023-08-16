@@ -458,14 +458,6 @@
 								<AudioNodeRef Name="3" ID="{3AA8DFFB-6258-4F2C-B24A-BDC2E7272E54}" WorkUnitID="{F7E92481-A793-4184-B739-016892FBD69A}" Platform="Linked"/>
 							</AudioNodeInfo>
 						</Entry>
-						<Entry>
-							<Path>
-								<PathElementRef Name="music" ID="{3D3F7EB7-C49F-45D6-A133-163E5D8F2922}"/>
-							</Path>
-							<AudioNodeInfo>
-								<AudioNodeRef Name="2" ID="{1BE7DB92-358D-4D0A-BBDF-FDAC906444C4}" WorkUnitID="{F7E92481-A793-4184-B739-016892FBD69A}" Platform="Linked"/>
-							</AudioNodeInfo>
-						</Entry>
 					</EntryList>
 				</MusicSwitchContainer>
 			</ChildrenList>

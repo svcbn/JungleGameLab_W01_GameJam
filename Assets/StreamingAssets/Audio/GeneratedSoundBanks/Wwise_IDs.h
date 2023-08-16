@@ -15,9 +15,6 @@ namespace AK
     {
         static const AkUniqueID BARRIER = 2953019946U;
         static const AkUniqueID ITEM = 1222624712U;
-        static const AkUniqueID MUS_DAY = 1210181189U;
-        static const AkUniqueID MUS_NIGHT = 3826194393U;
-        static const AkUniqueID MUS_TUT = 872068900U;
         static const AkUniqueID PLAYMUS = 1969559964U;
         static const AkUniqueID PLY_FLASHING = 119314287U;
         static const AkUniqueID SFX_BOX = 45699584U;

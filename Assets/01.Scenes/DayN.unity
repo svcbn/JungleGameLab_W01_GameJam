@@ -3190,7 +3190,7 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: d4d79446b89d546499ebd09a2f1360ef, type: 2}
   useCallbacks: 0
   Callbacks: []
-  playingId: 1812
+  playingId: 0
   soundEmitterObject: {fileID: 734599877}
   transitionDuration: 0
   eventIdInternal: 0
@@ -7025,6 +7025,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386546592}
   m_CullTransparentMesh: 1
+--- !u!1 &1388558793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1388558795}
+  - component: {fileID: 1388558794}
+  m_Layer: 0
+  m_Name: Sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1388558794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388558793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec9d31b11a1db9345a860483dfb545c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 3327c9e867a3b354c8d7be15edbfc5d2, type: 2}
+  valueIdInternal: 0
+  groupIdInternal: 0
+  valueGuidInternal: 
+  groupGuidInternal: 
+--- !u!4 &1388558795
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388558793}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.10512, y: 11.206134, z: -0.6349325}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1403170830
 GameObject:
   m_ObjectHideFlags: 0
@@ -8023,6 +8079,7 @@ GameObject:
   - component: {fileID: 1643473809}
   - component: {fileID: 1643473811}
   - component: {fileID: 1643473810}
+  - component: {fileID: 1643473812}
   m_Layer: 5
   m_Name: SceneLoadAnimationView
   m_TagString: Untagged
@@ -8089,6 +8146,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643473808}
   m_CullTransparentMesh: 1
+--- !u!114 &1643473812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643473808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec9d31b11a1db9345a860483dfb545c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f2d9e0ec
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 3327c9e867a3b354c8d7be15edbfc5d2, type: 2}
+  valueIdInternal: 0
+  groupIdInternal: 0
+  valueGuidInternal: 
+  groupGuidInternal: 
 --- !u!1 &1650346944
 GameObject:
   m_ObjectHideFlags: 0
@@ -8249,7 +8330,7 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: 12f52291537f0da48b6ffc9583f2e2c3, type: 2}
   useCallbacks: 0
   Callbacks: []
-  playingId: 1813
+  playingId: 879
   soundEmitterObject: {fileID: 1650346944}
   transitionDuration: 0
   eventIdInternal: 0

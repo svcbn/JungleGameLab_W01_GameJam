@@ -58,48 +58,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="MUS_Day" ID="{496A740B-45EE-42EB-B681-0A6DA7FC4FFD}">
-					<ChildrenList>
-						<Action Name="" ID="{B86F5CEF-24FC-42D7-A6D7-BA6C166C3F2D}" ShortID="505376369">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="23"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Day" ID="{A0E4275F-6C02-4E26-825D-A675111516E3}" WorkUnitID="{8D1E5A48-0A63-487B-A514-2611D08D1752}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="MUS_Night" ID="{7B5E1D53-7673-499E-917B-070F4C3CA8E3}">
-					<ChildrenList>
-						<Action Name="" ID="{F3E1738D-13EE-4075-952E-F9D6E5C48A12}" ShortID="470963375">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="23"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="night" ID="{AA7FF186-F1D8-4AF9-B930-EDD7A7BB7354}" WorkUnitID="{8D1E5A48-0A63-487B-A514-2611D08D1752}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="MUS_Tut" ID="{7180FC25-293D-487C-92D1-7EF3AC9BADDE}">
-					<ChildrenList>
-						<Action Name="" ID="{10E2D77C-60AE-421D-A154-4811443788C9}" ShortID="160381271">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="23"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Default" ID="{978E9A0F-B372-43A9-8DA5-A5CA4EA058BF}" WorkUnitID="{8D1E5A48-0A63-487B-A514-2611D08D1752}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="UI_Notice" ID="{2AFDAB7C-D276-4CD6-899D-4FF4CD6E52F9}">
 					<ChildrenList>
 						<Action Name="" ID="{E697C64A-1DCE-4309-BD93-D54820916B95}" ShortID="443408976">
