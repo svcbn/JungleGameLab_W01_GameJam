@@ -331,7 +331,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 91edc72a3e0b6142a9b84d1f915acfba
     GuidInternal: 
-    m_lastTime: -8585093950848273059
+    m_lastTime: -8585093931779033413
     List:
     - name: Main
       guid: 73e36dc5422d7044a1f5f15b0f33b27b
@@ -359,8 +359,42 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: b3dca2f1ca774146bb7df58218e94bb8
     GuidInternal: 
-    m_lastTime: -8585093950903658717
+    m_lastTime: -8585093931802844876
     List:
+    - name: Barrier
+      guid: ec1738ffb844d04c98b4d50203f49c3e
+      id: 2953019946
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b3dca2f1ca774146bb7df58218e94bb8
+      - ElementName: Barrier
+        ObjectType: 3
+        guid: ec1738ffb844d04c98b4d50203f49c3e
+      Path: Events\Default Work Unit\Barrier
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Item
+      guid: e9a51df6f11eb8438417df1338cafed6
+      id: 1222624712
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b3dca2f1ca774146bb7df58218e94bb8
+      - ElementName: Item
+        ObjectType: 3
+        guid: e9a51df6f11eb8438417df1338cafed6
+      Path: Events\Default Work Unit\Item
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: MUS_Day
       guid: 0b746a49ee45eb42b6810a6da7fc4ffd
       id: 1210181189
@@ -443,6 +477,40 @@ MonoBehaviour:
         ObjectType: 3
         guid: 8d7c50cf57528849b72983dc2406ac88
       Path: Events\Default Work Unit\SFX_Box
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Slime
+      guid: 9bb3d2de23bf034cb5a23b89aa15f556
+      id: 3803999823
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b3dca2f1ca774146bb7df58218e94bb8
+      - ElementName: Slime
+        ObjectType: 3
+        guid: 9bb3d2de23bf034cb5a23b89aa15f556
+      Path: Events\Default Work Unit\Slime
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Trap
+      guid: 8a4a08b1ecec0245818778020c970df4
+      id: 3254962040
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b3dca2f1ca774146bb7df58218e94bb8
+      - ElementName: Trap
+        ObjectType: 3
+        guid: 8a4a08b1ecec0245818778020c970df4
+      Path: Events\Default Work Unit\Trap
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -587,7 +655,7 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585095907643832231
     List: []
-  ExpandedFileSystemItemIds: 1200000013000000
+  ExpandedFileSystemItemIds: 02000000030000001200000013000000
   ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
