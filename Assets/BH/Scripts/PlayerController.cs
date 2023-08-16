@@ -150,15 +150,7 @@ public class PlayerController : MonoBehaviour
         isImmune = false;
     }
 
-    // 임시
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.CompareTag("Enemy"))
-        {
-            GetDamage();
-        }
-    }
-
+    
     void KnockBack()
     {
         StartCoroutine(KnockBackAreaFeedback());

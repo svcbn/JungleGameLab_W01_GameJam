@@ -10,6 +10,7 @@ TagManager:
   - ItemArea
   - Stage
   - TutorialSensor
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Player
   - Enemy
   - ItemArea
-  - 
+  - Ground
   - 
   - 
   - 
