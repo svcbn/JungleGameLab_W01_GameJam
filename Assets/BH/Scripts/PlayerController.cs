@@ -42,8 +42,16 @@ public class PlayerController : MonoBehaviour
         }
         set
         {
-            _hp = value;
-            UIManager.instance.UpdatePlayerHp(_hp);
+            if (value > 0)
+            {
+                _hp = value;
+                UIManager.instance.UpdatePlayerHp(_hp);
+
+            }
+            else
+            {
+                gameManager.ChangeState(GameManager.GameState.Die);
+            }
         }
     }
 

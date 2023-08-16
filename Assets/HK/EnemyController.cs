@@ -32,6 +32,9 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    public bool goBack = false;
+    Vector3 newPosition;
+
     //코루틴으로 플레이어 추격
     public IEnumerator ChasePlayer(Transform enemyTransform)
     {
@@ -41,9 +44,11 @@ public class EnemyController : MonoBehaviour
             {
                 if (player != null && enemyTransform != null)
                 {
-                    Vector2 targetPosition = player.transform.position;
+                    Vector3 targetPosition = player.transform.position;
 
-                    if (targetPosition.x - transform.position.x < 0)
+                    newPosition = new Vector3(targetPosition.x - transform.position.x, targetPosition.y - transform.position.y, 0);
+
+                    if (newPosition.x < 0)
                     {
                         Look.transform.localScale = new Vector3(1,1,1);
                     }
@@ -52,8 +57,16 @@ public class EnemyController : MonoBehaviour
                         Look.transform.localScale = new Vector3(-1,1,1);
                     }
 
-                    Vector2 newPosition = Vector2.MoveTowards(enemyTransform.position, targetPosition, moveSpeed * Time.deltaTime);
-                    enemyTransform.position = newPosition;
+                    if (goBack)
+                    {
+                        transform.position -= newPosition.normalized * moveSpeed * Time.deltaTime;
+
+                    }
+                    else
+                    {
+                        transform.position += newPosition.normalized * moveSpeed * Time.deltaTime;
+
+                    }
                 }
             }
 

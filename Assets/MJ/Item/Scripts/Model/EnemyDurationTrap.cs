@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -10,7 +11,8 @@ public abstract class EnemyDurationTrap : Item<EnemyController>
     /// 해당 아이템의 동작을 설정
     /// </summary>
     protected Action Action { private get; set; }
-    
+    protected Action ExpireAction { private get; set; }
+
     [Tooltip("해당 아이템의 지속 시간을 설정")]
     public int duration;
     
@@ -22,12 +24,15 @@ public abstract class EnemyDurationTrap : Item<EnemyController>
     public override void Execute()
     {
         Action?.Invoke();
-        Invoke(nameof(ExpireDuration), duration);
+        StartCoroutine(nameof(Expire));
     }
 
-    protected virtual void ExpireDuration()
+    IEnumerator Expire()
     {
-        Action = null;
+        yield return new WaitForSeconds(duration);
+        ExpireAction?.Invoke();
     }
+        
+    
 
 }

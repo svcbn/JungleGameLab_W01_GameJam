@@ -11,14 +11,9 @@ public class MoveReverseDurationTrap : EnemyDurationTrap
         Type = ItemType.EnemyMoveReserve;
         Action = () =>
         {
-            Target.gameObject.transform.rotation = new Quaternion(0, 0, 180, 0);
+            Target.goBack = true;
         };
-    }
 
-    protected override void ExpireDuration()
-    {
-        Target.gameObject.transform.rotation = new Quaternion();
-        // 대상의 이동 초기화
-        base.ExpireDuration();
+        ExpireAction = () => { Target.goBack = false; };
     }
 }
