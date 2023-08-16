@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         Stop = false;
+        moveSpeed += GameManager.instance.Stage * 2;
     }
 
 

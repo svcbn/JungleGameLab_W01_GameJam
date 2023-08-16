@@ -12,6 +12,7 @@ public class SpawnManager : MonoBehaviour
     public void SpawnStart()
     {
         transform.position = GameObject.FindWithTag("Player").transform.position;
+        numberOfEnemies = GameManager.instance.Stage + 1;
         SpawnEnemies();
     }
 

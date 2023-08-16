@@ -42,7 +42,7 @@ public class TutorialManager : MonoBehaviour
 
     private void ShowStep(int stepIndex)
     {
-        if (stepIndex >= 26)
+        if (stepIndex >= 25)
         {
             UIManager.instance.Tutorial_Reset();
             instance = null;
