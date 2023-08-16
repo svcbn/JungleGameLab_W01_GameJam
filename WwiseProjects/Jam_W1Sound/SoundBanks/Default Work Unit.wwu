@@ -8,9 +8,11 @@
 						<ObjectRef Name="MUS_Default" ID="{496A740B-45EE-42EB-B681-0A6DA7FC4FFD}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="UI_Button" ID="{26432478-49EE-442A-A22A-C702BAD86F6C}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="TUO_Letter" ID="{C0CB0CDC-86E4-443D-B650-4EBE38A128D0}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MUS_Day" ID="{5E884A5A-6784-4561-8688-357BB9FFC0FE}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="UI_Text" ID="{3DCAE778-3472-4749-8B02-40D89DE30899}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="UI_Arrow" ID="{98C34FE4-B925-4AC4-A7F0-3D85C9F386AE}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PLY_Flashing" ID="{B2777F00-A481-4CB9-BAF1-DD0B315081DB}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MUS_Night" ID="{2BE2D5F9-063D-4E65-B75C-4AEB3E29E8AC}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

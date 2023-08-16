@@ -61,9 +61,34 @@
 				<Event Name="MUS_Default" ID="{496A740B-45EE-42EB-B681-0A6DA7FC4FFD}">
 					<ChildrenList>
 						<Action Name="" ID="{78111092-1C7B-40C4-A1A8-2FEF2C4C4C92}" ShortID="884327633">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Music" ID="{A30723DC-63CC-4868-9734-8654F481927E}" WorkUnitID="{F7E92481-A793-4184-B739-016892FBD69A}"/>
+									<ObjectRef Name="Title" ID="{871F9030-F8DD-4D54-839A-CC3E21A3C76B}" WorkUnitID="{F7E92481-A793-4184-B739-016892FBD69A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MUS_Day" ID="{5E884A5A-6784-4561-8688-357BB9FFC0FE}">
+					<ChildrenList>
+						<Action Name="" ID="{DE1D3265-EC5E-4CAD-BE7B-83D1D38B5453}" ShortID="179786075">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MusicDay" ID="{A30723DC-63CC-4868-9734-8654F481927E}" WorkUnitID="{F7E92481-A793-4184-B739-016892FBD69A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MUS_Night" ID="{2BE2D5F9-063D-4E65-B75C-4AEB3E29E8AC}">
+					<ChildrenList>
+						<Action Name="" ID="{945D568B-21AC-4F97-AF35-1D9353810231}" ShortID="480755861">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MusicNight" ID="{B264DD49-4CAC-42F9-858B-78AA4F8FDEFE}" WorkUnitID="{F7E92481-A793-4184-B739-016892FBD69A}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

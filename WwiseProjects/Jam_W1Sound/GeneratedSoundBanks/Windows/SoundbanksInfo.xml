@@ -136,13 +136,21 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{5E51C41D-05EC-A265-379F-2E96A5706375}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{25052F27-A00E-BFDF-EC06-6AB31B26EB0C}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
+				<File Id="8839440" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MUS_Nomal.wav</ShortName>
+					<CachePath>SFX/MUS_Nomal_D79FB2B7.wem</CachePath>
+				</File>
 				<File Id="75577207" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MUS_Etc.wav</ShortName>
 					<CachePath>SFX/MUS_Etc_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="351671570" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MUS_Chase.wav</ShortName>
+					<CachePath>SFX/MUS_Chase_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="504254709" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>ESM_Explainer_Video_One_Shot_Positive_Notification_Alert_Texting_UI_Message_Sent_1_Award.wav</ShortName>
@@ -154,7 +162,7 @@
 				</File>
 				<File Id="685244288" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>DataTextTyping_BWU.447.wav</ShortName>
-					<CachePath>SFX/DataTextTyping_BWU.447_E1217EFE.wem</CachePath>
+					<CachePath>SFX/DataTextTyping_BWU.447_014E4A07.wem</CachePath>
 				</File>
 				<File Id="862821521" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CameraShutter_SFXB.4034.wav</ShortName>
@@ -166,9 +174,19 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="3132895340" Name="MUS_Default" DurationType="Infinite">
+				<Event Id="1210181189" Name="MUS_Day" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="75577207"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3132895340" Name="MUS_Default" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="8839440"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3826194393" Name="MUS_Night" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="351671570"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="119314287" Name="PLY_Flashing" DurationType="OneShot" DurationMin="1.4755555" DurationMax="1.4755555">
@@ -199,5 +217,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{04FE3C37-1627-1AD6-AC46-81A9843D8D51}</FileHash>
+	<FileHash>{CC8DD237-6A6C-957F-FA09-D734FBD50575}</FileHash>
 </SoundBanksInfo>
