@@ -75,3 +75,4 @@ crashlytics-build.properties
 
 # 폴더 무시
 .idea/
+*.xml
