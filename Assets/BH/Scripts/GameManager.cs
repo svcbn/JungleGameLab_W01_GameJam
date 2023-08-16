@@ -303,7 +303,7 @@ public class GameManager : MonoBehaviour
         boxes.Clear();
         maxKeys = difficulty * keys;
         ItemBox[] tempArr;
-        tempArr = GameObject.Find("RandomBox").GetComponentsInChildren<ItemBox>();
+        tempArr = GameObject.FindGameObjectsWithTag("Box").Select(x=> x.GetComponent<ItemBox>()).ToArray();
 
         foreach (ItemBox ib in tempArr)
         {
