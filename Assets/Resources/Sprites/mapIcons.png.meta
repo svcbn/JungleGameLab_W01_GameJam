@@ -110,8 +110,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 55.11111
-        height: 57
+        width: 32.333332
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5368a3c9c53779444b7188bac090f985
-      internalID: -615204587
+      spriteID: f5c6bd60317bdb64e827166715486ffb
+      internalID: 452489255
       vertices: []
       indices: 
       edges: []
@@ -129,10 +129,10 @@ TextureImporter:
       name: mapIcons_1
       rect:
         serializedVersion: 2
-        x: 55
+        x: 32
         y: 0
-        width: 55.11111
-        height: 57
+        width: 32.333332
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 531d8780affe8f84e99b41e60e7ce115
-      internalID: -967384195
+      spriteID: ac5b8715e9a404a4ea745c97620e07ed
+      internalID: 1582674876
       vertices: []
       indices: 
       edges: []
@@ -150,10 +150,10 @@ TextureImporter:
       name: mapIcons_2
       rect:
         serializedVersion: 2
-        x: 110
+        x: 64
         y: 0
-        width: 55.11111
-        height: 57
+        width: 32.333332
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,8 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42b9eef0f94a8624f92ea5e447ab4df3
-      internalID: 1640305892
+      spriteID: 72cea81ff056f394bb6cfcdbf8093dff
+      internalID: 901653980
       vertices: []
       indices: 
       edges: []
@@ -171,10 +171,10 @@ TextureImporter:
       name: mapIcons_3
       rect:
         serializedVersion: 2
-        x: 165
+        x: 96
         y: 0
-        width: 55.11111
-        height: 57
+        width: 32.333332
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 905faafb097528741967c0a0801d2607
-      internalID: 69678200
+      spriteID: 34517e42bc0a49b42945dab234594f02
+      internalID: 765608085
       vertices: []
       indices: 
       edges: []
@@ -192,10 +192,10 @@ TextureImporter:
       name: mapIcons_4
       rect:
         serializedVersion: 2
-        x: 220
+        x: 128
         y: 0
-        width: 55.11111
-        height: 57
+        width: 32.333332
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b2abf9786b0f9643b65ebdd9753b3ce
-      internalID: -12842055
+      spriteID: 8a82f1c4cfaeee744823b737e2a57b3d
+      internalID: 87298510
       vertices: []
       indices: 
       edges: []
@@ -213,10 +213,10 @@ TextureImporter:
       name: mapIcons_5
       rect:
         serializedVersion: 2
-        x: 275
+        x: 160
         y: 0
-        width: 55.11111
-        height: 57
+        width: 32.333332
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,8 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34eb120d6c265a440a80e6f685cf8441
-      internalID: 1143299313
+      spriteID: b82ab681f93c5b549a09ae11b15c5785
+      internalID: 1008279742
       vertices: []
       indices: 
       edges: []
@@ -234,10 +234,10 @@ TextureImporter:
       name: mapIcons_6
       rect:
         serializedVersion: 2
-        x: 330
+        x: 192
         y: 0
-        width: 55.11111
-        height: 57
+        width: 32.333332
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,8 +245,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e560bc1cd18cc784499ad33524905547
-      internalID: -506268339
+      spriteID: 3798d82529b3eef4c8d7ab1c4abaff55
+      internalID: 1100406669
       vertices: []
       indices: 
       edges: []
@@ -255,10 +255,10 @@ TextureImporter:
       name: mapIcons_7
       rect:
         serializedVersion: 2
-        x: 385
+        x: 224
         y: 0
-        width: 55.11111
-        height: 57
+        width: 32.333332
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,8 +266,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1129f7458b73c8340b8dcace167a48a5
-      internalID: -1820049988
+      spriteID: cff42eea2bbb3034998a8012c5760d0d
+      internalID: 2031569711
       vertices: []
       indices: 
       edges: []
@@ -276,10 +276,10 @@ TextureImporter:
       name: mapIcons_8
       rect:
         serializedVersion: 2
-        x: 440
+        x: 256
         y: 0
-        width: 55.11111
-        height: 57
+        width: 32.333332
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,8 +287,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 235ec5ea968ef1f419207e0273bfb1dd
-      internalID: 2143870889
+      spriteID: 6c4a0995242e24d4bb7438d88c8f2c77
+      internalID: -1078082445
       vertices: []
       indices: 
       edges: []
@@ -304,15 +304,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      mapIcons_0: -615204587
-      mapIcons_1: -967384195
-      mapIcons_2: 1640305892
-      mapIcons_3: 69678200
-      mapIcons_4: -12842055
-      mapIcons_5: 1143299313
-      mapIcons_6: -506268339
-      mapIcons_7: -1820049988
-      mapIcons_8: 2143870889
+      mapIcons_0: 452489255
+      mapIcons_1: 1582674876
+      mapIcons_2: 901653980
+      mapIcons_3: 765608085
+      mapIcons_4: 87298510
+      mapIcons_5: 1008279742
+      mapIcons_6: 1100406669
+      mapIcons_7: 2031569711
+      mapIcons_8: -1078082445
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
