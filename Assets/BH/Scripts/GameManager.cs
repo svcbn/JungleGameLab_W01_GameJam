@@ -206,8 +206,10 @@ public class GameManager : MonoBehaviour
     {
         // 씬 이동
         State = GameState.Shop;
+        CollectedGoalCnt = 0;
+        Inventory.AddCoin(4);
         SceneManager.LoadScene("01.Scenes/DayN");
-        
+
         // 데이터 설정
         Stage = 2;
         _backupCoin = Inventory.Coin;
