@@ -18,6 +18,7 @@ namespace AK
         static const AkUniqueID MUS_DAY = 1210181189U;
         static const AkUniqueID MUS_NIGHT = 3826194393U;
         static const AkUniqueID MUS_TUT = 872068900U;
+        static const AkUniqueID PLAYMUS = 1969559964U;
         static const AkUniqueID PLY_FLASHING = 119314287U;
         static const AkUniqueID SFX_BOX = 45699584U;
         static const AkUniqueID SLIME = 3803999823U;
@@ -28,6 +29,22 @@ namespace AK
         static const AkUniqueID UI_NOTICE = 2529527178U;
         static const AkUniqueID UI_TEXT = 3469071695U;
     } // namespace EVENTS
+
+    namespace SWITCHES
+    {
+        namespace MUSIC
+        {
+            static const AkUniqueID GROUP = 3991942870U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID DAY = 311764537U;
+                static const AkUniqueID DEFAULT = 782826392U;
+                static const AkUniqueID NIGHT = 1011622525U;
+            } // namespace SWITCH
+        } // namespace MUSIC
+
+    } // namespace SWITCHES
 
     namespace BANKS
     {
