@@ -321,7 +321,7 @@ public class GameManager : MonoBehaviour
             
             // 상점 씬으로 이동
             // nextStageWaitFlag = false;
-            // ChangeState(GameState.Shop);
+            ChangeState(GameState.Shop);
             SceneManager.LoadScene("DayN");
         }
         else
