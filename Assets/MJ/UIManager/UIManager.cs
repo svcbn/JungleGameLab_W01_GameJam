@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -23,25 +24,98 @@ public class UIManager : MonoBehaviour
         }
     }
     #endregion
+
+    private GameManager _gameManager;
+    
+    [Header("View by Game State")]
+    public GameObject titleObj;
+    public GameObject gameObj;
+    public GameObject shopObj;  
+    public GameObject clearObj;
+    public GameObject gameOverObj; 
     
     
-    [Header("Top Area")]
+    [Header("Default Game Info Area")]
     public TextMeshProUGUI hpText;
     public TextMeshProUGUI stageText;
     public TextMeshProUGUI coinText;
-
-    [Header("Top Under Area")] 
+    
+    [Header("Item Info")]
     public Transform itemCreatePosTr;
-
     public GameObject itemPrefab;
     
-    [Header("Bottom Area")]
+    [Header("Day or Night Text")]
     public TextMeshProUGUI goalText;
+    public TextMeshProUGUI timerText;
 
     [Header("Shop")]
-    public GameObject shopObject; 
-    public GameObject noMoneyObject; 
-        
+    public GameObject noMoneyObject;
+
+    [Header("Clear")]
+    public TextMeshProUGUI stageClearText;
+
+    void Start()
+    {
+        _gameManager = GameManager.instance;
+        SetViewObject();
+    }
+
+    #region Method by GameState
+    public void SetTitleView()
+    {
+        SetViewObject(title: true);
+    }
+
+    public void SetTutorialView()
+    {
+        SetViewObject(game:true);
+    }
+
+    public void SetGameViewShop()
+    {
+        SetViewObject(game:true, shop:true);
+        goalText.SetText(string.Empty);
+    }
+    
+    public void SetGameViewDay(int goalCnt)
+    {
+        SetViewObject(game:true, timerTextObj:true);
+        goalText.SetText($"The number of keys you need to collect is {goalCnt}."); 
+    }
+
+    public void SetGameViewNight()
+    {
+        SetViewObject(game:true);
+        UpdateGoalText(_gameManager.CollectedGoalCnt, _gameManager.GoalCnt);
+    }
+
+    public void SetClearView()
+    {
+        stageClearText.SetText($"Stage {_gameManager.Stage} Clear!!");
+    }
+
+    public void SetGameViewDie()
+    {
+        SetViewObject(gameOver:true);
+    }
+
+    /// <summary>
+    /// 설정되지 않은 항목들은 다 비활성화 시킴
+    /// </summary>
+    /// <param name="title"></param>
+    /// <param name="game"></param>
+    /// <param name="shop"></param>
+    private void SetViewObject(bool title = false, bool game= false, bool shop= false, bool gameOver = false, bool timerTextObj = false, bool clear = false)
+    {
+        titleObj.SetActive(title);
+        gameObj.SetActive(game);
+        shopObj.SetActive(shop);
+        gameOverObj.SetActive(gameOver);
+        clearObj.SetActive(clear);
+        timerText.gameObject.SetActive(timerTextObj);   
+    }
+    #endregion 
+    
     #region Other Text Update Method
 
     public void UpdatePlayerHp(int hpValue)
@@ -65,6 +139,11 @@ public class UIManager : MonoBehaviour
     public void UpdateGoalText(int curCnt, int goalCnt)
     {
         goalText.SetText($"GOAL {curCnt} / {goalCnt}"); 
+    }
+
+    public void UpdateTimerText(float time)
+    {
+        timerText.SetText($"{time:F2}");
     }
     #endregion
     
@@ -90,7 +169,7 @@ public class UIManager : MonoBehaviour
     #region Shop-Related Method
     public void ShowShop()
     {
-         shopObject.SetActive(true);   
+         shopObj.SetActive(true);   
     }
 
     public void CompleteShopping()
