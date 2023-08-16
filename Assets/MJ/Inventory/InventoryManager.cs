@@ -22,7 +22,7 @@ public class InventoryManager
         private set
         {
             _coin = value;
-            UIManager.instance.UpdateCoin(_coin);
+            UIManager.instance?.UpdateCoin(_coin);
         }
     }
     #endregion
@@ -52,7 +52,7 @@ public class InventoryManager
     public void AddItem(ItemType type)
     {
         Items.Add(type);
-        UIManager.instance.AddItemOnView(type);
+        UIManager.instance?.AddItemOnView(type);
     }
 
     /// <summary>
@@ -60,7 +60,7 @@ public class InventoryManager
     /// </summary>
     private void RemoveItem()
     {
-        UIManager.instance.RemoveItemOnView();
+        UIManager.instance?.RemoveItemOnView();
         Items.RemoveAt(0);
     }
     

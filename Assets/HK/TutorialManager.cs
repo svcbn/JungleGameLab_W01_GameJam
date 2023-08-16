@@ -29,6 +29,11 @@ public class TutorialManager : MonoBehaviour
 
     private void ShowStep(int stepIndex)
     {
+        if (stepIndex >= 24)
+        {
+            GameManager.instance.CompleteTutorial();
+        }
+        
         if (stepIndex >= 0 && stepIndex < tutorialObjects.Length)
         {
             for (int i = 0; i < tutorialObjects.Length; i++)
@@ -50,10 +55,10 @@ public class TutorialManager : MonoBehaviour
 
             if (stepIndex == 17)
             {
-                // Æ©Åä¸®¾ó Àü¿ë ÇÃ·¹ÀÌ¾î À§Ä¡¿¡ ½ºÆù
+                // Æ©ï¿½ä¸®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 GameObject playerInstance = Instantiate(playerPrefab, fixedPlayerPosition, Quaternion.identity);
 
-                // ¹ã ¹öÀü Ä«¸Þ¶ó
+                // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½Þ¶ï¿½
                 Camera.main.orthographicSize /= 4.0f;
             }
 

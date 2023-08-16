@@ -14,7 +14,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    private UIManager _uiManager;
+    public UIManager UIManager { get; set; }
     public InventoryManager Inventory { get; private set; }
 
     [SerializeField] int difficulty = 1;
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
         private set
         {
             _stage = value;
-            _uiManager.UpdateStageText(_stage);
+            UIManager?.UpdateStageText(_stage);
         }
     }
 
@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
         set
         {
             _collectedGoalCnt = value;
-            _uiManager.UpdateGoalText(_collectedGoalCnt, GoalCnt);
+            UIManager?.UpdateGoalText(_collectedGoalCnt, GoalCnt);
         }
     }
 
@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
         set
         {
             _timer = value;
-            _uiManager.UpdateTimerText(_timer);
+            UIManager?.UpdateTimerText(_timer);
         }
     }
     private int _backupCoin;
@@ -91,12 +91,15 @@ public class GameManager : MonoBehaviour
 
     Vignette vignette;
 
+    public int DefaultPlayerHp = 5;
+
     // Start is called before the first frame update
     void Start()
     {
-        _uiManager = UIManager.instance;
+        UIManager = UIManager.instance;
         ResourceManager.Init();
         Inventory = new InventoryManager();
+
         vignette = GetComponent<PostProcessVolume>().profile.GetSetting<Vignette>();
         ChangeState(GameState.Title);
     }
@@ -185,24 +188,24 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void CompleteTutorial()
     {
+        // 씬 이동
+        SceneManager.LoadScene("01.Scenes/DayN");
+        
         // 데이터 설정
         Stage = 2;
         Inventory.AddCoin(5);
         _backupCoin = Inventory.Coin;
-        
-        // 씬 이동
-        SceneManager.LoadScene("01.Scenes/DayN");
-        ChangeState(GameState.Shop);
     }
 
+    public void CompleteLoadShop() => ChangeState(GameState.Shop);
     void ShopPhase()
     {
+        Inventory.ResetItems();
+        UIManager.SetGameViewShop();
+        
         // size9 orthographic
         Camera.main.transform.position = new Vector3(1000, 1000, -10);
         Camera.main.orthographicSize = 9;
-        
-        Inventory.ResetItems();
-        _uiManager.SetGameViewShop();
     }
 
     public void B_ShopConfirm() => ChangeState(GameState.Day);
@@ -210,7 +213,7 @@ public class GameManager : MonoBehaviour
     {
         CollectedGoalCnt = 0;
         GoalCnt = Stage;
-        _uiManager.SetGameViewDay(GoalCnt);
+        UIManager?.SetGameViewDay(GoalCnt);
         
         CameraSetting(false, null, 40f);
 
@@ -235,13 +238,13 @@ public class GameManager : MonoBehaviour
     {
         Inventory.ResetItems();
         RandomBoxSetting(difficulty, keys);
-        _uiManager.SetGameViewNight();
+        UIManager?.SetGameViewNight();
         
         CameraSetting(true, GameObject.FindWithTag("Player").gameObject.transform, 10f, true);
 
         // [TODO] 캐릭터 랜덤 위치에 지정 필요!
     }
-    
+
     void CameraSetting(bool isVignette, Transform transform, float size, bool isAttached = false)
     {
         vignette.active = isVignette;
@@ -250,7 +253,7 @@ public class GameManager : MonoBehaviour
         {
             Camera.main.transform.position = new Vector3(0, 0, -10); // 현재 스테이지 카메라 위치로 변경할것
         }
-        
+
         Camera.main.orthographicSize = size;
     }
 
@@ -261,7 +264,7 @@ public class GameManager : MonoBehaviour
     public ItemType Type;
     void Die()
     {
-        _uiManager.SetGameViewDie();
+        UIManager?.SetGameViewDie();
     }
 
     public void B_Retry()
@@ -284,7 +287,7 @@ public class GameManager : MonoBehaviour
     {
         // 보상 처리 및 초기화
         nextStageWaitFlag = true;
-        _uiManager.SetClearView();
+        UIManager?.SetClearView();
         Inventory.AddCoin(5);
         // [TODO] 플레이어 SetActive(false) 필요 할 듯
          

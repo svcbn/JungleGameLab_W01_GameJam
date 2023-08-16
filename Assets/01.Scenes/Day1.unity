@@ -951,6 +951,7 @@ MonoBehaviour:
   - {fileID: 1831728978}
   - {fileID: 1783368380}
   - {fileID: 208457981}
+  - {fileID: 208457981}
   soundEvent:
   - 
   - 
@@ -2300,69 +2301,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 294905198}
   m_CullTransparentMesh: 1
---- !u!1 &302137184
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 302137185}
-  - component: {fileID: 302137186}
-  m_Layer: 5
-  m_Name: UIManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &302137185
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 302137184}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1107964923}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1280, y: 686}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &302137186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 302137184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f665e93f5cfd3884e8e445950e98df26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  titleObj: {fileID: 0}
-  gameObj: {fileID: 651899529}
-  shopObj: {fileID: 1624364809}
-  clearObj: {fileID: 0}
-  gameOverObj: {fileID: 0}
-  hpText: {fileID: 895897411}
-  stageText: {fileID: 1945633080}
-  coinText: {fileID: 1413095349}
-  itemCreatePosTr: {fileID: 1822387926}
-  itemPrefab: {fileID: 5346301451488492412, guid: 415a1fc193e25df48b4429032a3ad6c0, type: 3}
-  goalText: {fileID: 907133334}
-  timerText: {fileID: 43554834}
-  noMoneyObject: {fileID: 1582643835}
-  stageClearText: {fileID: 43554834}
 --- !u!1 &305677185
 GameObject:
   m_ObjectHideFlags: 0
@@ -2901,7 +2839,7 @@ RectTransform:
   - {fileID: 651899530}
   - {fileID: 1624364810}
   m_Father: {fileID: 1107964923}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5581,7 +5519,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1366754137}
-  - {fileID: 302137185}
   - {fileID: 362378966}
   m_Father: {fileID: 1697849235}
   m_RootOrder: 2
