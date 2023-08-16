@@ -13,9 +13,15 @@ public class ItemBox : MonoBehaviour
         {
             if (item[0] != ItemType.Ignore)
             {
-                //ÀÎº¥Åä¸®¿¡ Áı¾î³Ö±â
-                GameManager.instance.Inventory.AddItem(item[0]);
-
+                if (item[0] == ItemType.Key)
+                {
+                    GameManager.instance.AddKey();
+                }
+                else
+                {
+                    //ì¸ë²¤í† ë¦¬ì— ì§‘ì–´ë„£ê¸°
+                    GameManager.instance.Inventory.AddItem(item[0]);
+                }
                 gameObject.SetActive(false);
             }
         }

@@ -12,13 +12,13 @@ public class Door : MonoBehaviour
         {
             if (isComplete)
             {
-                // Åë°ú°¡´É
-                Debug.Log("Å¬¸®¾î");
+                GameManager.instance.Clear();
+                Debug.Log("Å¬ï¿½ï¿½ï¿½ï¿½");
             }
             else
             {
-                // Å° ¸ð¾Æ¿À¶ó°í ¸Þ½ÃÁö? ¶ç¿ì´ÂºÎºÐ
-                Debug.Log("Å°ºÎÁ·");
+                // Å° ï¿½ï¿½Æ¿ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½? ï¿½ï¿½ï¿½ÂºÎºï¿½
+                Debug.Log("Å°ï¿½ï¿½ï¿½ï¿½");
             }
         }
 

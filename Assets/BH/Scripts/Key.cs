@@ -9,14 +9,15 @@ public class Key : MonoBehaviour
     void Start()
     {
         door = GameObject.Find("Gate").GetComponent<GateCheck>();
-        door.keys.Add(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            door.CollectKey(gameObject);
-        }
+        // if (collision.gameObject.CompareTag("Player"))
+        // {
+        //     GameManager.instance.AddKey();
+        //     Destroy(gameObject);
+        //     door.CollectKey();
+        // }
     }
 }

@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public GameObject keyPrefab;
 
     public GameObject PlayerObj; 
+    public GateCheck GateCheck { get; set; }
     private void Awake()
     {
         if (instance == null)
@@ -240,7 +241,7 @@ public class GameManager : MonoBehaviour
     void NightPhase()
     {
         Inventory.ResetItems();
-        RandomBoxSetting(GoalCnt);
+        RandomBoxSetting(6); // RandomBoxSetting(GoalCnt);
         UIManager?.SetGameViewNight();
 
        
@@ -295,10 +296,11 @@ public class GameManager : MonoBehaviour
         Inventory.AddCoin(5);
         // [TODO] 플레이어 SetActive(false) 필요 할 듯
          
-        yield return new WaitForSeconds(2f); // 대기 (여운) 
+        yield return new WaitForSeconds(2f); // 대기 (여운)
+        
+        Stage++;
         
         // 상점 씬으로 이동
-        Stage++;
         nextStageWaitFlag = false;
         ChangeState(GameState.Shop);
     }
@@ -308,23 +310,31 @@ public class GameManager : MonoBehaviour
     void RandomBoxSetting(int keys)
     {
         ItemType type;
-        
-        boxes = GameObject.FindGameObjectsWithTag("Box").Select(x=> x.GetComponent<ItemBox>()).ToList();
 
-        for (int i = 0; i < boxes.Count; i++)
+        var tempBoxs = GameObject.FindGameObjectsWithTag("Box").Select(x=> x.GetComponent<ItemBox>()).ToList();
+
+        for (int i = 0; i < tempBoxs.Count; i++)
         {
             if (i < keys)
             {
-                boxes[i].item.Add(ItemType.Key);
+                tempBoxs[i].item.Add(ItemType.Key);
             }
             else
             {
                 //랜덤아이템로드
                 int randomNum = UnityEngine.Random.Range(1, Enum.GetNames(typeof(ItemType)).Length);
-                boxes[i].item.Add((ItemType)randomNum);
+                tempBoxs[i].item.Add((ItemType)randomNum);
             }
+        }
             
-            // 셔플하기
+        // 셔플하기
+        boxes.Clear();
+            
+        while (tempBoxs.Count > 0)
+        {
+            var index = Random.Range(0, tempBoxs.Count);
+            boxes.Add(tempBoxs[index]);
+            tempBoxs.RemoveAt(index);
         }
     }
 
@@ -399,5 +409,11 @@ public class GameManager : MonoBehaviour
                 ResourceManager.ItemPrefabDict[type].BroadcastMessage("Execute");
             }
         }
+    }
+
+    public void AddKey()
+    {
+        CollectedGoalCnt++;
+        GateCheck.CollectKey();
     }
 }

@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEngine;
 
 public class GateCheck : MonoBehaviour
 {
-    public List<GameObject> keys = new List<GameObject>();
+    private GameManager _gameManager;
     public List<GameObject> doors = new List<GameObject>();
 
     public bool isComplete = false;
@@ -12,26 +13,21 @@ public class GateCheck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _gameManager = GameManager.instance;
+        _gameManager.GateCheck = this;
+        isComplete = false;
         ResetKey();
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    public void CollectKey()
     {
-        //if (GameManager.instance.State == GameManager.GameState.Die)
-        //{
-        //    ResetKey();
-        //}
-    }
-
-    public void CollectKey(GameObject obj)
-    {
-        keys.Remove(obj);
-        obj.SetActive(false);
-        
-        if (keys.Count == 0)
+        if(!isComplete)
         {
-            OpenDoor();
+            if (_gameManager.CollectedGoalCnt >= _gameManager.GoalCnt)
+            {
+                OpenDoor();
+                isComplete = true;
+            }
         }
     }
 
@@ -46,7 +42,7 @@ public class GateCheck : MonoBehaviour
     void ResetKey()
     {
         //keys.Clear();
-        // Ű �߰�
+        // 키 추가
 
         foreach (GameObject go in doors)
         {
