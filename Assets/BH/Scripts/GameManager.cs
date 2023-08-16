@@ -191,7 +191,7 @@ public class GameManager : MonoBehaviour
         GoalCnt = 1;
         CollectedGoalCnt = 0;
         Stage = 1;
-        Inventory.AddCoin(-4);
+        Inventory.Coin = 5;
         //CameraSetting(false, null, 25f);
     }
     
@@ -457,5 +457,12 @@ public class GameManager : MonoBehaviour
             GateCheck.CollectKey();
         }
 
+    }
+
+    public void Reset()
+    {
+        Inventory.Coin = 0;
+        State = GameState.Title;
+        SceneManager.LoadScene("Title");
     }
 }

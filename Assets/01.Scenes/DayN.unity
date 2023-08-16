@@ -2412,6 +2412,18 @@ MonoBehaviour:
           m_StringArgument: UI_Button
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 303985174}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: B_Retry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &594941142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3178,7 +3190,7 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: d4d79446b89d546499ebd09a2f1360ef, type: 2}
   useCallbacks: 0
   Callbacks: []
-  playingId: 1794
+  playingId: 1812
   soundEmitterObject: {fileID: 734599877}
   transitionDuration: 0
   eventIdInternal: 0
@@ -3733,6 +3745,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: UI_Button
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 303985174}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: B_GotoMain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &775824495
@@ -8379,7 +8403,7 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: 12f52291537f0da48b6ffc9583f2e2c3, type: 2}
   useCallbacks: 0
   Callbacks: []
-  playingId: 1795
+  playingId: 1813
   soundEmitterObject: {fileID: 1650346944}
   transitionDuration: 0
   eventIdInternal: 0

@@ -19,7 +19,7 @@ public class InventoryManager
     private int _coin;
     public int Coin {
         get => _coin;
-        private set
+        set
         {
             _coin = value;
             UIManager.instance?.UpdateCoin(_coin);

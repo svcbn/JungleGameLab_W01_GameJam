@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -237,4 +238,14 @@ public class UIManager : MonoBehaviour
     }
 
     #endregion
+
+    public void B_GotoMain()
+    {
+        _gameManager.Reset();
+    }
+
+    public void B_Retry()
+    {
+        _gameManager.B_Retry();
+    }
 }
