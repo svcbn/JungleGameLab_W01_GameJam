@@ -136,7 +136,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{25052F27-A00E-BFDF-EC06-6AB31B26EB0C}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{297B6F31-CB7A-96CE-816C-E31BD18DA7D7}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -159,6 +159,10 @@
 				<File Id="577482382" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Flashing.wav</ShortName>
 					<CachePath>SFX/SFX_Flashing_10C4C929.wem</CachePath>
+				</File>
+				<File Id="656942889" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ESM_Ancient_Game_Crystal_Item_Aquire_Action_Hit_Tap_Impact_Airy_Magic_.wav</ShortName>
+					<CachePath>SFX/ESM_Ancient_Game_Crystal_Item_Aquire_Action_Hit_Tap_Impact_Airy_Magic__E8A1065D.wem</CachePath>
 				</File>
 				<File Id="685244288" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>DataTextTyping_BWU.447.wav</ShortName>
@@ -194,6 +198,11 @@
 						<MediaRef Id="577482382"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="45699584" Name="SFX_Box" DurationType="OneShot" DurationMin="1.6653225" DurationMax="1.6653225">
+					<MediaRefs>
+						<MediaRef Id="656942889"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3876674778" Name="TUO_Letter" DurationType="OneShot" DurationMin="0.6666667" DurationMax="0.6666667">
 					<MediaRefs>
 						<MediaRef Id="941962014"/>
@@ -217,5 +226,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{CC8DD237-6A6C-957F-FA09-D734FBD50575}</FileHash>
+	<FileHash>{113A4B2F-49E6-F39F-9348-BC542522FA69}</FileHash>
 </SoundBanksInfo>
