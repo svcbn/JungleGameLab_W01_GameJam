@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 838968187386585956, guid: 8d3604c009a71d540b30bf79bcbe401e, type: 3}
       propertyPath: m_Name
-      value: ThornGround
+      value: ThornGround Variant
       objectReference: {fileID: 0}
     - target: {fileID: 838968187386585958, guid: 8d3604c009a71d540b30bf79bcbe401e, type: 3}
       propertyPath: m_RootOrder
@@ -25,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 838968187386585958, guid: 8d3604c009a71d540b30bf79bcbe401e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 838968187386585958, guid: 8d3604c009a71d540b30bf79bcbe401e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -67,6 +67,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.3679245
       objectReference: {fileID: 0}
+    - target: {fileID: 838968187386585959, guid: 8d3604c009a71d540b30bf79bcbe401e, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d3604c009a71d540b30bf79bcbe401e, type: 3}
 --- !u!1 &6058307384255831427 stripped
@@ -86,3 +90,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b899b7f7664c69641a23dc0e810ef2de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interval: 0
+  damage: 0
