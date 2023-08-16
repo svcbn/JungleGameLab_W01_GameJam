@@ -29,4 +29,7 @@ public enum ItemType
     CompassArrowSizeUp,
     [Description("ArrowSpinnerChangeDirectionItem")]
     CompassChangeDirection,
+    
+    [Description("Key")]
+    Key,
 }

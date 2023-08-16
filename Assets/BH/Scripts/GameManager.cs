@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public int currentStage = 0;
 
     public List<ItemBox> boxes = new List<ItemBox>();
+    public GameObject keyPrefab;
 
     public GameObject PlayerObj; 
     private void Awake()
@@ -195,7 +196,6 @@ public class GameManager : MonoBehaviour
         
         // 데이터 설정
         Stage = 2;
-        Inventory.AddCoin(5);
         _backupCoin = Inventory.Coin;
     }
 
@@ -239,7 +239,7 @@ public class GameManager : MonoBehaviour
     void NightPhase()
     {
         Inventory.ResetItems();
-        RandomBoxSetting(difficulty, keys);
+        RandomBoxSetting(GoalCnt);
         UIManager?.SetGameViewNight();
 
        
@@ -304,28 +304,26 @@ public class GameManager : MonoBehaviour
     #endregion
 
 
-    void RandomBoxSetting(int difficulty, int keys)
+    void RandomBoxSetting(int keys)
     {
         ItemType type;
+        
+        boxes = GameObject.FindGameObjectsWithTag("Box").Select(x=> x.GetComponent<ItemBox>()).ToList();
 
-        boxes.Clear();
-        maxKeys = difficulty * keys;
-        ItemBox[] tempArr;
-        tempArr = GameObject.FindGameObjectsWithTag("Box").Select(x=> x.GetComponent<ItemBox>()).ToArray();
-
-        foreach (ItemBox ib in tempArr)
+        for (int i = 0; i < boxes.Count; i++)
         {
-            boxes.Add(ib);
-        }
-
-        foreach (ItemBox box in boxes)
-        {
-            //랜덤아이템로드
-            int randomNum = UnityEngine.Random.Range(1, Enum.GetNames(typeof(ItemType)).Length);
-
-            type = (ItemType)randomNum;
-
-            box.item.Add(type);
+            if (i < keys)
+            {
+                boxes[i].item.Add(ItemType.Key);
+            }
+            else
+            {
+                //랜덤아이템로드
+                int randomNum = UnityEngine.Random.Range(1, Enum.GetNames(typeof(ItemType)).Length);
+                boxes[i].item.Add((ItemType)randomNum);
+            }
+            
+            // 셔플하기
         }
     }
 
