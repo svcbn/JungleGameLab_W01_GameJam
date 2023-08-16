@@ -73,7 +73,7 @@ public class InventoryManager
         
         var item = Items.FirstOrDefault();
 
-        if (item != null)
+        if (item != ItemType.Ignore)
         {
             itemPrefab = ResourceManager.ItemPrefabDict[item];
             RemoveItem();

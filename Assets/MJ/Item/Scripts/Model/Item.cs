@@ -33,9 +33,14 @@ public abstract class Item<T>  : MonoBehaviour where T: MonoBehaviour
             if (obj.tag.Equals(TargetTag))
             {
                 Target = obj.GetComponent<T>();
+                if (Target == null)
+                {
+                    Target = obj.GetComponentInChildren<T>();
+                }
+
                 Execute();
                 
-                Destroy(obj);
+                Destroy(gameObject);
                 Target = null;
             }
         }

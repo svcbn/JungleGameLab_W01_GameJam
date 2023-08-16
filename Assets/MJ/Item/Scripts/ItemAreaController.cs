@@ -30,13 +30,13 @@ public class ItemAreaController : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D target)
     {
-        if(target.gameObject.tag.Equals("Player"))
-            unbuildableAreaObj.SetActive(true);
+        //if (target.gameObject.tag.Equals("Player"))
+        //    unbuildableAreaObj.SetActive(true);
     }
 
     public void OnTriggerExit2D(Collider2D target)
     {
-        if(target.gameObject.tag.Equals("Player"))
-            unbuildableAreaObj.SetActive(false);
+        //if (target.gameObject.tag.Equals("Player"))
+        //    unbuildableAreaObj.SetActive(false);
     }
 }

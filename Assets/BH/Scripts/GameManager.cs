@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour
         }
         #endregion
 
-        if (State == GameState.Day)
+        if (State == GameState.Day || State == GameState.Night)
         {
             RayCheck();
             if (Input.GetMouseButtonDown(0) && canSetItem)
@@ -145,6 +145,7 @@ public class GameManager : MonoBehaviour
     void ChangeState(GameState state)
     {
         State = state;
+        Debug.Log(state + "");
         switch (state)
         {
             case GameState.Title:
@@ -166,7 +167,6 @@ public class GameManager : MonoBehaviour
                 Die();
                 break;
         }
-        Debug.Log(state + "");
     }
 
     void Title()
@@ -238,7 +238,7 @@ public class GameManager : MonoBehaviour
     
     void CameraSetting(bool isVignette, Transform transform, float size, bool isAttached = false)
     {
-        //vignette.active = isVignette;
+        vignette.active = isVignette;
         Camera.main.transform.SetParent(transform, false);
         if (!isAttached)
         {
@@ -322,20 +322,25 @@ public class GameManager : MonoBehaviour
 
     public bool canSetItem = false;
 
+
+
     void RayCheck()
     {
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), transform.forward, 15f);
 
         if(hit)
         {
-            Debug.Log(hit.collider.gameObject);
+            Debug.Log(hit.collider.tag);
             
             if (hit.collider.CompareTag("ItemArea"))
             {
                 canSetItem = false;
                 GameObject go = hit.collider.transform.parent.GetChild(1).gameObject;
-                go.SetActive(true);
-                StartCoroutine(ActiveFalse(go));
+                if(go.gameObject.activeSelf == false)
+                {
+                    go.SetActive(true);
+                    StartCoroutine(ActiveFalse(go));
+                }
             }
             if (hit.collider.CompareTag("Ground"))
             {
@@ -352,11 +357,13 @@ public class GameManager : MonoBehaviour
 
     void PlaceItem()
     {
-        Vector2 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
 
-        // 이자리에 설치
-        // 인벤토리랑 연결
-        //Instantiate(testItem, position, Quaternion.identity);
-        canSetItem = false;
+        GameObject currentItem = Inventory.GetItemBeforeInstall();
+        if (currentItem != null)
+        {
+            Instantiate(currentItem, position, Quaternion.identity);
+            canSetItem = false;
+        }
     }
 }
