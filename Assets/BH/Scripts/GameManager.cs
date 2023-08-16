@@ -29,6 +29,22 @@ public class GameManager : MonoBehaviour
 
     public GameObject PlayerObj; 
     public GateCheck GateCheck { get; set; }
+
+    #region Tutorial Temp Data
+
+    private int _tutorialHp;
+    public int TutorialHp { get => _tutorialHp;
+        set
+        {
+            if (value > 0)
+            {
+                _tutorialHp = value;
+                UIManager.instance.UpdatePlayerHp(_tutorialHp);
+            }
+        }}
+    
+    
+    #endregion
     private void Awake()
     {
         if (instance == null)
@@ -163,12 +179,22 @@ public class GameManager : MonoBehaviour
     public void B_GameStart()
     {
         Stage = 1;
-        SceneManager.LoadScene("01.Scenes/Day1");
         ChangeState(GameState.Tutorial);
+        SceneManager.LoadScene("01.Scenes/Day1");
     }
+
+    public void CompleteLoadTutorialUI()
+    {
+        TutorialHp = 5;
+        GoalCnt = 1;
+        CollectedGoalCnt = 0;
+        Stage = 1;
+        Inventory.AddCoin(-4);
+        //CameraSetting(false, null, 25f);
+    }
+    
     void Tutorial()
     {
-        CameraSetting(false, null, 25f);
     }
     
     /// <summary>
@@ -177,6 +203,7 @@ public class GameManager : MonoBehaviour
     public void CompleteTutorial()
     {
         // 씬 이동
+        State = GameState.Shop;
         SceneManager.LoadScene("01.Scenes/DayN");
         
         // 데이터 설정
@@ -277,10 +304,10 @@ public class GameManager : MonoBehaviour
     {
         // 보상 처리 및 초기화
         nextStageWaitFlag = true;
-        UIManager?.SetClearView();
+        UIManager?.SetFinalClearView();
         Inventory.AddCoin(5);
         // [TODO] 플레이어 SetActive(false) 필요 할 듯
-         
+        UIManager.instance.SetClearView();
         yield return new WaitForSeconds(2f); // 대기 (여운)
 
 
@@ -410,6 +437,18 @@ public class GameManager : MonoBehaviour
     public void AddKey()
     {
         CollectedGoalCnt++;
-        GateCheck.CollectKey();
+        
+        if (State == GameState.Tutorial)
+        {
+            if (CollectedGoalCnt == GoalCnt)
+            {
+                TutorialManager.instance.ActiveButton();
+            }
+        }
+        else
+        {
+            GateCheck.CollectKey();
+        }
+
     }
 }

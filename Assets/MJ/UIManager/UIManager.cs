@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -15,6 +16,8 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
     private void Awake()
     {
+        _gameManager = GameManager.instance;
+        _gameManager.UIManager = this;
         if (instance == null)
         {
             instance = this;
@@ -23,14 +26,18 @@ public class UIManager : MonoBehaviour
         {
             Destroy(this);
         }
+        if(_gameManager.State == GameManager.GameState.Tutorial)
+        {
+            SetViewObject();
+            _gameManager.CompleteLoadTutorialUI();
+        }
+        else
+        {
+            _gameManager.CompleteLoadShop();
+            UpdateAllText();
+            shopConfirmButton.onClick.AddListener(_gameManager.B_ShopConfirm);
+        }
         
-        _gameManager = GameManager.instance;
-        _gameManager.UIManager = this;
-        
-        // 변경
-        _gameManager.CompleteLoadShop();
-        UpdateAllText();
-        shopConfirmButton.onClick.AddListener(_gameManager.B_ShopConfirm);
     }
     #endregion
 
@@ -86,8 +93,12 @@ public class UIManager : MonoBehaviour
 
     public void SetClearView()
     {
-        SetViewObject(clear:true);
         stageClearText.SetText($"Stage {_gameManager.Stage} Clear!!");
+    }
+
+    public void SetFinalClearView()
+    {
+        SetViewObject(clear:true);
     }
 
     public void SetGameViewDie()
@@ -206,5 +217,24 @@ public class UIManager : MonoBehaviour
     }
     
     #endregion
+    #endregion
+
+    #region Tutorial
+
+    public void Tutorial_Game()
+    {
+        SetViewObject(game: true);
+    }
+    public void Tutorial_Shop()
+    {
+        SetViewObject(shop: true, game: true);
+    }
+
+    public void Tutorial_Reset()
+    {
+        _gameManager.UIManager = null;
+        instance = null;
+    }
+
     #endregion
 }

@@ -4,6 +4,8 @@ using static UnityEngine.UI.GraphicRaycaster;
 
 public class TutorialManager : MonoBehaviour
 {
+    public static TutorialManager instance;
+    
     public GameObject playerPrefab;
     public Vector2 fixedPlayerPosition;
     public GameObject[] tutorialObjects; 
@@ -13,7 +15,18 @@ public class TutorialManager : MonoBehaviour
 
     private int[] sensorStepMapping = { 20, 21, 22, 19, 23, 24, 25};
 
-
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
     private void Start()
     {
         ShowStep(currentStep);
@@ -31,6 +44,8 @@ public class TutorialManager : MonoBehaviour
     {
         if (stepIndex >= 26)
         {
+            UIManager.instance.Tutorial_Reset();
+            instance = null;
             GameManager.instance.CompleteTutorial();
         }
         
@@ -45,6 +60,7 @@ public class TutorialManager : MonoBehaviour
             {
                 tutorialObjects[1].SetActive(true);
                 Debug.Log("Previous Step - stepIndex: 1");
+                UIManager.instance.Tutorial_Shop();
 
             }
 
@@ -56,6 +72,7 @@ public class TutorialManager : MonoBehaviour
 
             if (stepIndex == 17)
             {
+                
                 // Player Spawn
                 GameObject playerInstance = Instantiate(playerPrefab, fixedPlayerPosition, Quaternion.identity);
 
@@ -65,18 +82,26 @@ public class TutorialManager : MonoBehaviour
 
             if ((stepIndex >= 17 && stepIndex <= 26))
             {
-                tutorialObjects[17].SetActive(true);
-                tutorialButton.GetComponent<Image>().enabled = false;
+                tutorialObjects[17].SetActive(true); 
+                
+                if(stepIndex == 17)  
+                    tutorialButton.gameObject.SetActive(false);
             }
 
             else if ((stepIndex >= 9 && stepIndex <= 11))
             {
+                UIManager.instance.Tutorial_Game();
                 tutorialObjects[9].SetActive(true); 
             }
 
 
         }
 
+    }
+
+    public void ActiveButton()
+    {
+        tutorialButton.gameObject.SetActive(true);
     }
 
 
