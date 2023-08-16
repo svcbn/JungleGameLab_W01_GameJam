@@ -143,8 +143,40 @@ Transform:
   - {fileID: 1641567325121937736}
   - {fileID: 12423995956568252}
   - {fileID: 5773254653568644032}
+  - {fileID: 3222120817982294332}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6361807135989421738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3222120817982294332}
+  m_Layer: 0
+  m_Name: Spawn Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3222120817982294332
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6361807135989421738}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5006342584999767304}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &240347351861834018
 PrefabInstance:
@@ -229,7 +261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5111426768001353206, guid: b7457b3a460222848886d9a3c9a65887, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.18563046
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5111426768001353206, guid: b7457b3a460222848886d9a3c9a65887, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1305,7 +1337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5111426768001353206, guid: b7457b3a460222848886d9a3c9a65887, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.18563046
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5111426768001353206, guid: b7457b3a460222848886d9a3c9a65887, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1367,7 +1399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5111426768001353206, guid: b7457b3a460222848886d9a3c9a65887, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.18563046
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5111426768001353206, guid: b7457b3a460222848886d9a3c9a65887, type: 3}
       propertyPath: m_LocalRotation.w
