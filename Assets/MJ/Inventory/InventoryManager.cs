@@ -67,18 +67,15 @@ public class InventoryManager
     /// <summary>
     /// 아이템 설치 행동 시, 해당 메서드를 호출하여 아이템 정보 얻기 
     /// </summary>
-    public GameObject GetItemBeforeInstall()
-    {
-        GameObject itemPrefab = null;
-        
+    public ItemType GetItemBeforeInstall()
+    {   
         var item = Items.FirstOrDefault();
 
         if (item != ItemType.Ignore)
         {
-            itemPrefab = ResourceManager.ItemPrefabDict[item];
             RemoveItem();
         }
-        return itemPrefab;
+        return item;
     }
 
     /// <summary>

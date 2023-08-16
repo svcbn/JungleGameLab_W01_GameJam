@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
+using static UnityEditor.Progress;
 
 /// <summary>
 /// ByeongHan
@@ -372,13 +373,14 @@ public class GameManager : MonoBehaviour
 
         Vector3 position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
 
-        GameObject currentItem = Inventory.GetItemBeforeInstall();
+        ItemType type = Inventory.GetItemBeforeInstall();
 
-        if (currentItem == null) return;
+        if (type == ItemType.Ignore) return;
 
-        if (currentItem.GetComponent<SlowTrap>() != null || currentItem.GetComponent<StunTrap>() != null || currentItem.GetComponent<MoveReverseDurationTrap>() != null)
+
+        if (type == ItemType.EnemyStun || type == ItemType.EnemySlow || type == ItemType.EnemyMoveReserve)
         {
-            GameObject item = Instantiate(currentItem);
+            GameObject item = Instantiate(ResourceManager.ItemPrefabDict[type]);
             item.transform.SetParent(hit.transform, true);
             item.transform.position = position;
             canSetItem = false;
@@ -387,17 +389,15 @@ public class GameManager : MonoBehaviour
         {
             if(State == GameState.Day)
             {
-                GameObject item = Instantiate(currentItem);
+                GameObject item = Instantiate(ResourceManager.ItemPrefabDict[type]);
                 item.transform.SetParent(hit.transform, true);
                 item.transform.position = position;
                 canSetItem = false;
             }
             if(State == GameState.Night)
             {
-                
+                ResourceManager.ItemPrefabDict[type].BroadcastMessage("Execute");
             }
         }
-
-
     }
 }

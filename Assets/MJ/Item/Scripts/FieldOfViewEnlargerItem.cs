@@ -14,7 +14,6 @@ public class FieldOfViewEnlargerItem : PlayerItem
     }
     public override void Execute()
     {
-        var cameraObj = GameObject.Find("MainCamera");
-        cameraObj.transform.position -= new Vector3(0, 0, value);
+        Camera.main.orthographicSize += value;
     }
 }
