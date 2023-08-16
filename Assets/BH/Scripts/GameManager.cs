@@ -462,6 +462,8 @@ public class GameManager : MonoBehaviour
     public void Reset()
     {
         Inventory.Coin = 0;
+        instance = null;
+        Destroy(this.gameObject);
         State = GameState.Title;
         SceneManager.LoadScene("Title");
     }
