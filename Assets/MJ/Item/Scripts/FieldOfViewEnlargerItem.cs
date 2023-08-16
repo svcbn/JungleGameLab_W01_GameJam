@@ -12,7 +12,7 @@ public class FieldOfViewEnlargerItem : PlayerItem
     {
         Type = ItemType.CameraZoomOut;
     }
-    protected override void Execute()
+    public override void Execute()
     {
         var cameraObj = GameObject.Find("MainCamera");
         cameraObj.transform.position -= new Vector3(0, 0, value);

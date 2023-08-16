@@ -46,7 +46,7 @@ public abstract class Item<T>  : MonoBehaviour where T: MonoBehaviour
         }
     }
 
-    protected abstract void Execute();
+    public abstract void Execute();
     
     public void OnMouseUp()
     {

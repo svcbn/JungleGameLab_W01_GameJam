@@ -8,7 +8,7 @@ public class ArrowSpinnerChangeDirectionItem : ArrowSpinnerItem
         Type = ItemType.CompassChangeDirection;
     }
     
-    protected override void Execute()
+    public override void Execute()
     {
         Target.ChangeRotateDirection();
     }

@@ -257,11 +257,6 @@ public class GameManager : MonoBehaviour
         Camera.main.orthographicSize = size;
     }
 
-    public GameObject testItem;
-    List<GameObject> testList = new List<GameObject>();
-    public GameObject testKey;
-
-    public ItemType Type;
     void Die()
     {
         UIManager?.SetGameViewDie();
@@ -303,13 +298,12 @@ public class GameManager : MonoBehaviour
 
     void RandomBoxSetting(int difficulty, int keys)
     {
+        ItemType type;
+
         boxes.Clear();
         maxKeys = difficulty * keys;
         ItemBox[] tempArr;
         tempArr = GameObject.Find("RandomBox").GetComponentsInChildren<ItemBox>();
-
-        testList.Add(testItem);
-        testList.Add(testKey);
 
         foreach (ItemBox ib in tempArr)
         {
@@ -319,13 +313,11 @@ public class GameManager : MonoBehaviour
         foreach (ItemBox box in boxes)
         {
             //랜덤아이템로드
-            int randomNum = UnityEngine.Random.Range(0, testList.Count);
-            
-            GameObject itemPrefab = testList[randomNum];
+            int randomNum = UnityEngine.Random.Range(1, Enum.GetNames(typeof(ItemType)).Length);
 
-            Type = (ItemType)1;
+            type = (ItemType)randomNum;
 
-            box.item.Add(itemPrefab);
+            box.item.Add(type);
         }
     }
 
@@ -361,7 +353,11 @@ public class GameManager : MonoBehaviour
     IEnumerator ActiveFalse(GameObject gameObject)
     {
         yield return new WaitForSeconds(1f);
-        gameObject.SetActive(false);
+        if (gameObject != null)
+        {
+            gameObject.SetActive(false);
+
+        }
     }
 
     void PlaceItem()
@@ -371,12 +367,31 @@ public class GameManager : MonoBehaviour
         Vector3 position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
 
         GameObject currentItem = Inventory.GetItemBeforeInstall();
-        if (currentItem != null)
+
+        if (currentItem == null) return;
+
+        if (currentItem.GetComponent<SlowTrap>() != null || currentItem.GetComponent<StunTrap>() != null || currentItem.GetComponent<MoveReverseDurationTrap>() != null)
         {
             GameObject item = Instantiate(currentItem);
             item.transform.SetParent(hit.transform, true);
             item.transform.position = position;
             canSetItem = false;
         }
+        else
+        {
+            if(State == GameState.Day)
+            {
+                GameObject item = Instantiate(currentItem);
+                item.transform.SetParent(hit.transform, true);
+                item.transform.position = position;
+                canSetItem = false;
+            }
+            if(State == GameState.Night)
+            {
+                
+            }
+        }
+
+
     }
 }

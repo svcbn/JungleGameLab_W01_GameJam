@@ -13,7 +13,7 @@ public class ArrowSpinnerSpeedUpItem : ArrowSpinnerItem
         Type = ItemType.CompassArrowSpeedUp;
     }
     
-    protected override void Execute()
+    public override void Execute()
     {
         Target.ChangeSpinnerSpeed(value);
     }
