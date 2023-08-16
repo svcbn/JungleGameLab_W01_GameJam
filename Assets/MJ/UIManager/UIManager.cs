@@ -138,7 +138,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateStageText(int stageIdx)
     {
-        stageText.SetText($"STAGE {stageIdx}");
+        stageText.SetText($"DAY {stageIdx}");
     }
 
     public void UpdateCoin(int cnt)
