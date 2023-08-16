@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 /// <summary>
 /// [MJ] UI Manager
@@ -22,6 +23,14 @@ public class UIManager : MonoBehaviour
         {
             Destroy(this);
         }
+        
+        _gameManager = GameManager.instance;
+        _gameManager.UIManager = this;
+        
+        // 변경
+        _gameManager.CompleteLoadShop();
+        UpdateAllText();
+        shopConfirmButton.onClick.AddListener(_gameManager.B_ShopConfirm);
     }
     #endregion
 
@@ -50,21 +59,13 @@ public class UIManager : MonoBehaviour
     [Header("Shop")]
     public GameObject noMoneyObject;
 
+    public Button shopConfirmButton;
+
     [Header("Clear")]
     public TextMeshProUGUI stageClearText;
 
-    void Start()
-    {
-        _gameManager = GameManager.instance;
-        SetViewObject();
-    }
 
     #region Method by GameState
-    public void SetTutorialView()
-    {
-        SetViewObject(game:true);
-    }
-
     public void SetGameViewShop()
     {
         SetViewObject(game:true, shop:true);
@@ -96,10 +97,7 @@ public class UIManager : MonoBehaviour
     /// <summary>
     /// 설정되지 않은 항목들은 다 비활성화 시킴
     /// </summary>
-    /// <param name="title"></param>
-    /// <param name="game"></param>
-    /// <param name="shop"></param>
-    private void SetViewObject(bool game= false, bool shop= false, bool gameOver = false, bool timerTextObj = false, bool clear = false)
+    private void SetViewObject(bool game = false, bool shop= false, bool gameOver = false, bool timerTextObj = false, bool clear = false)
     {
         gameObj.SetActive(game);
         shopObj.SetActive(shop);
@@ -110,6 +108,13 @@ public class UIManager : MonoBehaviour
     #endregion 
     
     #region Other Text Update Method
+
+    private void UpdateAllText()
+    {
+        UpdatePlayerHp(_gameManager.DefaultPlayerHp);
+        UpdateStageText(_gameManager.Stage);
+        UpdateCoin(_gameManager.Inventory.Coin);
+    }
 
     public void UpdatePlayerHp(int hpValue)
     {
