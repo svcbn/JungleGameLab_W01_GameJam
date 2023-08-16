@@ -133,7 +133,7 @@ public class GameManager : MonoBehaviour
         if (State == GameState.Day)
         {
             RayCheck();
-            if(Input.GetMouseButtonDown(0) && canSetItem)
+            if (Input.GetMouseButtonDown(0) && canSetItem)
             {
                 PlaceItem();
             }
@@ -191,6 +191,10 @@ public class GameManager : MonoBehaviour
 
     void ShopPhase()
     {
+        // size9 orthographic
+        Camera.main.transform.position = new Vector3(1000, 1000, -10);
+        Camera.main.orthographicSize = 9;
+        
         Inventory.ResetItems();
         _uiManager.SetGameViewShop();
     }
