@@ -172,8 +172,11 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void RemoveItemOnView()
     {
-        var obj = itemCreatePosTr.GetChild(0).gameObject;
-        Destroy(obj);
+        if(itemCreatePosTr.childCount > 0)
+        {
+            var obj = itemCreatePosTr.GetChild(0).gameObject;
+            Destroy(obj);
+        }
     }
     #endregion
 
