@@ -12,6 +12,7 @@ public class Ground : MonoBehaviour
 
     public void MovePlayerOnLeftUp()
     {
+        if (myTr == null) return;
         if (crossTr.position.x > myTr.position.x || crossTr.position.y < myTr.position.y)
         {
             crossTr.position = myTr.position +  new Vector3(-GroundManager.valueX, GroundManager.valueY, 0);
@@ -29,6 +30,7 @@ public class Ground : MonoBehaviour
     }
     public void MovePlayerOnLeftDown()
     {
+        if (myTr == null) return;
         if (crossTr.position.x > myTr.position.x || crossTr.position.y > myTr.position.y )
         {
             crossTr.position = myTr.position +  new Vector3(-GroundManager.valueX, -GroundManager.valueY, 0);
@@ -46,6 +48,7 @@ public class Ground : MonoBehaviour
     }
     public void MovePlayerOnRightUp()
     {
+        if (myTr == null) return;
         
         if (crossTr.position.x < myTr.position.x || crossTr.position.y < myTr.position.y )
         {
@@ -64,6 +67,7 @@ public class Ground : MonoBehaviour
     }
     public void MovePlayerOnRightDown()
     {
+        if (myTr == null) return;
         if (crossTr.position.x < myTr.position.x || crossTr.position.y > myTr.position.y)
         {
             crossTr.position = myTr.position + new Vector3(GroundManager.valueX, -GroundManager.valueY, 0);
