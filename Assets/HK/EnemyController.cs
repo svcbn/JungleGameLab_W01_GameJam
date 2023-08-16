@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+//MEGANLAB 230815
 public class EnemyController : MonoBehaviour
 {
     public float moveSpeed = 3.0f; // 이동 속도
