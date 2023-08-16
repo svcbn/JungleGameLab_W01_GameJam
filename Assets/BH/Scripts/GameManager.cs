@@ -115,27 +115,11 @@ public class GameManager : MonoBehaviour
         #region 디버그용
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            ChangeState(GameState.Title);
+            SceneManager.LoadScene("DayN");
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if(Input.GetKeyDown(KeyCode.Alpha2))
         {
-            ChangeState(GameState.Tutorial);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            ChangeState(GameState.Shop);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            ChangeState(GameState.Day);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            ChangeState(GameState.Night);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            ChangeState(GameState.Die);
+            timeLeft = 1f;
         }
         #endregion
 
@@ -147,7 +131,6 @@ public class GameManager : MonoBehaviour
                 PlaceItem();
             }
         }
-
     }
 
     #region 게임 상태 관련
@@ -250,6 +233,8 @@ public class GameManager : MonoBehaviour
         var index = Random.Range(0, randomPosArr.Length);
         PlayerObj.SetActive(true);
         PlayerObj.transform.position = randomPosArr[index].transform.position;
+
+        GameObject.Find("SpawnManager").GetComponent<SpawnManager>().SpawnStart();
         
         // 카메라 Player 추적하도록 설정
         CameraSetting(true, PlayerObj.transform, 10f, true);
@@ -399,9 +384,10 @@ public class GameManager : MonoBehaviour
         if (type == ItemType.Ignore) return;
 
 
+        GameObject item = Instantiate(ResourceManager.ItemPrefabDict[type]);
+
         if (type == ItemType.EnemyStun || type == ItemType.EnemySlow || type == ItemType.EnemyMoveReserve)
         {
-            GameObject item = Instantiate(ResourceManager.ItemPrefabDict[type]);
             item.transform.SetParent(hit.transform, true);
             item.transform.position = position;
             canSetItem = false;
@@ -410,14 +396,13 @@ public class GameManager : MonoBehaviour
         {
             if(State == GameState.Day)
             {
-                GameObject item = Instantiate(ResourceManager.ItemPrefabDict[type]);
                 item.transform.SetParent(hit.transform, true);
                 item.transform.position = position;
                 canSetItem = false;
             }
             if(State == GameState.Night)
             {
-                ResourceManager.ItemPrefabDict[type].BroadcastMessage("Execute");
+                item.transform.position = GameObject.FindWithTag("Player").transform.position;
             }
         }
     }

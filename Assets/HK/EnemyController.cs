@@ -7,6 +7,8 @@ public class EnemyController : MonoBehaviour
     public float moveSpeed = 3.0f; // 이동 속도
 
     private GameObject player; // 플레이어 오브젝트
+
+    public GameObject Look;
     
     public bool Stop { get; set; }
 
@@ -40,6 +42,16 @@ public class EnemyController : MonoBehaviour
                 if (player != null && enemyTransform != null)
                 {
                     Vector2 targetPosition = player.transform.position;
+
+                    if (targetPosition.x - transform.position.x < 0)
+                    {
+                        Look.transform.localScale = new Vector3(1,1,1);
+                    }
+                    else
+                    {
+                        Look.transform.localScale = new Vector3(-1,1,1);
+                    }
+
                     Vector2 newPosition = Vector2.MoveTowards(enemyTransform.position, targetPosition, moveSpeed * Time.deltaTime);
                     enemyTransform.position = newPosition;
                 }

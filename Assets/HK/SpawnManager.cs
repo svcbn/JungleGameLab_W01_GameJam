@@ -9,9 +9,9 @@ public class SpawnManager : MonoBehaviour
     public GameObject enemyPrefab; // 적 프리팹
     public int numberOfEnemies = 2; // 스폰할 적의 수
 
-  
-    void Start()
+    public void SpawnStart()
     {
+        transform.position = GameObject.FindWithTag("Player").transform.position;
         SpawnEnemies();
     }
 
@@ -31,19 +31,14 @@ public class SpawnManager : MonoBehaviour
 
     Vector3 GetRandomSpawnPosition()
     {
-        float minX = -15f;
-        float maxX = 15f;
-        float minY = -10f;
-        float maxY = 10f;
+        float minX = -30f;
+        float maxX = 30f;
+        float minY = -20f;
+        float maxY = 20f;
 
-        Vector3 spawnPosition = Vector3.zero;
-
-        do
-        {
-            spawnPosition = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), 0f);
-        } 
-        while ((spawnPosition.x >= -10f && spawnPosition.x <= 10f) || (spawnPosition.y >= -7f && spawnPosition.y <= 7f));
-
+        Vector3 spawnPosition = new Vector3(transform.position.x + Random.Range(minX, maxX), transform.position.y + Random.Range(minY, maxY), 0f);
+        
+       
         return spawnPosition;
     }
 

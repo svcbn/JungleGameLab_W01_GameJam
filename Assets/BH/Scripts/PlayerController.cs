@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
         InRangeCheck();
 
-        if (Input.GetKeyDown(KeyCode.J)) // 키 뭘로바꾸지???
+        if (Input.GetMouseButtonDown(1)) // 키 뭘로바꾸지???
         {
             Warp();
         }
