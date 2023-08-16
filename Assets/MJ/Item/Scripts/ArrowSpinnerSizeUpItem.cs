@@ -13,7 +13,7 @@ public class ArrowSpinnerSizeUpItem : ArrowSpinnerItem
         Type = ItemType.CompassArrowSizeUp;
     }
     
-    protected override void Execute()
+    public override void Execute()
     {
         Target.ChangeSpinnerSize(value);
     }

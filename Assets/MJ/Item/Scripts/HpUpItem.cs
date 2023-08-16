@@ -12,7 +12,7 @@ public class HpUpItem : PlayerItem
     {
         Type = ItemType.PlayerHpUp;
     }
-    protected override void Execute()
+    public override void Execute()
     {
         Target.HP += value;
     }

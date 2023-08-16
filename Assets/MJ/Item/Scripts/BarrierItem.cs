@@ -8,7 +8,7 @@ public class BarrierItem : PlayerItem
     {
         Type = ItemType.PlayerBarrier;
     }
-    protected override void Execute()
+    public override void Execute()
     {
         Target.OnBarrier();
     }

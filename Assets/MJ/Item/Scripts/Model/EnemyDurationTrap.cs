@@ -19,7 +19,7 @@ public abstract class EnemyDurationTrap : Item<EnemyController>
         
     }
 
-    protected override void Execute()
+    public override void Execute()
     {
         Action?.Invoke();
         Invoke(nameof(ExpireDuration), duration);

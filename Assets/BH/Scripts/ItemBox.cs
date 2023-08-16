@@ -5,15 +5,17 @@ using UnityEngine;
 
 public class ItemBox : MonoBehaviour
 {
-    public List<GameObject> item = new List<GameObject>();
+    public List<ItemType> item = new List<ItemType>();
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            if (item[0] != null)
+            if (item[0] != ItemType.Ignore)
             {
-                Instantiate(item[0], transform.position, Quaternion.identity);
+                //인벤토리에 집어넣기
+                GameManager.instance.Inventory.AddItem(item[0]);
+
                 gameObject.SetActive(false);
             }
         }
