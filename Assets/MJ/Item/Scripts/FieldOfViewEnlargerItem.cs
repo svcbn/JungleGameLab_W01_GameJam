@@ -14,6 +14,9 @@ public class FieldOfViewEnlargerItem : PlayerItem
     }
     public override void Execute()
     {
-        Camera.main.orthographicSize += value;
+        if(Camera.main.orthographicSize < 30)
+        {
+            Camera.main.orthographicSize += value;
+        }
     }
 }

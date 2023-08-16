@@ -53,6 +53,7 @@ public class ArrowSpinner : MonoBehaviour
     public void ChangeSpinnerSize(float size)
     {
         spinnerSize *= size;
+        if(spinnerSize > 2) spinnerSize = 2;
         transform.localScale = Vector3.one * spinnerSize;
     }
 

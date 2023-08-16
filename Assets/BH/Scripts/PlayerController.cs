@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        //if (gameManager.State != GameManager.GameState.Night) return;
+        if (gameManager.State != GameManager.GameState.Night) return;
 
         inputX = Input.GetAxis("Horizontal");
         inputY = Input.GetAxis("Vertical");
@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
 
     void Warp()
     {
-        //if (gameManager.State != GameManager.GameState.Night) return;
+        if (gameManager.State != GameManager.GameState.Night) return;
 
         transform.position = warpPos.transform.position;
         playerRb.velocity *= warpSpeed;

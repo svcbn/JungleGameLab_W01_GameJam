@@ -10,7 +10,7 @@ public class ItemAreaController : MonoBehaviour
     private GameManager _gameManager;
     
     [Tooltip("아이템 설치 가능 반경 값")]
-    public int radius;
+    int radius = 10;
     
     [Tooltip("아이템 설치 가능 반경을 나타내주는 오브젝트")]
     public GameObject unbuildableAreaObj;
