@@ -609,7 +609,7 @@ MonoBehaviour:
   boxes: []
   keyPrefab: {fileID: 0}
   PlayerObj: {fileID: 0}
-  dayTime: 10
+  dayTime: 15
   _timer: 0
   postProcess: {fileID: 1376657023}
   DefaultPlayerHp: 5

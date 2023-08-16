@@ -607,7 +607,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 0.5
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -645,6 +645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   Look: {fileID: 2054891249752152294}
+  goBack: 0
 --- !u!1 &2964398164228301612
 GameObject:
   m_ObjectHideFlags: 0
