@@ -13,11 +13,9 @@ public class SlowTrap : EnemyDurationTrap
     {
         Type = ItemType.EnemySlow;
         Action = () => { Target.moveSpeed -= speedDownValue; };
+
+        ExpireAction = () => { Target.moveSpeed += speedDownValue; };
     }
 
-    protected override void ExpireDuration()
-    {
-        Target.moveSpeed += speedDownValue;
-        base.ExpireDuration();
-    }
+    
 }

@@ -110,6 +110,7 @@ public class GameManager : MonoBehaviour
     
     float timeLeft;
 
+    public PostProcessVolume postProcess;
     Vignette vignette;
 
     public int DefaultPlayerHp = 5;
@@ -121,8 +122,9 @@ public class GameManager : MonoBehaviour
         ResourceManager.Init();
         Inventory = new InventoryManager();
 
-        vignette = GetComponent<PostProcessVolume>().profile.GetSetting<Vignette>();
+        vignette = postProcess.profile.GetSetting<Vignette>();
         ChangeState(GameState.Title);
+        DontDestroyOnLoad(postProcess);
     }
 
     // Update is called once per frame
@@ -150,7 +152,7 @@ public class GameManager : MonoBehaviour
     }
 
     #region 게임 상태 관련
-    void ChangeState(GameState state)
+    public void ChangeState(GameState state)
     {
         State = state;
         Debug.Log(state + "");
