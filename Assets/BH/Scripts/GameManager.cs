@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
     }
 
     public GameState State { get; private set; }
-    [SerializeField] float dayTime = 30f;
+    [SerializeField] float dayTime = 15f;
 
     private int _stage;
     public int Stage
@@ -224,6 +224,8 @@ public class GameManager : MonoBehaviour
         // size9 orthographic
         Camera.main.transform.position = new Vector3(1000, 1000, -10);
         Camera.main.orthographicSize = 9;
+        postProcess.profile.GetSetting<LensDistortion>().active = false;
+
     }
 
     public void B_ShopConfirm() => ChangeState(GameState.Day);
@@ -269,6 +271,7 @@ public class GameManager : MonoBehaviour
         
         // 카메라 Player 추적하도록 설정
         CameraSetting(true, PlayerObj.transform, 10f, true);
+        postProcess.profile.GetSetting<LensDistortion>().active = true;
     }
 
     void CameraSetting(bool isVignette, Transform transform, float size, bool isAttached = false)
