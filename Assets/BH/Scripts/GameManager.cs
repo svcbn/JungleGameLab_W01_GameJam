@@ -363,12 +363,16 @@ public class GameManager : MonoBehaviour
 
     void PlaceItem()
     {
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), transform.forward, 15f);
+
         Vector3 position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
 
         GameObject currentItem = Inventory.GetItemBeforeInstall();
         if (currentItem != null)
         {
-            Instantiate(currentItem, position, Quaternion.identity);
+            GameObject item = Instantiate(currentItem);
+            item.transform.SetParent(hit.transform, true);
+            item.transform.position = position;
             canSetItem = false;
         }
     }
