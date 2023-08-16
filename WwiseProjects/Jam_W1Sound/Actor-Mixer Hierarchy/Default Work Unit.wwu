@@ -3,7 +3,7 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{74BA5088-BD9C-4730-A89F-E3B5EFD2848A}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="Test" ID="{379E374D-E829-4BA3-BF9E-E749EA930CE4}" ShortID="90919448">
+				<ActorMixer Name="SFX" ID="{808C6AB0-F62B-463E-9C29-34CE5ED675E5}" ShortID="838119121">
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1694B4FC-E629-4683-9468-C5B46A8B06C9}"/>
@@ -13,23 +13,136 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="Theme1 13-Screech Pad" ID="{4E2A6861-0AFC-4C9C-9F92-FFF07FA7E5DB}">
+						<Sound Name="UI_Button" ID="{89557C44-3237-45E7-AF76-E5EAC7868F40}" ShortID="1044905819">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1694B4FC-E629-4683-9468-C5B46A8B06C9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6B3CF2AD-713C-4EDE-82EB-9CD8EAB6D367}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CameraShutter_SFXB_4034" ID="{9E64C6BC-D882-4BE9-B0EB-77CA0216FB62}">
+									<Language>SFX</Language>
+									<AudioFile>CameraShutter_SFXB.4034.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="862821521"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="CameraShutter_SFXB_4034" ID="{9E64C6BC-D882-4BE9-B0EB-77CA0216FB62}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="UI_Arrow" ID="{639E643B-6133-4C09-AA76-30077262A421}" ShortID="308707984">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1694B4FC-E629-4683-9468-C5B46A8B06C9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6B3CF2AD-713C-4EDE-82EB-9CD8EAB6D367}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SlideProjector_S011TE_820" ID="{5FF7F414-48C0-44D8-80E3-75401D6E6492}">
+									<Language>SFX</Language>
+									<AudioFile>SlideProjector_S011TE.820.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="148128065"/>
+									</MediaIDList>
+								</AudioFileSource>
+								<AudioFileSource Name="ESM_Explainer_Video_One_Shot_Positive_Notification_Alert_Texting_UI_Message_Sent_1_Award" ID="{0CCAD167-DC22-4BCE-89D3-F07DD5CDB702}">
+									<Language>SFX</Language>
+									<AudioFile>ESM_Explainer_Video_One_Shot_Positive_Notification_Alert_Texting_UI_Message_Sent_1_Award.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="504254709"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ESM_Explainer_Video_One_Shot_Positive_Notification_Alert_Texting_UI_Message_Sent_1_Award" ID="{0CCAD167-DC22-4BCE-89D3-F07DD5CDB702}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="PLY_Flashing" ID="{2A115CA4-5BCB-4427-A4CD-3A2EEC7F67CE}" ShortID="60924831">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1694B4FC-E629-4683-9468-C5B46A8B06C9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6B3CF2AD-713C-4EDE-82EB-9CD8EAB6D367}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SFX_Flashing" ID="{B5F2C9BC-D6DF-40D6-91E8-A7E6CAD36A71}">
+									<Language>SFX</Language>
+									<AudioFile>SFX_Flashing.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="577482382"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="SFX_Flashing" ID="{B5F2C9BC-D6DF-40D6-91E8-A7E6CAD36A71}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="UI_Text" ID="{4B54B33A-6B5D-40B6-94E7-1FB1D7E7A1EB}" ShortID="337681526">
 							<PropertyList>
-								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-								<Property Name="TrimBegin" Type="Real64" Value="59.4789181057037"/>
-								<Property Name="TrimEnd" Type="Real64" Value="97.8660212803071"/>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-470</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
-							<Language>SFX</Language>
-							<AudioFile>Theme1 13-Screech Pad.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="317007985"/>
-							</MediaIDList>
-						</AudioFileSource>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1694B4FC-E629-4683-9468-C5B46A8B06C9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6B3CF2AD-713C-4EDE-82EB-9CD8EAB6D367}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="DataTextTyping_BWU_447" ID="{03F0297E-48D3-4C49-ACB0-AAFBA20D3F7F}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.26472727272727"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>DataTextTyping_BWU.447.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="685244288"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="DataTextTyping_BWU_447" ID="{03F0297E-48D3-4C49-ACB0-AAFBA20D3F7F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="TUO_Letter" ID="{FF2C84FF-6FEE-4AC1-9156-BAB04DE18EAB}" ShortID="721752189">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1694B4FC-E629-4683-9468-C5B46A8B06C9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6B3CF2AD-713C-4EDE-82EB-9CD8EAB6D367}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BookPaperback_S08FO_177" ID="{D85E412C-A136-4A63-9D58-5FD0D6C5BCA2}">
+									<Language>SFX</Language>
+									<AudioFile>BookPaperback_S08FO.177.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="941962014"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BookPaperback_S08FO_177" ID="{D85E412C-A136-4A63-9D58-5FD0D6C5BCA2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="Theme1 13-Screech Pad" ID="{4E2A6861-0AFC-4C9C-9F92-FFF07FA7E5DB}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
+				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

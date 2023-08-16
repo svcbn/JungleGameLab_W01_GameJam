@@ -4,6 +4,12 @@
 		<UserProjectSettings Name="" ID="{B43C22B4-062D-483C-A319-0D96D7382867}">
 			<PropertyList>
 				<Property Name="Event Action List\{01CBB5A3-BFB6-4CAE-8A91-B13348BC3275}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{26432478-49EE-442A-A22A-C702BAD86F6C}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{3DCAE778-3472-4749-8B02-40D89DE30899}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{496A740B-45EE-42EB-B681-0A6DA7FC4FFD}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{98C34FE4-B925-4AC4-A7F0-3D85C9F386AE}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{B2777F00-A481-4CB9-BAF1-DD0B315081DB}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{C0CB0CDC-86E4-443D-B650-4EBE38A128D0}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
 				<Property Name="EventView\FilterMode2" Type="int32" Value="2"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
@@ -19,10 +25,11 @@
 				<Property Name="Game Profiler\Voice Monitor\LastBus" Type="string" Value="{00000000-0000-0000-0000-000000000000}"/>
 				<Property Name="General\LatestLanguage" Type="int32" Value="684519430"/>
 				<Property Name="General\LatestPlatform" Type="string" Value="Windows"/>
-				<Property Name="GenerateSoundBanks\x64_SelectedLanguages" Type="string" Value=""/>
+				<Property Name="GenerateSoundBanks\x64_SelectedLanguages" Type="string" Value="BvDMKA=="/>
 				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value="JG6Fq1qWv0OHEP8A+DwatQ=="/>
 				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value="c+NtxUItcESh9fFbDzOyew=="/>
 				<Property Name="HardwareController\CurrentSession" Type="string" Value="{00000000-0000-0000-0000-000000000000}"/>
+				<Property Name="Interactive Music\x64_{D8E03F8B-C79C-47DC-9CF7-1EC260DD784F} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwPwAAAAAALDFAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="MeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
 				<Property Name="MeterView\MeterMode1" Type="int32" Value="1"/>
 				<Property Name="MeterView\MeterMode1Viewpoint0" Type="int32" Value="1"/>

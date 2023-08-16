@@ -3,12 +3,67 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="Test" ID="{01CBB5A3-BFB6-4CAE-8A91-B13348BC3275}">
+				<Event Name="UI_Button" ID="{26432478-49EE-442A-A22A-C702BAD86F6C}">
 					<ChildrenList>
-						<Action Name="" ID="{8D2FB12B-20DC-4F6E-A3F2-AC35A0619A63}" ShortID="24240601">
+						<Action Name="" ID="{21802494-812B-4550-B789-69C452E4E257}" ShortID="461887892">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Test" ID="{379E374D-E829-4BA3-BF9E-E749EA930CE4}" WorkUnitID="{74BA5088-BD9C-4730-A89F-E3B5EFD2848A}"/>
+									<ObjectRef Name="UI_Button" ID="{89557C44-3237-45E7-AF76-E5EAC7868F40}" WorkUnitID="{74BA5088-BD9C-4730-A89F-E3B5EFD2848A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="UI_Arrow" ID="{98C34FE4-B925-4AC4-A7F0-3D85C9F386AE}">
+					<ChildrenList>
+						<Action Name="" ID="{4D8333E6-7E3F-4C17-95F5-C102E48C4167}" ShortID="377070940">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_Arrow" ID="{639E643B-6133-4C09-AA76-30077262A421}" WorkUnitID="{74BA5088-BD9C-4730-A89F-E3B5EFD2848A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PLY_Flashing" ID="{B2777F00-A481-4CB9-BAF1-DD0B315081DB}">
+					<ChildrenList>
+						<Action Name="" ID="{358F3A50-5941-45F8-8FEC-1F388DBD5AA9}" ShortID="1042918966">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PLY_Flashing" ID="{2A115CA4-5BCB-4427-A4CD-3A2EEC7F67CE}" WorkUnitID="{74BA5088-BD9C-4730-A89F-E3B5EFD2848A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="UI_Text" ID="{3DCAE778-3472-4749-8B02-40D89DE30899}">
+					<ChildrenList>
+						<Action Name="" ID="{D2E8A842-0780-4B36-BD4D-60769735AC8B}" ShortID="207269044">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_Text" ID="{4B54B33A-6B5D-40B6-94E7-1FB1D7E7A1EB}" WorkUnitID="{74BA5088-BD9C-4730-A89F-E3B5EFD2848A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="TUO_Letter" ID="{C0CB0CDC-86E4-443D-B650-4EBE38A128D0}">
+					<ChildrenList>
+						<Action Name="" ID="{301D3C2D-E286-46AF-85B1-4B00C1E2BE41}" ShortID="127113985">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TUO_Letter" ID="{FF2C84FF-6FEE-4AC1-9156-BAB04DE18EAB}" WorkUnitID="{74BA5088-BD9C-4730-A89F-E3B5EFD2848A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MUS_Default" ID="{496A740B-45EE-42EB-B681-0A6DA7FC4FFD}">
+					<ChildrenList>
+						<Action Name="" ID="{78111092-1C7B-40C4-A1A8-2FEF2C4C4C92}" ShortID="884327633">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music" ID="{A30723DC-63CC-4868-9734-8654F481927E}" WorkUnitID="{F7E92481-A793-4184-B739-016892FBD69A}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

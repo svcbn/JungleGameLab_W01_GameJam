@@ -1,6 +1,16 @@
 Event	ID	Name			Wwise Object Path	Notes
-	3157003241	Test			\Default Work Unit\Test	
+	119314287	PLY_Flashing			\Default Work Unit\PLY_Flashing	
+	2505162442	UI_Button			\Default Work Unit\UI_Button	
+	2967469105	UI_Arrow			\Default Work Unit\UI_Arrow	
+	3132895340	MUS_Default			\Default Work Unit\MUS_Default	
+	3469071695	UI_Text			\Default Work Unit\UI_Text	
+	3876674778	TUO_Letter			\Default Work Unit\TUO_Letter	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	317007985	Test	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\Theme1 13-Screech Pad_C7B3DCE6.wem		\Actor-Mixer Hierarchy\Default Work Unit\Test		6771584
+	75577207	MUS_Etc	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\MUS_Etc_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music\MUS_Etc\MUS_Etc		4838496
+	504254709	UI_Arrow	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\ESM_Explainer_Video_One_Shot_Positive_Notification_Alert_Texting_UI_Message_Sent_1_Award_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\UI_Arrow		160112
+	577482382	PLY_Flashing	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\SFX_Flashing_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\PLY_Flashing		260384
+	685244288	UI_Text	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\DataTextTyping_BWU.447_E1217EFE.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\UI_Text		50924
+	862821521	UI_Button	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\CameraShutter_SFXB.4034_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\UI_Button		53344
+	941962014	TUO_Letter	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\BookPaperback_S08FO.177_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\TUO_Letter		128096
 
