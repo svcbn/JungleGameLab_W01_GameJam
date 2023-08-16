@@ -7,6 +7,7 @@
 					<ObjectInclusionList>
 						<ObjectRef Name="MUS_Day" ID="{496A740B-45EE-42EB-B681-0A6DA7FC4FFD}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Item" ID="{F61DA5E9-1EF1-43B8-8417-DF1338CAFED6}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayMUS" ID="{913EF77D-49ED-43D9-8AF1-05A778E69989}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="UI_Button" ID="{26432478-49EE-442A-A22A-C702BAD86F6C}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="TUO_Letter" ID="{C0CB0CDC-86E4-443D-B650-4EBE38A128D0}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Trap" ID="{B1084A8A-ECEC-4502-8187-78020C970DF4}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>

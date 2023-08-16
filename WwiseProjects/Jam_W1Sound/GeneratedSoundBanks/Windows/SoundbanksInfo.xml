@@ -21,6 +21,15 @@
 			<Busses>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
+			<SwitchGroups>
+				<SwitchGroup Id="3991942870" Name="music">
+					<Switches>
+						<Switch Id="311764537" Name="Day"/>
+						<Switch Id="782826392" Name="Default"/>
+						<Switch Id="1011622525" Name="night"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 			<AcousticTextures>
 				<AcousticTexture Id="504532776" Name="Brick">
 					<Properties>
@@ -136,7 +145,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{DB76E32F-889F-F23B-4793-108CCEB9F3AD}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{B349EB56-4476-0177-98B2-C6EB901BDF0B}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -150,7 +159,7 @@
 				</File>
 				<File Id="208197436" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>ESM_Massive_Mech_Power_Up_1_Hybrid_Mobile_Collect_Special_Power_Up_Buff.wav</ShortName>
-					<CachePath>SFX/ESM_Massive_Mech_Power_Up_1_Hybrid_Mobile_Collect_Special_Power_Up_Buff_A5B8BB2F.wem</CachePath>
+					<CachePath>SFX/ESM_Massive_Mech_Power_Up_1_Hybrid_Mobile_Collect_Special_Power_Up_Buff_6B482182.wem</CachePath>
 				</File>
 				<File Id="425547343" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FF_JO_foley_metal_crank_halfturna.wav</ShortName>
@@ -208,20 +217,48 @@
 						<MediaRef Id="1034740535"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1210181189" Name="MUS_Day" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="75577207"/>
-					</MediaRefs>
+				<Event Id="1210181189" Name="MUS_Day" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetSwitch>
+						<ActionSetSwitchEntry GroupId="3991942870" Id="311764537" Name="Day"/>
+					</ActionSetSwitch>
 				</Event>
-				<Event Id="3826194393" Name="MUS_Night" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="1072286818"/>
-					</MediaRefs>
+				<Event Id="3826194393" Name="MUS_Night" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetSwitch>
+						<ActionSetSwitchEntry GroupId="3991942870" Id="1011622525" Name="night"/>
+					</ActionSetSwitch>
 				</Event>
-				<Event Id="872068900" Name="MUS_Tut" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="70823677"/>
-					</MediaRefs>
+				<Event Id="872068900" Name="MUS_Tut" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetSwitch>
+						<ActionSetSwitchEntry GroupId="3991942870" Id="782826392" Name="Default"/>
+					</ActionSetSwitch>
+				</Event>
+				<Event Id="1969559964" Name="PlayMUS" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3991942870" Id="311764537"/>
+							<MediaRefs>
+								<MediaRef Id="75577207"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3991942870" Id="1011622525"/>
+							<MediaRefs>
+								<MediaRef Id="1072286818"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3991942870" Id="782826392"/>
+							<MediaRefs>
+								<MediaRef Id="70823677"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3991942870" Id="0"/>
+							<MediaRefs>
+								<MediaRef Id="75577207"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
 				<Event Id="119314287" Name="PLY_Flashing" DurationType="OneShot" DurationMin="0.5546753" DurationMax="0.5546753">
 					<MediaRefs>
@@ -269,7 +306,16 @@
 					</MediaRefs>
 				</Event>
 			</Events>
+			<SwitchGroups>
+				<SwitchGroup Id="3991942870" Name="music">
+					<Switches>
+						<Switch Id="311764537" Name="Day"/>
+						<Switch Id="782826392" Name="Default"/>
+						<Switch Id="1011622525" Name="night"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{FBE76DE3-FD28-F997-844B-C023E8264F5A}</FileHash>
+	<FileHash>{3E19B689-0AF7-F961-30A8-A658B2AAD720}</FileHash>
 </SoundBanksInfo>
