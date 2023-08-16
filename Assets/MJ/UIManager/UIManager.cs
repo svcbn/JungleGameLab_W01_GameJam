@@ -93,7 +93,7 @@ public class UIManager : MonoBehaviour
 
     public void SetClearView()
     {
-        stageClearText.SetText($"Stage {_gameManager.Stage} Clear!!");
+        stageClearText.SetText($"I endure for {_gameManager.Stage} days!");
     }
 
     public void SetFinalClearView()
