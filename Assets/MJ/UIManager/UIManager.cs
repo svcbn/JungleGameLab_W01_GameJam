@@ -28,7 +28,6 @@ public class UIManager : MonoBehaviour
     private GameManager _gameManager;
     
     [Header("View by Game State")]
-    public GameObject titleObj;
     public GameObject gameObj;
     public GameObject shopObj;  
     public GameObject clearObj;
@@ -61,11 +60,6 @@ public class UIManager : MonoBehaviour
     }
 
     #region Method by GameState
-    public void SetTitleView()
-    {
-        SetViewObject(title: true);
-    }
-
     public void SetTutorialView()
     {
         SetViewObject(game:true);
@@ -105,9 +99,8 @@ public class UIManager : MonoBehaviour
     /// <param name="title"></param>
     /// <param name="game"></param>
     /// <param name="shop"></param>
-    private void SetViewObject(bool title = false, bool game= false, bool shop= false, bool gameOver = false, bool timerTextObj = false, bool clear = false)
+    private void SetViewObject(bool game= false, bool shop= false, bool gameOver = false, bool timerTextObj = false, bool clear = false)
     {
-        titleObj.SetActive(title);
         gameObj.SetActive(game);
         shopObj.SetActive(shop);
         gameOverObj.SetActive(gameOver);
