@@ -11,7 +11,7 @@ public class TutorialManager : MonoBehaviour
     public Button tutorialButton;
     private int currentStep = 0;
 
-    private int[] sensorStepMapping = { 20, 21, 22, 19};
+    private int[] sensorStepMapping = { 20, 21, 22, 19, 23};
 
 
     private void Start()
@@ -45,6 +45,7 @@ public class TutorialManager : MonoBehaviour
             {
                 tutorialObjects[1].SetActive(true);
                 Debug.Log("Previous Step - stepIndex: 1");
+
             }
 
             if ((stepIndex >= 12 && stepIndex <= 15))
@@ -55,20 +56,19 @@ public class TutorialManager : MonoBehaviour
 
             if (stepIndex == 17)
             {
-                // Ʃ�丮�� ���� �÷��̾� ��ġ�� ����
+                // Player Spawn
                 GameObject playerInstance = Instantiate(playerPrefab, fixedPlayerPosition, Quaternion.identity);
 
-                // �� ���� ī�޶�
+                //Night Camera
                 Camera.main.orthographicSize /= 4.0f;
             }
 
             if ((stepIndex >= 17 && stepIndex <= 23))
             {
                 tutorialObjects[17].SetActive(true);
-                Debug.Log("Previous Step - stepIndex: 1");
+                tutorialButton.GetComponent<Image>().enabled = false;
+
             }
-
-
 
             else if ((stepIndex >= 9 && stepIndex <= 11))
             {
@@ -76,18 +76,6 @@ public class TutorialManager : MonoBehaviour
             }
 
 
-        }
-
-        Button[] buttons = tutorialObjects[stepIndex].GetComponentsInChildren<Button>();
-        foreach (Button button in buttons)
-        {
-            Color targetColor = (stepIndex == 2 || stepIndex == 16) ? Color.white : Color.black;
-
-            ColorBlock colorBlock = button.colors;
-            colorBlock.normalColor = targetColor;
-            button.colors = colorBlock;
-
-            Debug.Log("ChangeColor");
         }
 
     }
@@ -98,27 +86,23 @@ public class TutorialManager : MonoBehaviour
         if (stepIndex != 1 && stepIndex != 8)
         {
             tutorialObjects[stepIndex].SetActive(false);
-            Debug.Log("HideStep - stepIndex: " + currentStep);
         }
 
         if (stepIndex != 12 && stepIndex != 15)
         {
             tutorialObjects[stepIndex].SetActive(false);
-            Debug.Log("HideStep - stepIndex: " + currentStep);
         }
 
         if (stepIndex == 8)
         {
             tutorialObjects[1].SetActive(false);
             tutorialObjects[8].SetActive(false);
-            Debug.Log("HideStep - stepIndex: " + currentStep);
         }
 
         else if (stepIndex == 16)
         {
             tutorialObjects[12].SetActive(false);
             tutorialObjects[15].SetActive(false);
-            Debug.Log("HideStep - stepIndex: " + currentStep);
         }
     }
 
@@ -129,6 +113,16 @@ public class TutorialManager : MonoBehaviour
             int targetStep = sensorStepMapping[sensorID];
             HideStep(currentStep);
             ShowStep(targetStep);
+        }
+    }
+
+    private void ChangeButtonColor(Button button, Color color)
+    {
+        if (button != null && button.gameObject.activeSelf)
+        {
+            ColorBlock colorBlock = button.colors;
+            colorBlock.normalColor = color;
+            button.colors = colorBlock;
         }
     }
 
