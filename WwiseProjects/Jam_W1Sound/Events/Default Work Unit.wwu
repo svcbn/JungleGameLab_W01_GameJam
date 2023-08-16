@@ -123,6 +123,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="SFX_Box" ID="{CF507C8D-5257-4988-B729-83DC2406AC88}">
+					<ChildrenList>
+						<Action Name="" ID="{32D185CF-AE24-4827-A1CE-30789F95F1D0}" ShortID="336410476">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_Box" ID="{ABE32793-5B9F-462B-B9AD-C90C7199B13D}" WorkUnitID="{74BA5088-BD9C-4730-A89F-E3B5EFD2848A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

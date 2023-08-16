@@ -17,6 +17,7 @@ namespace AK
         static const AkUniqueID MUS_NIGHT = 3826194393U;
         static const AkUniqueID MUS_TUT = 872068900U;
         static const AkUniqueID PLY_FLASHING = 119314287U;
+        static const AkUniqueID SFX_BOX = 45699584U;
         static const AkUniqueID TUO_LETTER = 3876674778U;
         static const AkUniqueID UI_ARROW = 2967469105U;
         static const AkUniqueID UI_BUTTON = 2505162442U;

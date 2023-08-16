@@ -170,6 +170,35 @@
 								<ActiveSource Name="BRS_Camera_D50_Focus_Beep_2" ID="{2DBB3D87-4EE9-4ECC-BAEA-D5183B1251F2}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="SFX_Box" ID="{ABE32793-5B9F-462B-B9AD-C90C7199B13D}" ShortID="938278470">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1694B4FC-E629-4683-9468-C5B46A8B06C9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6B3CF2AD-713C-4EDE-82EB-9CD8EAB6D367}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ESM_Ancient_Game_Crystal_Item_Aquire_Action_Hit_Tap_Impact_Airy_Magic_" ID="{78DED3F9-DE09-4822-9F27-55559DFC5707}">
+									<Language>SFX</Language>
+									<AudioFile>ESM_Ancient_Game_Crystal_Item_Aquire_Action_Hit_Tap_Impact_Airy_Magic_.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1055554780"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ESM_Ancient_Game_Crystal_Item_Aquire_Action_Hit_Tap_Impact_Airy_Magic_" ID="{78DED3F9-DE09-4822-9F27-55559DFC5707}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</ActorMixer>
 			</ChildrenList>

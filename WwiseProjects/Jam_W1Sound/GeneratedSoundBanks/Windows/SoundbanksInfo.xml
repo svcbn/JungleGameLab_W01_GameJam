@@ -136,7 +136,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{50A14A32-9540-D522-CBD5-2676C5485E63}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{0A9538DF-E224-0C7C-5E52-CB5336303597}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -168,6 +168,10 @@
 					<ShortName>BookPaperback_S08FO.177.wav</ShortName>
 					<CachePath>SFX/BookPaperback_S08FO.177_10C4C929.wem</CachePath>
 				</File>
+				<File Id="1055554780" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ESM_Ancient_Game_Crystal_Item_Aquire_Action_Hit_Tap_Impact_Airy_Magic_.wav</ShortName>
+					<CachePath>SFX/ESM_Ancient_Game_Crystal_Item_Aquire_Action_Hit_Tap_Impact_Airy_Magic__10C4C929.wem</CachePath>
+				</File>
 				<File Id="1066179899" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>BRS_Camera_D50_Focus_Beep_2.wav</ShortName>
 					<CachePath>SFX/BRS_Camera_D50_Focus_Beep_2_10C4C929.wem</CachePath>
@@ -198,6 +202,11 @@
 						<MediaRef Id="577482382"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="45699584" Name="SFX_Box" DurationType="OneShot" DurationMin="2.25" DurationMax="2.25">
+					<MediaRefs>
+						<MediaRef Id="1055554780"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3876674778" Name="TUO_Letter" DurationType="OneShot" DurationMin="0.6666667" DurationMax="0.6666667">
 					<MediaRefs>
 						<MediaRef Id="941962014"/>
@@ -226,5 +235,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{BF7B2188-45C3-E3F5-70E8-85E2CE95D51E}</FileHash>
+	<FileHash>{DCB689E1-8ED8-0672-D489-E64031573603}</FileHash>
 </SoundBanksInfo>

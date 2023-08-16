@@ -1,4 +1,5 @@
 Event	ID	Name			Wwise Object Path	Notes
+	45699584	SFX_Box			\Default Work Unit\SFX_Box	
 	119314287	PLY_Flashing			\Default Work Unit\PLY_Flashing	
 	872068900	MUS_Tut			\Default Work Unit\MUS_Tut	
 	1210181189	MUS_Day			\Default Work Unit\MUS_Day	
@@ -17,6 +18,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	685244288	UI_Text	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\DataTextTyping_BWU.447_014E4A07.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\UI_Text		50924
 	862821521	UI_Button	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\CameraShutter_SFXB.4034_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\UI_Button		53344
 	941962014	TUO_Letter	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\BookPaperback_S08FO.177_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\TUO_Letter		128096
+	1055554780	SFX_Box	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\ESM_Ancient_Game_Crystal_Item_Aquire_Action_Hit_Tap_Impact_Airy_Magic__10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\SFX_Box		432096
 	1066179899	UI_Notice	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\BRS_Camera_D50_Focus_Beep_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\UI_Notice		82016
 	1072286818	MUS_Chase	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\MUS_Chase_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\NightMusic\MUS_Chase\MUS_Chase		2419296
 
