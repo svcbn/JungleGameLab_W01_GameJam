@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public GameObject knockBackArea;
     [SerializeField] int _hp = 5;
 
-    [SerializeField] float immuneTime = 1.5f;
     bool isImmune = false;
     SpriteRenderer playerSprite;
 
@@ -31,6 +30,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float knockBackPower = 7f;
     [SerializeField] float knockBackRadius = 7.5f;
     [SerializeField] Collider2D[] enemyInRange;
+    [HideInInspector] public GameObject barrier;
 
     GameManager gameManager;
 
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
         InRangeCheck();
 
-        if (Input.GetMouseButtonDown(1)) // 키 뭘로바꾸지???
+        if (Input.GetMouseButtonDown(1))
         {
             Warp();
         }
@@ -121,7 +121,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void OnBarrier()
     {
-        
+        StartCoroutine(Immune(3f));
+        barrier.SetActive(true);
     }
 
     /// <summary>
@@ -131,11 +132,11 @@ public class PlayerController : MonoBehaviour
     {
         if (isImmune) return;
         HP--;
-        StartCoroutine(Immune());
+        StartCoroutine(Immune(1.5f));
         KnockBack();
     }
 
-    IEnumerator Immune()
+    IEnumerator Immune(float immuneTime)
     {
         isImmune = true;
         float currentTime = 0f;
@@ -150,6 +151,7 @@ public class PlayerController : MonoBehaviour
         }
         playerSprite.enabled = true;
         isImmune = false;
+        barrier.SetActive(false);
     }
 
     
