@@ -6,6 +6,7 @@ using System.Resources;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// ByeongHan
@@ -148,7 +149,6 @@ public class GameManager : MonoBehaviour
         switch (state)
         {
             case GameState.Title:
-                Title();
                 break;
             case GameState.Tutorial:
                 Tutorial();
@@ -169,24 +169,30 @@ public class GameManager : MonoBehaviour
         Debug.Log(state + "");
     }
 
-    void Title()
-    {
-        _uiManager.SetTitleView();
-    }
-
-    public void B_Tutorial()
-    {
-        Stage = 0;
-        ChangeState(GameState.Tutorial);
-    }
     public void B_GameStart()
     {
         Stage = 1;
-        ChangeState(GameState.Shop);
+        SceneManager.LoadScene("01.Scenes/Day1");
+        ChangeState(GameState.Tutorial);
     }
     void Tutorial()
     {
         CameraSetting(false, null, 25f);
+    }
+    
+    /// <summary>
+    /// 튜토리얼 종료 후 호출
+    /// </summary>
+    public void CompleteTutorial()
+    {
+        // 데이터 설정
+        Stage = 2;
+        Inventory.AddCoin(5);
+        _backupCoin = Inventory.Coin;
+        
+        // 씬 이동
+        SceneManager.LoadScene("01.Scenes/DayN");
+        ChangeState(GameState.Shop);
     }
 
     void ShopPhase()
