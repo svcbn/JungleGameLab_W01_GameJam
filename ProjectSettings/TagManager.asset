@@ -9,6 +9,7 @@ TagManager:
   - Item
   - ItemArea
   - Stage
+  - TutorialSensor
   layers:
   - Default
   - TransparentFX

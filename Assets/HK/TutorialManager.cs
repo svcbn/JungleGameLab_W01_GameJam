@@ -7,10 +7,11 @@ public class TutorialManager : MonoBehaviour
     public Vector2 fixedPlayerPosition;
     public GameObject[] tutorialObjects;
     public string[] soundEvent;
+    public Button tutorialButton;
     private int currentStep = 0;
-    private bool waitForCollision = false;
 
-    private int[] sensorStepMapping = { 17, 19, 12 };
+    private int[] sensorStepMapping = { 20, 21, 22};
+
 
     private void Start()
     {
@@ -40,13 +41,13 @@ public class TutorialManager : MonoBehaviour
                 Debug.Log("Previous Step - stepIndex: 1");
             }
 
-            if ((stepIndex >= 11 && stepIndex <= 14))
+            if ((stepIndex >= 12 && stepIndex <= 15))
             {
-                tutorialObjects[11].SetActive(true); // Step 1 활성화
+                tutorialObjects[12].SetActive(true);
                 Debug.Log("Previous Step - stepIndex: 1");
             }
 
-            if (stepIndex == 16)
+            if (stepIndex == 17)
             {
                 // 튜토리얼 전용 플레이어 위치에 스폰
                 GameObject playerInstance = Instantiate(playerPrefab, fixedPlayerPosition, Quaternion.identity);
@@ -55,30 +56,25 @@ public class TutorialManager : MonoBehaviour
                 Camera.main.orthographicSize /= 4.0f;
             }
 
-            if ((stepIndex >= 16 && stepIndex <= 18))
+            if ((stepIndex >= 17 && stepIndex <= 23))
             {
-                tutorialObjects[16].SetActive(true); // Step 1 활성화
+                tutorialObjects[17].SetActive(true); // Step 1 활성화
                 Debug.Log("Previous Step - stepIndex: 1");
             }
 
-            if (tutorialObjects[stepIndex].CompareTag("TutorialSensor")) // 튜토리얼 센서와 충돌했을 때
+            if(stepIndex == 18)
             {
-                TutorialSensor sensor = tutorialObjects[stepIndex].GetComponent<TutorialSensor>();
-                if (sensor != null)
-                {
-                    int sensorID = sensor.sensorID;
-                    GoToSensorStep(sensorID);
-                }
+                tutorialButton.gameObject.SetActive(false);
             }
 
-
-            else if (stepIndex == 10)
+            else if ((stepIndex >= 9 && stepIndex <= 11))
             {
-                tutorialObjects[9].SetActive(true); // Step 8 활성화
-                Debug.Log("Previous Step - stepIndex: 8");
+                tutorialObjects[9].SetActive(true); 
             }
         }
+
     }
+
 
     private void HideStep(int stepIndex)
     {
@@ -88,7 +84,7 @@ public class TutorialManager : MonoBehaviour
             Debug.Log("HideStep - stepIndex: " + currentStep);
         }
 
-        if (stepIndex != 11 && stepIndex != 14)
+        if (stepIndex != 12 && stepIndex != 15)
         {
             tutorialObjects[stepIndex].SetActive(false);
             Debug.Log("HideStep - stepIndex: " + currentStep);
@@ -101,28 +97,15 @@ public class TutorialManager : MonoBehaviour
             Debug.Log("HideStep - stepIndex: " + currentStep);
         }
 
-        else if (stepIndex == 15)
+        else if (stepIndex == 16)
         {
-            tutorialObjects[11].SetActive(false);
-            tutorialObjects[14].SetActive(false);
+            tutorialObjects[12].SetActive(false);
+            tutorialObjects[15].SetActive(false);
             Debug.Log("HideStep - stepIndex: " + currentStep);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("TutorialSensor")) // 튜토리얼 센서와 충돌했을 때만 동작
-        {
-            TutorialSensor sensor = other.GetComponent<TutorialSensor>();
-            if (sensor != null)
-            {
-                int sensorID = sensor.sensorID;
-                GoToSensorStep(sensorID);
-            }
-        }
-    }
-
-    private void GoToSensorStep(int sensorID)
+    public void GoToSensorStep(int sensorID)
     {
         if (sensorID >= 0 && sensorID < sensorStepMapping.Length)
         {
@@ -133,3 +116,4 @@ public class TutorialManager : MonoBehaviour
     }
 
 }
+
