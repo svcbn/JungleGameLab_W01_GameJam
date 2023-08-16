@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour
         }
         #endregion
 
-        if (State == GameState.Day || State == GameState.Night)
+        if (State == GameState.Day || State == GameState.Night || State == GameState.Tutorial)
         {
             RayCheck();
             if (Input.GetMouseButtonDown(0) && canSetItem)
