@@ -12,6 +12,7 @@ TagManager:
   - TutorialSensor
   - Ground
   - Box
+  - SpawnPosition
   layers:
   - Default
   - TransparentFX
