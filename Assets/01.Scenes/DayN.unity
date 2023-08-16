@@ -930,7 +930,7 @@ MonoBehaviour:
   timerText: {fileID: 649043134}
   noMoneyObject: {fileID: 820797151}
   shopConfirmButton: {fileID: 1001967441}
-  stageClearText: {fileID: 649043134}
+  stageClearText: {fileID: 1403170832}
 --- !u!1 &318332450
 GameObject:
   m_ObjectHideFlags: 0
@@ -3050,7 +3050,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 695795361}
-  - component: {fileID: 695795360}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -3058,31 +3057,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &695795360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695795359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecb1422abe4bfd84b8cf0cdd594f5b90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitializationSettings: {fileID: 11400000, guid: a678552c3ed542e459f3865519273649, type: 2}
-  basePath: 
-  language: 
-  defaultPoolSize: 0
-  lowerPoolSize: 0
-  streamingPoolSize: 0
-  memoryCutoffThreshold: 0
-  monitorPoolSize: 0
-  monitorQueuePoolSize: 0
-  callbackManagerBufferSize: 0
-  spatialAudioPoolSize: 0
-  maxSoundPropagationDepth: 0
-  engineLogging: 0
 --- !u!4 &695795361
 Transform:
   m_ObjectHideFlags: 0
@@ -3096,7 +3070,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &734599877
 GameObject:
@@ -3204,7 +3178,7 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: d4d79446b89d546499ebd09a2f1360ef, type: 2}
   useCallbacks: 0
   Callbacks: []
-  playingId: 99
+  playingId: 1440
   soundEmitterObject: {fileID: 734599877}
   transitionDuration: 0
   eventIdInternal: 0
@@ -4403,7 +4377,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 865502559}
-  - component: {fileID: 865502558}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -4411,31 +4384,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &865502558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 865502557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecb1422abe4bfd84b8cf0cdd594f5b90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitializationSettings: {fileID: 11400000, guid: a678552c3ed542e459f3865519273649, type: 2}
-  basePath: 
-  language: 
-  defaultPoolSize: 0
-  lowerPoolSize: 0
-  streamingPoolSize: 0
-  memoryCutoffThreshold: 0
-  monitorPoolSize: 0
-  monitorQueuePoolSize: 0
-  callbackManagerBufferSize: 0
-  spatialAudioPoolSize: 0
-  maxSoundPropagationDepth: 0
-  engineLogging: 0
 --- !u!4 &865502559
 Transform:
   m_ObjectHideFlags: 0
@@ -4449,7 +4397,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &867011291
 GameObject:
@@ -7294,7 +7242,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1449820146
 GameObject:
@@ -8354,7 +8302,7 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: 12f52291537f0da48b6ffc9583f2e2c3, type: 2}
   useCallbacks: 0
   Callbacks: []
-  playingId: 100
+  playingId: 1441
   soundEmitterObject: {fileID: 1650346944}
   transitionDuration: 0
   eventIdInternal: 0
