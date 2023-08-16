@@ -5,12 +5,16 @@
 			<ChildrenList>
 				<SoundBank Name="Main" ID="{C56DE373-2D42-4470-A1F5-F15B0F33B27B}">
 					<ObjectInclusionList>
-						<ObjectRef Name="MUS_Default" ID="{496A740B-45EE-42EB-B681-0A6DA7FC4FFD}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MUS_Day" ID="{496A740B-45EE-42EB-B681-0A6DA7FC4FFD}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="UI_Button" ID="{26432478-49EE-442A-A22A-C702BAD86F6C}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="TUO_Letter" ID="{C0CB0CDC-86E4-443D-B650-4EBE38A128D0}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="UI_Text" ID="{3DCAE778-3472-4749-8B02-40D89DE30899}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MUS_Tut" ID="{7180FC25-293D-487C-92D1-7EF3AC9BADDE}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="SFX_Box" ID="{CF507C8D-5257-4988-B729-83DC2406AC88}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MUS_Night" ID="{7B5E1D53-7673-499E-917B-070F4C3CA8E3}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="UI_Arrow" ID="{98C34FE4-B925-4AC4-A7F0-3D85C9F386AE}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PLY_Flashing" ID="{B2777F00-A481-4CB9-BAF1-DD0B315081DB}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="UI_Notice" ID="{2AFDAB7C-D276-4CD6-899D-4FF4CD6E52F9}" WorkUnitID="{F1A2DCB3-77CA-4641-BB7D-F58218E94BB8}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

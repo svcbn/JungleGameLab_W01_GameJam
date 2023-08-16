@@ -75,6 +75,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="SFX_Flashing" ID="{B5F2C9BC-D6DF-40D6-91E8-A7E6CAD36A71}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.175348962543789"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.325648073295608"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.570182340788646"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.12485763046798"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>SFX_Flashing.wav</AudioFile>
 									<MediaIDList>
@@ -139,6 +146,57 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="BookPaperback_S08FO_177" ID="{D85E412C-A136-4A63-9D58-5FD0D6C5BCA2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="UI_Notice" ID="{5D09C238-54C9-4C85-967E-E17C8E0FDBA4}" ShortID="64366185">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1694B4FC-E629-4683-9468-C5B46A8B06C9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6B3CF2AD-713C-4EDE-82EB-9CD8EAB6D367}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BRS_Camera_D50_Focus_Beep_2" ID="{2DBB3D87-4EE9-4ECC-BAEA-D5183B1251F2}">
+									<Language>SFX</Language>
+									<AudioFile>BRS_Camera_D50_Focus_Beep_2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1066179899"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BRS_Camera_D50_Focus_Beep_2" ID="{2DBB3D87-4EE9-4ECC-BAEA-D5183B1251F2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="SFX_Box" ID="{ABE32793-5B9F-462B-B9AD-C90C7199B13D}" ShortID="938278470">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1694B4FC-E629-4683-9468-C5B46A8B06C9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6B3CF2AD-713C-4EDE-82EB-9CD8EAB6D367}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ESM_Ancient_Game_Crystal_Item_Aquire_Action_Hit_Tap_Impact_Airy_Magic_" ID="{78DED3F9-DE09-4822-9F27-55559DFC5707}">
+									<Language>SFX</Language>
+									<AudioFile>ESM_Ancient_Game_Crystal_Item_Aquire_Action_Hit_Tap_Impact_Airy_Magic_.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1055554780"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ESM_Ancient_Game_Crystal_Item_Aquire_Action_Hit_Tap_Impact_Airy_Magic_" ID="{78DED3F9-DE09-4822-9F27-55559DFC5707}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
