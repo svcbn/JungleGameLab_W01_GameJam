@@ -65,6 +65,8 @@ public class PlayerController : MonoBehaviour
         knockBackArea.SetActive(false);
         playerSprite = GetComponent<SpriteRenderer>();
         gameManager = GameManager.instance;
+        gameManager.PlayerObj = this.gameObject;
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame

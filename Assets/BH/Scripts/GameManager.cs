@@ -7,6 +7,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 /// <summary>
 /// ByeongHan
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     public List<ItemBox> boxes = new List<ItemBox>();
 
+    public GameObject PlayerObj; 
     private void Awake()
     {
         if (instance == null)
@@ -239,10 +241,16 @@ public class GameManager : MonoBehaviour
         Inventory.ResetItems();
         RandomBoxSetting(difficulty, keys);
         UIManager?.SetGameViewNight();
-        
-        CameraSetting(true, GameObject.FindWithTag("Player").gameObject.transform, 10f, true);
 
-        // [TODO] 캐릭터 랜덤 위치에 지정 필요!
+       
+        // Player 랜덤 위치 지정 
+        var randomPosArr = GameObject.FindGameObjectsWithTag("SpawnPosition");
+        var index = Random.Range(0, randomPosArr.Length);
+        PlayerObj.SetActive(true);
+        PlayerObj.transform.position = randomPosArr[index].transform.position;
+        
+        // 카메라 Player 추적하도록 설정
+        CameraSetting(true, PlayerObj.transform, 10f, true);
     }
 
     void CameraSetting(bool isVignette, Transform transform, float size, bool isAttached = false)
