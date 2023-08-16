@@ -137,8 +137,7 @@ public class PlayerController : MonoBehaviour
     }
 
     IEnumerator Immune(float immuneTime)
-    {
-        isImmune = true;
+    {        isImmune = true;
         float currentTime = 0f;
 
         while (currentTime < immuneTime)
