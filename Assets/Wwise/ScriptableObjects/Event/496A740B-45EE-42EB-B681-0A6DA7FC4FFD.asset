@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e695152ec5106c149865e97d331e40b4, type: 3}
   m_Name: 496A740B-45EE-42EB-B681-0A6DA7FC4FFD
   m_EditorClassIdentifier: 
-  objectName: MUS_Default
-  id: 3132895340
+  objectName: MUS_Day
+  id: 1210181189
   guid: 496A740B-45EE-42EB-B681-0A6DA7FC4FFD

@@ -14,7 +14,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	70823677	MUS_Nomal	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\MUS_Nomal_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\TutorialMusic\MUS_Nomal\MUS_Nomal		2419296
 	75577207	MUS_Etc	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\MUS_Etc_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\DayMusic\MUS_Etc\MUS_Etc		4838496
 	504254709	UI_Arrow	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\ESM_Explainer_Video_One_Shot_Positive_Notification_Alert_Texting_UI_Message_Sent_1_Award_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\UI_Arrow		160112
-	577482382	PLY_Flashing	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\SFX_Flashing_D95FCC5B.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\PLY_Flashing		97940
+	577482382	PLY_Flashing	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\SFX_Flashing_BEB4588F.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\PLY_Flashing		97940
 	685244288	UI_Text	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\DataTextTyping_BWU.447_014E4A07.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\UI_Text		50924
 	862821521	UI_Button	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\CameraShutter_SFXB.4034_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\UI_Button		53344
 	941962014	TUO_Letter	C:\Users\Jungle\Desktop\JungleJam01\WwiseProjects\Jam_W1Sound\.cache\Windows\SFX\BookPaperback_S08FO.177_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\TUO_Letter		128096
