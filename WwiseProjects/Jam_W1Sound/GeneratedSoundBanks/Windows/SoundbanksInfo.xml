@@ -136,7 +136,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{0A9538DF-E224-0C7C-5E52-CB5336303597}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{16FE35F5-9C39-765C-8227-24BFBFD59BEE}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -154,7 +154,7 @@
 				</File>
 				<File Id="577482382" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Flashing.wav</ShortName>
-					<CachePath>SFX/SFX_Flashing_D95FCC5B.wem</CachePath>
+					<CachePath>SFX/SFX_Flashing_BEB4588F.wem</CachePath>
 				</File>
 				<File Id="685244288" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>DataTextTyping_BWU.447.wav</ShortName>
@@ -235,5 +235,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{DCB689E1-8ED8-0672-D489-E64031573603}</FileHash>
+	<FileHash>{1692A28E-052D-C593-E88A-78BBD37B8360}</FileHash>
 </SoundBanksInfo>

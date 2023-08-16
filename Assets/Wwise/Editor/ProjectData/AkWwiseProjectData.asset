@@ -331,7 +331,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 91edc72a3e0b6142a9b84d1f915acfba
     GuidInternal: 
-    m_lastTime: -8585093954654135524
+    m_lastTime: -8585093950848273059
     List:
     - name: Main
       guid: 73e36dc5422d7044a1f5f15b0f33b27b
@@ -359,11 +359,11 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: b3dca2f1ca774146bb7df58218e94bb8
     GuidInternal: 
-    m_lastTime: -8585093954655615481
+    m_lastTime: -8585093950903658717
     List:
-    - name: MUS_Default
+    - name: MUS_Day
       guid: 0b746a49ee45eb42b6810a6da7fc4ffd
-      id: 3132895340
+      id: 1210181189
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -371,10 +371,44 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: b3dca2f1ca774146bb7df58218e94bb8
-      - ElementName: MUS_Default
+      - ElementName: MUS_Day
         ObjectType: 3
         guid: 0b746a49ee45eb42b6810a6da7fc4ffd
-      Path: Events\Default Work Unit\MUS_Default
+      Path: Events\Default Work Unit\MUS_Day
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: MUS_Night
+      guid: 531d5e7b73769e49917b070f4c3ca8e3
+      id: 3826194393
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b3dca2f1ca774146bb7df58218e94bb8
+      - ElementName: MUS_Night
+        ObjectType: 3
+        guid: 531d5e7b73769e49917b070f4c3ca8e3
+      Path: Events\Default Work Unit\MUS_Night
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: MUS_Tut
+      guid: 25fc80713d297c4892d17ef3ac9badde
+      id: 872068900
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b3dca2f1ca774146bb7df58218e94bb8
+      - ElementName: MUS_Tut
+        ObjectType: 3
+        guid: 25fc80713d297c4892d17ef3ac9badde
+      Path: Events\Default Work Unit\MUS_Tut
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -392,6 +426,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: 007f77b281a4b94cbaf1dd0b315081db
       Path: Events\Default Work Unit\PLY_Flashing
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SFX_Box
+      guid: 8d7c50cf57528849b72983dc2406ac88
+      id: 45699584
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b3dca2f1ca774146bb7df58218e94bb8
+      - ElementName: SFX_Box
+        ObjectType: 3
+        guid: 8d7c50cf57528849b72983dc2406ac88
+      Path: Events\Default Work Unit\SFX_Box
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -443,6 +494,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: 78244326ee492a44a22ac702bad86f6c
       Path: Events\Default Work Unit\UI_Button
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI_Notice
+      guid: 7cabfd2a76d2d64c899d4ff4cd6e52f9
+      id: 2529527178
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b3dca2f1ca774146bb7df58218e94bb8
+      - ElementName: UI_Notice
+        ObjectType: 3
+        guid: 7cabfd2a76d2d64c899d4ff4cd6e52f9
+      Path: Events\Default Work Unit\UI_Notice
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -519,9 +587,9 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585095907643832231
     List: []
-  ExpandedFileSystemItemIds: 
+  ExpandedFileSystemItemIds: 1200000013000000
   ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
-  currentDataSource: 0
+  currentDataSource: 1
   CurrentPluginConfig: 
