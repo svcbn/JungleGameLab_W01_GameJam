@@ -36,8 +36,6 @@ public static class ResourceManager
         {
             ItemSpriteDict.Add((ItemType)index, sprites[index - 1]);
         }
-
-        
     }
 }
 

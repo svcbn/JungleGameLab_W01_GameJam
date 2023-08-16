@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Resources;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -12,6 +13,7 @@ using UnityEngine.Rendering.PostProcessing;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    private UIManager _uiManager;
     public InventoryManager Inventory { get; private set; }
 
     [SerializeField] int difficulty = 1;
@@ -45,19 +47,58 @@ public class GameManager : MonoBehaviour
     }
 
     public GameState State { get; private set; }
-
     [SerializeField] float dayTime = 30f;
+
+    private int _stage;
+    public int Stage
+    {
+        get => _stage;
+        private set
+        {
+            _stage = value;
+            _uiManager.UpdateStageText(_stage);
+        }
+    }
+
+    public int GoalCnt { get; private set; }
+    private int _collectedGoalCnt;
+
+    public int CollectedGoalCnt
+    {
+        get => _collectedGoalCnt;
+        set
+        {
+            _collectedGoalCnt = value;
+            _uiManager.UpdateGoalText(_collectedGoalCnt, GoalCnt);
+        }
+    }
+
+    public float _timer;
+
+    public float Timer
+    {
+        get => _timer;
+        set
+        {
+            _timer = value;
+            _uiManager.UpdateTimerText(_timer);
+        }
+    }
+    private int _backupCoin;
+    
     float timeLeft;
-    public string timer = "";
 
     Vignette vignette;
 
     // Start is called before the first frame update
     void Start()
     {
+        _uiManager = UIManager.instance;
         ResourceManager.Init();
         Inventory = new InventoryManager();
-        vignette = GetComponent<PostProcessVolume>().profile.GetSetting<Vignette>();
+        // vignette = GetComponent<PostProcessVolume>().profile.GetSetting<Vignette>();
+
+        ChangeState(GameState.Title);
     }
 
     // Update is called once per frame
@@ -95,6 +136,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    #region 게임 상태 관련
     void ChangeState(GameState state)
     {
         State = state;
@@ -116,28 +158,44 @@ public class GameManager : MonoBehaviour
                 NightPhase();
                 break;
             case GameState.Die:
+                Die();
                 break;
         }
     }
 
     void Title()
     {
-        
+        _uiManager.SetTitleView();
     }
 
+    public void B_Tutorial()
+    {
+        Stage = 0;
+        ChangeState(GameState.Tutorial);
+    }
+    public void B_GameStart()
+    {
+        Stage = 1;
+        ChangeState(GameState.Shop);
+    }
     void Tutorial()
     {
-
         CameraSetting(false, null, 25f);
     }
 
     void ShopPhase()
     {
-        
+        Inventory.ResetItems();
+        _uiManager.SetGameViewShop();
     }
 
+    public void B_ShopConfirm() => ChangeState(GameState.Day);
     void DayPhase()
     {
+        CollectedGoalCnt = 0;
+        GoalCnt = Stage;
+        _uiManager.SetGameViewDay(GoalCnt);
+        
         CameraSetting(false, null, 40f);
 
         StartCoroutine(DayTimer());
@@ -150,7 +208,7 @@ public class GameManager : MonoBehaviour
         while(timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
-            timer = Mathf.CeilToInt(timeLeft).ToString();
+            Timer = timeLeft;
             yield return null;
         }
 
@@ -159,15 +217,18 @@ public class GameManager : MonoBehaviour
 
     void NightPhase()
     {
+        Inventory.ResetItems();
+        RandomBoxSetting(difficulty, keys);
+        _uiManager.SetGameViewNight();
+        
         CameraSetting(true, GameObject.FindWithTag("Player").gameObject.transform, 10f, true);
 
-        RandomBoxSetting(difficulty, keys);
-
+        // [TODO] 캐릭터 랜덤 위치에 지정 필요!
     }
-
+    
     void CameraSetting(bool isVignette, Transform transform, float size, bool isAttached = false)
     {
-        vignette.active = isVignette;
+        //vignette.active = isVignette;
         Camera.main.transform.SetParent(transform, false);
         if (!isAttached)
         {
@@ -176,6 +237,45 @@ public class GameManager : MonoBehaviour
         
         Camera.main.orthographicSize = size;
     }
+
+    void Die()
+    {
+        _uiManager.SetGameViewDie();
+    }
+
+    public void B_Retry()
+    {
+        
+    }
+
+    public void B_Main()
+    {
+        // Reload Scene
+    }
+
+    /// <summary>
+    /// 목표 대상을 수집 후, 탈출구로 이동할 때 수행되는 클리어
+    /// </summary>
+    public void Clear() => StartCoroutine(nameof(ClearNextEventBeforeDelay));
+
+    private bool nextStageWaitFlag;
+    IEnumerator ClearNextEventBeforeDelay()
+    {
+        // 보상 처리 및 초기화
+        nextStageWaitFlag = true;
+        _uiManager.SetClearView();
+        Inventory.AddCoin(5);
+        // [TODO] 플레이어 SetActive(false) 필요 할 듯
+         
+        yield return new WaitForSeconds(2f); // 대기 (여운) 
+        
+        // 상점 씬으로 이동
+        Stage++;
+        nextStageWaitFlag = false;
+        ChangeState(GameState.Shop);
+    }
+    #endregion
+
 
     void RandomBoxSetting(int difficulty, int keys)
     {
