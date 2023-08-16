@@ -11,7 +11,7 @@ public class TutorialManager : MonoBehaviour
     public Button tutorialButton;
     private int currentStep = 0;
 
-    private int[] sensorStepMapping = { 20, 21, 22, 19, 23};
+    private int[] sensorStepMapping = { 20, 21, 22, 19, 23, 24, 25};
 
 
     private void Start()
@@ -29,7 +29,7 @@ public class TutorialManager : MonoBehaviour
 
     private void ShowStep(int stepIndex)
     {
-        if (stepIndex >= 24)
+        if (stepIndex >= 26)
         {
             GameManager.instance.CompleteTutorial();
         }
@@ -63,11 +63,10 @@ public class TutorialManager : MonoBehaviour
                 Camera.main.orthographicSize /= 4.0f;
             }
 
-            if ((stepIndex >= 17 && stepIndex <= 23))
+            if ((stepIndex >= 17 && stepIndex <= 26))
             {
                 tutorialObjects[17].SetActive(true);
                 tutorialButton.GetComponent<Image>().enabled = false;
-
             }
 
             else if ((stepIndex >= 9 && stepIndex <= 11))
