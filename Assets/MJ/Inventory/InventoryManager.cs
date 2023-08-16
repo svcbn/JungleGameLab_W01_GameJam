@@ -83,10 +83,8 @@ public class InventoryManager
     /// </summary>
     public void ResetItems()
     {
-        while (Items.Count > 0)
-        {
-            RemoveItem();
-        }
+        Items.Clear();
+        UIManager.instance.ResetItem();
     }
 
     #endregion

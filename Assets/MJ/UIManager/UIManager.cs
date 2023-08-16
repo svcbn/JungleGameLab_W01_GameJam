@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -168,15 +169,12 @@ public class UIManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 해당 오브젝트는 혹시라도 아이템이 비어있는 경우에 호출되지 않음. 호출부에서 빈 값일 때 수행안하도록 처리됨
+    /// 해당 오브젝트는 혹시라도 아이템이 비어있는 경우에 호출되지 않 음. 호출부에서 빈 값일 때 수행안하도록 처리됨
     /// </summary>
     public void RemoveItemOnView()
     {
-        if(itemCreatePosTr.childCount > 0)
-        {
-            var obj = itemCreatePosTr.GetChild(0).gameObject;
-            Destroy(obj);
-        }
+        var obj = itemCreatePosTr.GetChild(0).gameObject;
+        Destroy(obj);
     }
     #endregion
 
@@ -250,5 +248,14 @@ public class UIManager : MonoBehaviour
     public void B_Retry()
     {
         _gameManager.B_Retry();
+    }
+
+    public void ResetItem()
+    {
+        for (int i = itemCreatePosTr.childCount - 1; i >= 0; i--)
+        {
+            var tr = itemCreatePosTr.GetChild(i);
+            Destroy(tr.gameObject);
+        }
     }
 }
