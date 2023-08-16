@@ -32,8 +32,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float knockBackRadius = 7.5f;
     [SerializeField] Collider2D[] enemyInRange;
 
-    public bool canSetItem = true;
-
+    GameManager gameManager;
 
     public int HP
     {
@@ -50,6 +49,7 @@ public class PlayerController : MonoBehaviour
 
     public enum PlayerState
     {
+        Ignore = 0,
         Tutorial,
         Play,
         Die
@@ -64,13 +64,12 @@ public class PlayerController : MonoBehaviour
         knockBackArea.transform.localScale = Vector3.one * knockBackRadius * 2;
         knockBackArea.SetActive(false);
         playerSprite = GetComponent<SpriteRenderer>();
-
+        gameManager = GameManager.instance;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
         Move();
 
         LimitMoveSpeed();
@@ -81,10 +80,13 @@ public class PlayerController : MonoBehaviour
         {
             Warp();
         }
+
     }
 
     void Move()
     {
+        //if (gameManager.State != GameManager.GameState.Night) return;
+
         inputX = Input.GetAxis("Horizontal");
         inputY = Input.GetAxis("Vertical");
         direction = new Vector2(inputX, inputY);
@@ -106,6 +108,8 @@ public class PlayerController : MonoBehaviour
 
     void Warp()
     {
+        //if (gameManager.State != GameManager.GameState.Night) return;
+
         transform.position = warpPos.transform.position;
         playerRb.velocity *= warpSpeed;
     }
@@ -170,21 +174,5 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         knockBackArea.SetActive(false);
     }
-
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if(canSetItem && collision.gameObject.CompareTag("ItemArea"))
-        {
-            canSetItem = false;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if(!canSetItem && collision.gameObject.CompareTag("ItemArea"))
-        {
-            canSetItem = true;
-        }
-    }
+    
 }

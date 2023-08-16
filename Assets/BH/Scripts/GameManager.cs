@@ -19,19 +19,19 @@ public class GameManager : MonoBehaviour
     public int maxKeys;
     public int currentStage = 0;
 
-    public List<GameObject> boxes = new List<GameObject>();
+    public List<ItemBox> boxes = new List<ItemBox>();
 
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(this);
         }
-
     }
 
     public enum GameState
@@ -56,43 +56,50 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         ResourceManager.Init();
-        Inventory = new InventoryManager();
+        //Inventory = new InventoryManager();
         vignette = GetComponent<PostProcessVolume>().profile.GetSetting<Vignette>();
+        RandomBoxSetting(difficulty, keys);
     }
 
     // Update is called once per frame
     void Update()
     {
+        #region 디버그용
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             ChangeState(GameState.Title);
-            Debug.Log("Title");
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             ChangeState(GameState.Tutorial);
-            Debug.Log("Tutorial");
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             ChangeState(GameState.Shop);
-            Debug.Log("Shop");
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             ChangeState(GameState.Day);
-            Debug.Log("Day");
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             ChangeState(GameState.Night);
-            Debug.Log("Night");
         }
         if (Input.GetKeyDown(KeyCode.Alpha6))
         {
             ChangeState(GameState.Die);
-            Debug.Log("Die");
         }
+        #endregion
+
+        if (State == GameState.Day)
+        {
+            RayCheck();
+            if(Input.GetMouseButtonDown(0) && canSetItem)
+            {
+                PlaceItem();
+            }
+        }
+
     }
 
     void ChangeState(GameState state)
@@ -118,6 +125,7 @@ public class GameManager : MonoBehaviour
             case GameState.Die:
                 break;
         }
+        Debug.Log(state + "");
     }
 
     void Title()
@@ -177,15 +185,77 @@ public class GameManager : MonoBehaviour
         Camera.main.orthographicSize = size;
     }
 
+    public GameObject testItem;
+    public GameObject testKey;
+    public ItemType Type;
+
+    List<GameObject> testList = new List<GameObject>();
+
     void RandomBoxSetting(int difficulty, int keys)
     {
+        boxes.Clear();
         maxKeys = difficulty * keys;
-       
-        foreach (var box in boxes)
-        {
-            //GameObject itemPrefab = 
+        ItemBox[] tempArr;
+        tempArr = GameObject.Find("RandomBox").GetComponentsInChildren<ItemBox>();
 
-            //box.GetComponent<ItemBox>().item.Append();
+        testList.Add(testItem);
+        testList.Add(testKey);
+
+        foreach (ItemBox ib in tempArr)
+        {
+            boxes.Add(ib);
         }
+
+        foreach (ItemBox box in boxes)
+        {
+            //랜덤아이템로드
+            int randomNum = UnityEngine.Random.Range(0, testList.Count);
+            
+            GameObject itemPrefab = testList[randomNum];
+
+            Type = (ItemType)1;
+
+            box.item.Add(itemPrefab);
+        }
+    }
+
+    public bool canSetItem = false;
+
+    void RayCheck()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), transform.forward, 15f);
+
+        if(hit)
+        {
+            Debug.Log(hit.collider.gameObject);
+            
+            if (hit.collider.CompareTag("ItemArea"))
+            {
+                canSetItem = false;
+                GameObject go = hit.collider.transform.parent.GetChild(1).gameObject;
+                go.SetActive(true);
+                StartCoroutine(ActiveFalse(go));
+            }
+            if (hit.collider.CompareTag("Ground"))
+            {
+                canSetItem = true;
+            }
+        }
+    }
+
+    IEnumerator ActiveFalse(GameObject gameObject)
+    {
+        yield return new WaitForSeconds(1f);
+        gameObject.SetActive(false);
+    }
+
+    void PlaceItem()
+    {
+        Vector2 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // 이자리에 설치
+        // 인벤토리랑 연결
+        //Instantiate(testItem, position, Quaternion.identity);
+        canSetItem = false;
     }
 }
