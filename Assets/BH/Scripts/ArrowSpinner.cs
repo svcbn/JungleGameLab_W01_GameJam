@@ -62,6 +62,6 @@ public class ArrowSpinner : MonoBehaviour
     /// <param name="speed"></param>
     public void ChangeSpinnerSpeed(float speed)
     {
-        rotateSpeed = speed;
+        rotateSpeed *= speed;
     }
 }

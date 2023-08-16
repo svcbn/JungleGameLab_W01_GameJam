@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject warpPos;
     [HideInInspector] public GameObject knockBackArea;
-    [SerializeField] int _hp = 5;
+    [SerializeField] int _hp = 8;
 
     bool isImmune = false;
     SpriteRenderer playerSprite;
@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void OnBarrier()
     {
-        StartCoroutine(Immune(3f));
+        StartCoroutine(Immune(2f));
         barrier.SetActive(true);
     }
 
