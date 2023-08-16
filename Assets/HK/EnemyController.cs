@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         Stop = false;
-        moveSpeed = UnityEngine.Random.Range(2f, 5f);
+        moveSpeed = UnityEngine.Random.Range(4f, 6f);
         moveSpeed += GameManager.instance.Stage * 0.5f;
     }
 

@@ -2,13 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Resources;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
-using static UnityEditor.Progress;
 
 /// <summary>
 /// ByeongHan
@@ -130,17 +127,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        #region 디버그용
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SceneManager.LoadScene("DayN");
-        }
-        if(Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            timeLeft = 1f;
-        }
-        #endregion
-
         if (State == GameState.Day || State == GameState.Night || State == GameState.Tutorial)
         {
             RayCheck();
@@ -207,7 +193,7 @@ public class GameManager : MonoBehaviour
         // 씬 이동
         State = GameState.Shop;
         CollectedGoalCnt = 0;
-        Inventory.AddCoin(4);
+        Inventory.Coin = 5;
         SceneManager.LoadScene("01.Scenes/DayN");
 
         // 데이터 설정
@@ -293,7 +279,9 @@ public class GameManager : MonoBehaviour
 
     public void B_Retry()
     {
-        
+        Inventory.Coin = _backupCoin;
+        ChangeState(GameState.Shop);
+        SceneManager.LoadScene("DayN");
     }
 
     public void B_Main()
@@ -318,7 +306,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2f); // 대기 (여운)
 
 
-        if (Stage < 5)
+        if (Stage <= 3 )
         {
             Stage++;
             
