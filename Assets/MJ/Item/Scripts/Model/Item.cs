@@ -40,7 +40,7 @@ public abstract class Item<T>  : MonoBehaviour where T: MonoBehaviour
 
                 Execute();
                 
-                Destroy(gameObject);
+                Destroy(transform.parent.gameObject);
                 Target = null;
             }
         }
