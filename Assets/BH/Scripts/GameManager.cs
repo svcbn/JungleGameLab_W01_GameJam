@@ -297,12 +297,23 @@ public class GameManager : MonoBehaviour
         // [TODO] 플레이어 SetActive(false) 필요 할 듯
          
         yield return new WaitForSeconds(2f); // 대기 (여운)
-        
-        Stage++;
-        
-        // 상점 씬으로 이동
-        nextStageWaitFlag = false;
-        ChangeState(GameState.Shop);
+
+
+        if (Stage < 5)
+        {
+            Stage++;
+            
+            // 상점 씬으로 이동
+            // nextStageWaitFlag = false;
+            // ChangeState(GameState.Shop);
+            SceneManager.LoadScene("DayN");
+        }
+        else
+        {
+            UIManager.instance.endingObj.SetActive(true);
+            Time.timeScale = 0;
+        }
+
     }
     #endregion
 

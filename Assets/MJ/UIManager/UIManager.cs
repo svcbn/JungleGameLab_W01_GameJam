@@ -40,8 +40,8 @@ public class UIManager : MonoBehaviour
     public GameObject gameObj;
     public GameObject shopObj;  
     public GameObject clearObj;
-    public GameObject gameOverObj; 
-    
+    public GameObject gameOverObj;
+    public GameObject endingObj;
     
     [Header("Default Game Info Area")]
     public TextMeshProUGUI hpText;
@@ -86,6 +86,7 @@ public class UIManager : MonoBehaviour
 
     public void SetClearView()
     {
+        SetViewObject(clear:true);
         stageClearText.SetText($"Stage {_gameManager.Stage} Clear!!");
     }
 
