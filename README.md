@@ -10,4 +10,4 @@
 ---
 프로젝트 소개 - [Notion](https://www.notion.so/megans0und/W1_-dccaaad5770647339805da16344031b0)  
 
-프로젝트 영상 - [Yourube]()
+프로젝트 영상 - [YouTube]()
