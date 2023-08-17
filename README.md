@@ -10,4 +10,6 @@
 ---
 프로젝트 소개 - [Notion](https://www.notion.so/megans0und/W1_-dccaaad5770647339805da16344031b0)  
 
-프로젝트 영상 - [YouTube]()
+프로젝트 영상 - [YouTube]()  
+
+프로젝트 다운로드 - [Download ZIP](https://github.com/svcbn/JungleJam01/raw/main/Build.zip)
