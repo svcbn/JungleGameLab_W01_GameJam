@@ -116,7 +116,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         UIManager = UIManager.instance;
-        ResourceManager.Init();
+        ResourceManager.Instance.Init();
         Inventory = new InventoryManager();
 
         vignette = postProcess.profile.GetSetting<Vignette>();
@@ -224,10 +224,6 @@ public class GameManager : MonoBehaviour
     {
         Inventory.ResetItems();
         UIManager.SetGameViewShop();
-        
-        // size9 orthographic
-        Camera.main.transform.position = new Vector3(1000, 1000, -10);
-        Camera.main.orthographicSize = 9;
         postProcess.profile.GetSetting<LensDistortion>().active = false;
         postProcess.profile.GetSetting<Vignette>().active = false;
 
@@ -424,7 +420,7 @@ public class GameManager : MonoBehaviour
         if (type == ItemType.Ignore) return;
 
 
-        GameObject item = Instantiate(ResourceManager.ItemPrefabDict[type]);
+        GameObject item = Instantiate(ResourceManager.Instance.ItemPrefabDict[type]);
 
         if (type == ItemType.EnemyStun || type == ItemType.EnemySlow || type == ItemType.EnemyMoveReserve)
         {

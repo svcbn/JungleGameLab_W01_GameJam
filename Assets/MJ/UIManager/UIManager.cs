@@ -165,7 +165,7 @@ public class UIManager : MonoBehaviour
     {
         // 생성 후 데이타 설정
         var obj = Instantiate(itemPrefab, itemCreatePosTr);
-        obj.GetComponent<ShopItem>().Init(type);
+        obj.GetComponent<UIItem>().Init(type);
     }
 
     /// <summary>

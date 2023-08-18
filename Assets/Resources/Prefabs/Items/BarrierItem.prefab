@@ -64,6 +64,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 58777937492126198, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: Category
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 58777937492126198, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: ItemType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 58777937492126198, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: ShortName
+      value: "\uBCA0\uB9AC\uC5B4"
+      objectReference: {fileID: 0}
+    - target: {fileID: 58777937492126198, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: ItemSprite
+      value: 
+      objectReference: {fileID: 1582674876, guid: b805ca25e5ce03643995bc40feacb48d, type: 3}
+    - target: {fileID: 58777937492126198, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: Description
+      value: "5\uCD08\uAC04 \uD50C\uB808\uC774\uC5B4\uB97C \uBB34\uC801 \uC0C1\uD0DC\uB85C
+        \uB9CC\uB4E4\uC5B4\uC8FC\uB294 \uC544\uC774\uD15C"
+      objectReference: {fileID: 0}
     - target: {fileID: 7741027389447059861, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
       propertyPath: m_Color.a
       value: 0
@@ -123,18 +144,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7741027389447059850, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
   m_PrefabInstance: {fileID: 8570844364424825878}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2133693502939002269 stripped
+--- !u!1 &2133693503062770223 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7741027389447059851, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7741027389625257529, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
   m_PrefabInstance: {fileID: 8570844364424825878}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &877267505
+--- !u!114 &344584981571831553
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2133693502939002269}
+  m_GameObject: {fileID: 2133693503062770223}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fcd01c2e21c4878bfc1ea4666154f27, type: 3}

@@ -11,10 +11,14 @@ public abstract class Item<T>  : MonoBehaviour where T: MonoBehaviour
 {
     private GameManager _gameManager { get; set; }
     protected T Target { get; private set; }
-    private string TargetTag { get; }
-
-    public ItemType Type { get; protected set; }
     
+    /// <summary>
+    /// 충돌 처리할 대상 태그
+    /// </summary>
+    private string TargetTag { get; }
+    
+    public ItemType Type { get; protected set; }
+
     public Item(string tag)
     {
         TargetTag = tag;
@@ -42,27 +46,13 @@ public abstract class Item<T>  : MonoBehaviour where T: MonoBehaviour
 
                 if (!target.CompareTag("Enemy"))
                 {
-                    Destroy(transform.parent.gameObject);
+                    Destroy(gameObject);
                 }
+                
                 
             }
         }
     }
 
     public abstract void Execute();
-    
-    public void OnMouseUp()
-    {
-        if (_gameManager.State == GameManager.GameState.Shop)
-        {
-            if (_gameManager.Inventory.Coin >= 1)
-            {
-                _gameManager.Inventory.BuyItem(Type);
-            }
-            else
-            {
-                UIManager.instance.ShowBuyFailText();
-            }
-        }
-    }
 }
