@@ -39,9 +39,12 @@ public abstract class Item<T>  : MonoBehaviour where T: MonoBehaviour
                 }
 
                 Execute();
+
+                if (!target.CompareTag("Enemy"))
+                {
+                    Destroy(transform.parent.gameObject);
+                }
                 
-                Destroy(transform.parent.gameObject);
-                Target = null;
             }
         }
     }

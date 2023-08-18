@@ -22,7 +22,7 @@ public class EnemyController : MonoBehaviour
 
 
     //플레이어와의 충돌시, 데미지 메서드 호출. 재 확인 필요
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
@@ -30,9 +30,11 @@ public class EnemyController : MonoBehaviour
             if (playerController != null)
             {
                 playerController.GetDamage(); 
-            }           
+            }
         }
     }
+
+    
 
     public bool goBack = false;
     Vector3 newPosition;
