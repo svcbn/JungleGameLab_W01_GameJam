@@ -7,7 +7,6 @@ using static GameManager;
 /// </summary>
 public class ItemAreaController : MonoBehaviour
 {
-    private GameManager _gameManager;
     
     [Tooltip("아이템 설치 가능 반경 값")]
     int radius = 10;
@@ -17,7 +16,6 @@ public class ItemAreaController : MonoBehaviour
 
     public void Start()
     {
-        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         
         // Collider 반경 설정
         GetComponent<CircleCollider2D>().radius = radius;

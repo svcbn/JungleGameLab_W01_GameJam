@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     public List<ItemBox> boxes = new List<ItemBox>();
     public GameObject keyPrefab;
 
-    public GameObject PlayerObj; 
+    public GameObject PlayerObj;
     public GateCheck GateCheck { get; set; }
 
     #region Tutorial Temp Data
@@ -121,12 +121,30 @@ public class GameManager : MonoBehaviour
 
         vignette = postProcess.profile.GetSetting<Vignette>();
         ChangeState(GameState.Title);
-        DontDestroyOnLoad(postProcess);
     }
 
     // Update is called once per frame
     void Update()
     {
+        #region 디버그용
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SceneManager.LoadScene("DayN");
+            ChangeState(GameState.Shop);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            timeLeft = 1f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            ChangeState(GameState.Die);
+        }
+
+        #endregion
+
         if (State == GameState.Day || State == GameState.Night || State == GameState.Tutorial)
         {
             RayCheck();
@@ -211,6 +229,7 @@ public class GameManager : MonoBehaviour
         Camera.main.transform.position = new Vector3(1000, 1000, -10);
         Camera.main.orthographicSize = 9;
         postProcess.profile.GetSetting<LensDistortion>().active = false;
+        postProcess.profile.GetSetting<Vignette>().active = false;
 
     }
 
@@ -327,7 +346,6 @@ public class GameManager : MonoBehaviour
 
     void RandomBoxSetting(int keys)
     {
-        ItemType type;
 
         var tempBoxs = GameObject.FindGameObjectsWithTag("Box").Select(x=> x.GetComponent<ItemBox>()).ToList();
 

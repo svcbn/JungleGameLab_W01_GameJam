@@ -13,9 +13,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
     public GameObject warpPos;
     [HideInInspector] public GameObject knockBackArea;
-    [SerializeField] int _hp = 8;
 
     bool isImmune = false;
     SpriteRenderer playerSprite;
@@ -38,15 +38,14 @@ public class PlayerController : MonoBehaviour
     {
         get
         {
-            return _hp;
+            return StatManager.Instance.HP;
         }
         set
         {
             if (value > 0)
             {
-                _hp = value;
-                UIManager.instance.UpdatePlayerHp(_hp);
-
+                StatManager.Instance.HP = value;
+                UIManager.instance.UpdatePlayerHp(StatManager.Instance.HP);
             }
             else
             {
@@ -65,6 +64,15 @@ public class PlayerController : MonoBehaviour
 
     public PlayerState playerState;
 
+    private void Awake()
+    {
+        gameManager = GameManager.instance;
+        gameManager.PlayerObj = this.gameObject;
+        UIManager.instance.UpdatePlayerHp(HP);
+
+        
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -72,8 +80,6 @@ public class PlayerController : MonoBehaviour
         knockBackArea.transform.localScale = Vector3.one * knockBackRadius * 2;
         knockBackArea.SetActive(false);
         playerSprite = GetComponent<SpriteRenderer>();
-        gameManager = GameManager.instance;
-        gameManager.PlayerObj = this.gameObject;
         gameObject.SetActive(false);
     }
 
