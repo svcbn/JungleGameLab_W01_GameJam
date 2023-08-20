@@ -9,10 +9,10 @@ using UnityEngine;
 public class ThornGround : MonoBehaviour
 {
     [Tooltip("데미지 주기")]
-    public float interval;
+    float interval;
     
     [Tooltip("가시가 사용자게에 입히는 데미지")]
-    public int damage;
+    int damage;
     
     private PlayerController _player;
     public void OnTriggerEnter2D(Collider2D target)

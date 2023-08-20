@@ -36,7 +36,7 @@ public class UIShopItem : MonoBehaviour
 
     private void Click()
     {
-        var gm = GameManager.instance; 
+        var gm = GameManager.Instance; 
         if (gm.State == GameManager.GameState.Shop)
         {
             if (gm.Inventory.Coin >= 1)

@@ -18,9 +18,51 @@ public class StatManager : MonoBehaviour
         }
     }
 
+    [Header("GameManager")]
+    public float DayTime = 10f;
+    public int Stage;
+    public int GoalCount;
+    public int DefaultPlayerHP = 5;
+
+    [Header("Player")]
     public int HP = 8;
+    public float PlayerSpeed = 1000f;
+    public float PlayerMaxSpeed = 8f;
+    public float PlayerWarpSpeed = 0.05f;
+    public float PlayerKnockBackPower = 7f;
+    public float PlayerKnockBackRadius = 7.5f;
+
+    [Header("Inventory")]
 
 
+    [Header("ArrowSpinner")]
+    public int RotateDirection = 1;
+    public float RotateSpeed = 200f;
+    public float SpinnerSize = 1f;
+
+    [Header("EnemySpawnManager")]
+    public float SpawnPosX = 30f;
+    public float SpawnPosY = 20f;
+
+    [Header("Enemy")]
+    public float EnemySpeed = 3f;
+
+    [Header("Item")]
+    public float ItemSetRadius = 10f;
+
+    [Header("PlayerItem")]
+    public int FieldOfViewEnlarger = 3;
+    public int FieldOfViewMax = 20;
+    public float ArrowSpeedUp = 1.5f;
+    public float SpinnerSizeUp = 1.2f;
+    public float SpinnerSizeMax = 2f;
+
+    [Header("TrapItem")]
+    public float TrapDuration = 2f;
+    public float SpeedDown = 4f;
+
+    [Header("GroundEffect")]
+    public float SlowGround = 4f;
 
 
 }

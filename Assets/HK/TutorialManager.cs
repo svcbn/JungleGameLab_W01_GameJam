@@ -49,7 +49,7 @@ public class TutorialManager : MonoBehaviour
         {
             UIManager.instance.Tutorial_Reset();
             instance = null;
-            GameManager.instance.CompleteTutorial();
+            GameManager.Instance.CompleteTutorial();
         }
         
         if (stepIndex >= 0 && stepIndex < tutorialObjects.Length)

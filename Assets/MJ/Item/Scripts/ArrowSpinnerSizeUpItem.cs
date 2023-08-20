@@ -6,7 +6,29 @@ using UnityEngine;
 public class ArrowSpinnerSizeUpItem : ArrowSpinnerItem
 {
     [Tooltip("증가시킬 배수를 입력 (=기존 나침반 반경 * value)")]
-    public float value;
+    public float Value
+    {
+        get
+        {
+            return StatManager.Instance.SpinnerSizeUp;
+        }
+        set
+        {
+            StatManager.Instance.SpinnerSizeUp = value;
+        }
+    }
+
+    public float MaxValue
+    {
+        get
+        {
+            return StatManager.Instance.SpinnerSizeMax;
+        }
+        set
+        {
+            StatManager.Instance.SpinnerSizeMax = value;
+        }
+    }
 
     public ArrowSpinnerSizeUpItem()
     {
@@ -15,6 +37,9 @@ public class ArrowSpinnerSizeUpItem : ArrowSpinnerItem
     
     public override void Execute()
     {
-        Target.ChangeSpinnerSize(value);
+        if (StatManager.Instance.SpinnerSize < MaxValue)
+        {
+            Target.ChangeSpinnerSize(Value);
+        }
     }
 }

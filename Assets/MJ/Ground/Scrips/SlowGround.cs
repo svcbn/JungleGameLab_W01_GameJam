@@ -8,7 +8,17 @@ using UnityEngine;
 public class SlowGround : MonoBehaviour
 {
     [Tooltip("낮출 속도")]
-    public int value;
+    public float Value
+    {
+        get
+        {
+            return StatManager.Instance.SlowGround;
+        }
+        set
+        {
+            StatManager.Instance.SlowGround = value;
+        }
+    }
     public void OnTriggerEnter2D(Collider2D target)
     {
         var obj = target.gameObject;
@@ -17,12 +27,12 @@ public class SlowGround : MonoBehaviour
         if (obj.tag.Equals("Player"))
         {
             var player = obj.GetComponent<PlayerController>();
-            player.maxSpeed = 4;
+            player.MaxSpeed -= Value;
         }
         else if (obj.tag.Equals("Enemy"))
         {
             var enemy  = obj.GetComponent<EnemyController>(); 
-            enemy.moveSpeed -= value;
+            enemy.Speed -= Value / 2;
         } 
     }
 
@@ -32,12 +42,12 @@ public class SlowGround : MonoBehaviour
         if (obj.tag.Equals("Player"))
         {
             var player = obj.GetComponent<PlayerController>();
-            player.maxSpeed = 8;
+            player.MaxSpeed += Value;
         }
         else if (obj.tag.Equals("Enemy"))
         {
             var enemy  = obj.GetComponent<EnemyController>(); 
-            enemy.moveSpeed += value;
+            enemy.Speed += Value / 2;
         }
     }
 }

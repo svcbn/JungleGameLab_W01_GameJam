@@ -6,7 +6,29 @@ using UnityEngine;
 public class FieldOfViewEnlargerItem : PlayerItem
 {
     [Tooltip("증가시킬 배수를 입력 (기존 나침반 속도 * value)")]
-    public int value;
+    public int Value
+    {
+        get
+        {
+            return StatManager.Instance.FieldOfViewEnlarger;
+        }
+        set
+        {
+            StatManager.Instance.FieldOfViewEnlarger = value;
+        }
+    }
+
+    public int MaxValue
+    {
+        get
+        {
+            return StatManager.Instance.FieldOfViewMax;
+        }
+        set
+        {
+            StatManager.Instance.FieldOfViewMax = value;
+        }
+    }
 
     public FieldOfViewEnlargerItem()
     {
@@ -14,9 +36,9 @@ public class FieldOfViewEnlargerItem : PlayerItem
     }
     public override void Execute()
     {
-        if(Camera.main.orthographicSize < 30)
+        if(Camera.main.orthographicSize < MaxValue)
         {
-            Camera.main.orthographicSize += value;
+            Camera.main.orthographicSize += Value;
         }
     }
 }

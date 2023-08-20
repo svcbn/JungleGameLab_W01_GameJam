@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 /// <summary>
@@ -6,6 +5,7 @@ using UnityEngine;
 /// </summary>
 public class MoveReverseDurationTrap : EnemyDurationTrap
 {
+
     public MoveReverseDurationTrap()
     {
         Type = ItemType.EnemyMoveReserve;
