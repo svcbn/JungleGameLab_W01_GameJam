@@ -12,14 +12,21 @@ using Random = UnityEngine.Random;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager Instance;
     public UIManager UIManager { get; set; }
     public InventoryManager Inventory { get; private set; }
-
-    [SerializeField] int difficulty = 1;
-    [SerializeField] int keys = 10;
-    public int maxKeys;
-    public int currentStage = 0;
+ 
+    public float DayTime
+    {
+        get
+        {
+            return StatManager.Instance.DayTime;
+        }
+        set
+        {
+            StatManager.Instance.DayTime = value;
+        }
+    }
 
     public List<ItemBox> boxes = new List<ItemBox>();
     public GameObject keyPrefab;
@@ -44,9 +51,9 @@ public class GameManager : MonoBehaviour
     #endregion
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -66,20 +73,31 @@ public class GameManager : MonoBehaviour
     }
 
     public GameState State { get; private set; }
-    [SerializeField] float dayTime = 15f;
 
-    private int _stage;
     public int Stage
     {
-        get => _stage;
+        get
+        {
+            return StatManager.Instance.Stage;
+        }
         private set
         {
-            _stage = value;
-            UIManager?.UpdateStageText(_stage);
+            StatManager.Instance.Stage = value;
+            UIManager?.UpdateStageText(Stage);
         }
     }
 
-    public int GoalCnt { get; private set; }
+    public int GoalCnt
+    {
+        get
+        {
+            return StatManager.Instance.GoalCount;
+        }
+        private set
+        {
+            StatManager.Instance.GoalCount = value;
+        }
+    }
     private int _collectedGoalCnt;
 
     public int CollectedGoalCnt
@@ -110,7 +128,17 @@ public class GameManager : MonoBehaviour
     public PostProcessVolume postProcess;
     Vignette vignette;
 
-    public int DefaultPlayerHp = 5;
+    public int DefaultPlayerHp
+    {
+        get
+        {
+            return StatManager.Instance.DefaultPlayerHP;
+        }
+        set
+        {
+            StatManager.Instance.DefaultPlayerHP = value;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -243,7 +271,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator DayTimer()
     {
-        timeLeft = dayTime;
+        timeLeft = DayTime;
 
         while(timeLeft > 0)
         {
@@ -258,7 +286,7 @@ public class GameManager : MonoBehaviour
     void NightPhase()
     {
         Inventory.ResetItems();
-        RandomBoxSetting(6); // RandomBoxSetting(GoalCnt);
+        RandomBoxSetting(GoalCnt);
         UIManager?.SetGameViewNight();
 
        
@@ -343,30 +371,30 @@ public class GameManager : MonoBehaviour
     void RandomBoxSetting(int keys)
     {
 
-        var tempBoxs = GameObject.FindGameObjectsWithTag("Box").Select(x=> x.GetComponent<ItemBox>()).ToList();
+        var tempBoxes = GameObject.FindGameObjectsWithTag("Box").Select(x=> x.GetComponent<ItemBox>()).ToList();
 
-        for (int i = 0; i < tempBoxs.Count; i++)
+        for (int i = 0; i < tempBoxes.Count; i++)
         {
             if (i < keys)
             {
-                tempBoxs[i].item.Add(ItemType.Key);
+                tempBoxes[i].item.Add(ItemType.Key);
             }
             else
             {
                 //랜덤아이템로드
                 int randomNum = UnityEngine.Random.Range(1, Enum.GetNames(typeof(ItemType)).Length);
-                tempBoxs[i].item.Add((ItemType)randomNum);
+                tempBoxes[i].item.Add((ItemType)randomNum);
             }
         }
             
         // 셔플하기
         boxes.Clear();
             
-        while (tempBoxs.Count > 0)
+        while (tempBoxes.Count > 0)
         {
-            var index = Random.Range(0, tempBoxs.Count);
-            boxes.Add(tempBoxs[index]);
-            tempBoxs.RemoveAt(index);
+            var index = Random.Range(0, tempBoxes.Count);
+            boxes.Add(tempBoxes[index]);
+            tempBoxes.RemoveAt(index);
         }
     }
 
@@ -464,7 +492,7 @@ public class GameManager : MonoBehaviour
     public void Reset()
     {
         Inventory.Coin = 0;
-        instance = null;
+        Instance = null;
         Destroy(this.gameObject);
         State = GameState.Title;
         SceneManager.LoadScene("Title");

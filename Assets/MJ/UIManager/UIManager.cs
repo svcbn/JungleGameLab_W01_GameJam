@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
     private void Awake()
     {
-        _gameManager = GameManager.instance;
+        _gameManager = GameManager.Instance;
         _gameManager.UIManager = this;
         if (instance == null)
         {

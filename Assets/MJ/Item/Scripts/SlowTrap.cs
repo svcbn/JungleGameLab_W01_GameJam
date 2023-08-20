@@ -7,14 +7,24 @@ using UnityEngine;
 public class SlowTrap : EnemyDurationTrap
 {
     [Tooltip("감소 시킬 값을 입력")]
-    public int speedDownValue;
+    public float Value
+    {
+        get
+        {
+            return StatManager.Instance.SpeedDown;
+        }
+        set
+        {
+            StatManager.Instance.SpeedDown = value;
+        }
+    }
 
     public SlowTrap()
     {
         Type = ItemType.EnemySlow;
-        Action = () => { Target.moveSpeed -= speedDownValue; };
+        Action = () => { Target.Speed -= Value; };
 
-        ExpireAction = () => { Target.moveSpeed += speedDownValue; };
+        ExpireAction = () => { Target.Speed += Value; };
     }
 
     

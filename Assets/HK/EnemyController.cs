@@ -4,7 +4,17 @@ using UnityEngine;
 //MEGANLAB 230815
 public class EnemyController : MonoBehaviour
 {
-    public float moveSpeed; // 이동 속도
+    public float Speed
+    {
+        get
+        {
+            return StatManager.Instance.EnemySpeed;
+        }
+        set
+        {
+            StatManager.Instance.EnemySpeed = value;
+        }
+    }
 
     private GameObject player; // 플레이어 오브젝트
 
@@ -16,8 +26,8 @@ public class EnemyController : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         Stop = false;
-        moveSpeed = UnityEngine.Random.Range(4f, 6f);
-        moveSpeed += GameManager.instance.Stage * 0.5f;
+        Speed = UnityEngine.Random.Range(4f, 6f);
+        Speed += GameManager.Instance.Stage * 0.5f;
     }
 
 
@@ -63,12 +73,12 @@ public class EnemyController : MonoBehaviour
 
                     if (goBack)
                     {
-                        transform.position -= newPosition.normalized * moveSpeed * Time.deltaTime;
+                        transform.position -= newPosition.normalized * Speed * Time.deltaTime;
 
                     }
                     else
                     {
-                        transform.position += newPosition.normalized * moveSpeed * Time.deltaTime;
+                        transform.position += newPosition.normalized * Speed * Time.deltaTime;
 
                     }
                 }

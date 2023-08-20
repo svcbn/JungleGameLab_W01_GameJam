@@ -9,42 +9,56 @@ using UnityEngine;
 
 public class ArrowSpinner : MonoBehaviour
 {
-    [SerializeField] int originRotateDirection = 1;
-    [SerializeField] float originRotateSpeed = 200f;
-    [SerializeField] float originSpinnerSize = 1f;
 
-    int rotateDirection;
-    float rotateSpeed;
-    float spinnerSize;
+    int RotateDirection
+    {
+        get
+        {
+            return StatManager.Instance.RotateDirection;
+        }
+        set
+        {
+            StatManager.Instance.RotateDirection = value;
+        }
+    }
+    float RotateSpeed
+    {
+        get
+        {
+            return StatManager.Instance.RotateSpeed;
+        }
+        set
+        {
+            StatManager.Instance.RotateSpeed = value;
+        }
+    }
+    float SpinnerSize
+    {
+        get
+        {
+            return StatManager.Instance.SpinnerSize;
+        }
+        set
+        {
+            StatManager.Instance.SpinnerSize = value;
+        }
+    }
 
     public GameObject arrow;
 
     
-    void Start()
-    {
-        OriginSetting();
-    }
-
-    
     void Update()
     {
-        arrow.transform.RotateAround(transform.position, Vector3.forward, rotateDirection * rotateSpeed * Time.deltaTime);
-
+        arrow.transform.RotateAround(transform.position, Vector3.forward, RotateDirection * RotateSpeed * Time.deltaTime);
     }
 
-    void OriginSetting()
-    {
-        rotateDirection = originRotateDirection;
-        rotateSpeed = originRotateSpeed;
-        spinnerSize = originSpinnerSize;
-    }
 
     /// <summary>
     /// Change Spinner's Rotation Direction with -1 or +1
     /// </summary>
     public void ChangeRotateDirection()
     {
-        rotateDirection *= -1;
+        RotateDirection *= -1;
     }
 
     /// <summary>
@@ -52,9 +66,8 @@ public class ArrowSpinner : MonoBehaviour
     /// </summary>
     public void ChangeSpinnerSize(float size)
     {
-        spinnerSize *= size;
-        if(spinnerSize > 2) spinnerSize = 2;
-        transform.localScale = Vector3.one * spinnerSize;
+        SpinnerSize *= size;
+        transform.localScale = Vector3.one * SpinnerSize;
     }
 
     /// <summary>
@@ -63,6 +76,6 @@ public class ArrowSpinner : MonoBehaviour
     /// <param name="speed"></param>
     public void ChangeSpinnerSpeed(float speed)
     {
-        rotateSpeed *= speed;
+        RotateSpeed *= speed;
     }
 }
