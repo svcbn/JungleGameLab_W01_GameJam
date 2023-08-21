@@ -145,14 +145,10 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{3D785B29-0D37-42F8-32D6-D3B4B805D1FB}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{011221BE-D61F-0023-397F-E71DC690ED8F}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
-				<File Id="70823677" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>MUS_Nomal.wav</ShortName>
-					<CachePath>SFX/MUS_Nomal_D79FB2B7.wem</CachePath>
-				</File>
 				<File Id="75577207" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MUS_Etc.wav</ShortName>
 					<CachePath>SFX/MUS_Etc_D79FB2B7.wem</CachePath>
@@ -201,10 +197,6 @@
 					<ShortName>BRS_Camera_D50_Focus_Beep_2.wav</ShortName>
 					<CachePath>SFX/BRS_Camera_D50_Focus_Beep_2_10C4C929.wem</CachePath>
 				</File>
-				<File Id="1072286818" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>MUS_Chase.wav</ShortName>
-					<CachePath>SFX/MUS_Chase_D79FB2B7.wem</CachePath>
-				</File>
 			</Media>
 			<Events>
 				<Event Id="2953019946" Name="Barrier" DurationType="OneShot" DurationMin="0.96180546" DurationMax="0.96180546">
@@ -218,26 +210,9 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="1969559964" Name="PlayMUS" DurationType="Infinite">
-					<SwitchContainers>
-						<SwitchContainer>
-							<SwitchValue GroupType="Switch" GroupId="3991942870" Id="311764537"/>
-							<MediaRefs>
-								<MediaRef Id="75577207"/>
-							</MediaRefs>
-						</SwitchContainer>
-						<SwitchContainer>
-							<SwitchValue GroupType="Switch" GroupId="3991942870" Id="1011622525"/>
-							<MediaRefs>
-								<MediaRef Id="1072286818"/>
-							</MediaRefs>
-						</SwitchContainer>
-						<SwitchContainer>
-							<SwitchValue GroupType="Switch" GroupId="3991942870" Id="782826392"/>
-							<MediaRefs>
-								<MediaRef Id="70823677"/>
-							</MediaRefs>
-						</SwitchContainer>
-					</SwitchContainers>
+					<MediaRefs>
+						<MediaRef Id="75577207"/>
+					</MediaRefs>
 				</Event>
 				<Event Id="119314287" Name="PLY_Flashing" DurationType="OneShot" DurationMin="0.5546753" DurationMax="0.5546753">
 					<MediaRefs>
@@ -285,16 +260,7 @@
 					</MediaRefs>
 				</Event>
 			</Events>
-			<SwitchGroups>
-				<SwitchGroup Id="3991942870" Name="music">
-					<Switches>
-						<Switch Id="311764537" Name="Day"/>
-						<Switch Id="782826392" Name="Default"/>
-						<Switch Id="1011622525" Name="night"/>
-					</Switches>
-				</SwitchGroup>
-			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{C49D7F08-BA10-ED07-99E9-298A99B5490E}</FileHash>
+	<FileHash>{3D760F1E-4436-C47D-044E-917C8600FC2C}</FileHash>
 </SoundBanksInfo>

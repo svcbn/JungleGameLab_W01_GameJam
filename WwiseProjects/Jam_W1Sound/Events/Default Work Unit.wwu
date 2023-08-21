@@ -129,7 +129,7 @@
 						<Action Name="" ID="{3B1304C9-35C9-4D7A-B626-A0E4499B0D6E}" ShortID="106128187">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="MUS" ID="{089CF07B-7281-48EB-9241-C2F2B2836B40}" WorkUnitID="{F7E92481-A793-4184-B739-016892FBD69A}"/>
+									<ObjectRef Name="2" ID="{1BE7DB92-358D-4D0A-BBDF-FDAC906444C4}" WorkUnitID="{F7E92481-A793-4184-B739-016892FBD69A}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
