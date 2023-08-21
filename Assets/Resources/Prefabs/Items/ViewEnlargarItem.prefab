@@ -111,6 +111,14 @@ PrefabInstance:
       propertyPath: Description
       value: "\uC2DC\uC57C\uB97C \uB113\uD600\uC8FC\uB294 \uC544\uC774\uD15C"
       objectReference: {fileID: 0}
+    - target: {fileID: 7741027389010530717, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741027389010530717, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7741027389625257529, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
       propertyPath: m_Name
       value: ViewEnlargarItem
@@ -118,6 +126,18 @@ PrefabInstance:
     - target: {fileID: 7741027389625257530, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741027389625257530, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741027389625257530, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741027389625257530, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7741027389625257530, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -159,6 +179,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7741027389625257530, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
 --- !u!4 &3389332641444592980 stripped
@@ -183,4 +207,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7380e7072b084cd980a5ab451518339b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 3

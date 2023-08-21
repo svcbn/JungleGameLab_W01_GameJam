@@ -54,8 +54,25 @@ public class SpawnManager : MonoBehaviour
 
     Vector3 GetRandomSpawnPosition()
     {
-        Vector3 spawnPosition = new Vector3(transform.position.x + Random.Range(-SpawnPosX, SpawnPosX), transform.position.y + Random.Range(-SpawnPosY, SpawnPosY), 0f);
+        float randX;
+        float randY;
+
+        while (true)
+        {
+            randX = Random.Range(-SpawnPosX, SpawnPosX);
+            if(randX < 10 && randX > -10)
+            { 
+                continue;
+            }
+            randY = Random.Range(-SpawnPosY, SpawnPosY);
+            if(randY < 8 && randY > -8)
+            {
+                continue;
+            }
+            break;
+        }
        
+        Vector3 spawnPosition = new Vector3(transform.position.x + randX, transform.position.y + randY, 0f);
         return spawnPosition;
     }
 

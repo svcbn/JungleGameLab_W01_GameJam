@@ -19,21 +19,22 @@ public class StatManager : MonoBehaviour
     }
 
     [Header("GameManager")]
-    public float DayTime = 10f;
+    public float DayTime = 15f;
     public int Stage;
     public int GoalCount;
     public int DefaultPlayerHP = 5;
 
     [Header("Player")]
-    public int HP = 8;
+    public int HP = 5;
     public float PlayerSpeed = 1000f;
+    public float playerOriginMaxSpeed = 8f;
     public float PlayerMaxSpeed = 8f;
     public float PlayerWarpSpeed = 0.05f;
     public float PlayerKnockBackPower = 7f;
     public float PlayerKnockBackRadius = 7.5f;
 
     [Header("Inventory")]
-
+    public int RoundCoin = 5;
 
     [Header("ArrowSpinner")]
     public int RotateDirection = 1;
@@ -48,7 +49,7 @@ public class StatManager : MonoBehaviour
     public float EnemySpeed = 3f;
 
     [Header("Item")]
-    public float ItemSetRadius = 10f;
+    public float ItemSetRadius = 5f;
 
     [Header("PlayerItem")]
     public int FieldOfViewEnlarger = 3;
