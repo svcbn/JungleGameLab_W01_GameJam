@@ -14,11 +14,11 @@ public class TutorialBox : MonoBehaviour
             Destroy(this.gameObject);
             if (itemType == ItemType.Key)
             {
-                GameManager.instance.AddKey();
+                GameManager.Instance.AddKey();
             }
             else
             {
-                GameManager.instance.Inventory.AddItem(itemType);
+                GameManager.Instance.Inventory.AddItem(itemType);
             }
         }
     }

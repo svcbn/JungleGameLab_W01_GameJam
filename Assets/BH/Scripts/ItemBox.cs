@@ -15,12 +15,12 @@ public class ItemBox : MonoBehaviour
             {
                 if (item[0] == ItemType.Key)
                 {
-                    GameManager.instance.AddKey();
+                    GameManager.Instance.AddKey();
                 }
                 else
                 {
                     //인벤토리에 집어넣기
-                    GameManager.instance.Inventory.AddItem(item[0]);
+                    GameManager.Instance.Inventory.AddItem(item[0]);
                 }
                 gameObject.SetActive(false);
             }

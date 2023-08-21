@@ -9,7 +9,17 @@ public class ItemAreaController : MonoBehaviour
 {
     
     [Tooltip("아이템 설치 가능 반경 값")]
-    int radius = 10;
+    public float Radius
+    {
+        get
+        {
+            return StatManager.Instance.ItemSetRadius;
+        }
+        set
+        {
+            StatManager.Instance.ItemSetRadius = value;
+        }
+    }
     
     [Tooltip("아이템 설치 가능 반경을 나타내주는 오브젝트")]
     public GameObject unbuildableAreaObj;
@@ -18,23 +28,12 @@ public class ItemAreaController : MonoBehaviour
     {
         
         // Collider 반경 설정
-        GetComponent<CircleCollider2D>().radius = radius;
+        GetComponent<CircleCollider2D>().radius = Radius;
 
         // 영역 오브젝트 크기 설정     
-        unbuildableAreaObj.transform.localScale = new Vector3(radius * 2, radius * 2, 0);
+        unbuildableAreaObj.transform.localScale = new Vector3(Radius * 2, Radius * 2, 0);
         
         unbuildableAreaObj.SetActive(false);
     }
 
-    public void OnTriggerEnter2D(Collider2D target)
-    {
-        //if (target.gameObject.tag.Equals("Player"))
-        //    unbuildableAreaObj.SetActive(true);
-    }
-
-    public void OnTriggerExit2D(Collider2D target)
-    {
-        //if (target.gameObject.tag.Equals("Player"))
-        //    unbuildableAreaObj.SetActive(false);
-    }
 }

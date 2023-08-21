@@ -26,7 +26,7 @@ public abstract class Item<T>  : MonoBehaviour where T: MonoBehaviour
 
     public void Start()
     {
-        _gameManager = GameManager.instance;
+        _gameManager = GameManager.Instance;
     }
 
     public void OnTriggerEnter2D(Collider2D target)

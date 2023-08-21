@@ -14,7 +14,17 @@ public abstract class EnemyDurationTrap : Item<EnemyController>
     protected Action ExpireAction { private get; set; }
 
     [Tooltip("해당 아이템의 지속 시간을 설정")]
-    public int duration;
+    public float Duration
+    {
+        get
+        {
+            return StatManager.Instance.TrapDuration;
+        }
+        set
+        {
+            StatManager.Instance.TrapDuration = value;
+        }
+    }
     
     protected EnemyDurationTrap() : base("Enemy")
     {
@@ -32,7 +42,7 @@ public abstract class EnemyDurationTrap : Item<EnemyController>
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
 
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds(Duration);
 
         ExpireAction?.Invoke();
         Destroy(gameObject);

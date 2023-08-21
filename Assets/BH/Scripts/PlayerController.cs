@@ -24,11 +24,61 @@ public class PlayerController : MonoBehaviour
     float inputY;
     Vector2 direction;
     Rigidbody2D playerRb;
-    [SerializeField] float speed = 1000f;
-    public float maxSpeed = 8f;
-    [SerializeField] float warpSpeed = 0.05f;
-    [SerializeField] float knockBackPower = 7f;
-    [SerializeField] float knockBackRadius = 7.5f;
+    public float Speed
+    {
+        get
+        {
+            return StatManager.Instance.PlayerSpeed;
+        }
+        set
+        {
+            StatManager.Instance.PlayerSpeed = value;
+        }
+    }
+    public float MaxSpeed
+    {
+        get
+        {
+            return StatManager.Instance.PlayerMaxSpeed;
+        }
+        set
+        {
+            StatManager.Instance.PlayerMaxSpeed = value;
+        }
+    }
+    public float WarpSpeed
+    {
+        get
+        {
+            return StatManager.Instance.PlayerWarpSpeed;
+        }
+        set
+        {
+            StatManager.Instance.PlayerWarpSpeed = value;
+        }
+    }
+    public float KnockBackPower
+    {
+        get
+        {
+            return StatManager.Instance.PlayerKnockBackPower;
+        }
+        set
+        {
+            StatManager.Instance.PlayerKnockBackPower = value;
+        }
+    }
+    public float KnockBackRadius
+    {
+        get
+        {
+            return StatManager.Instance.PlayerKnockBackRadius;
+        }
+        set
+        {
+            StatManager.Instance.PlayerKnockBackRadius = value;
+        }
+    }
     [SerializeField] Collider2D[] enemyInRange;
     [HideInInspector] public GameObject barrier;
 
@@ -66,18 +116,16 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        gameManager = GameManager.instance;
+        gameManager = GameManager.Instance;
         gameManager.PlayerObj = this.gameObject;
         UIManager.instance.UpdatePlayerHp(HP);
-
-        
     }
 
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
-        knockBackArea.transform.localScale = Vector3.one * knockBackRadius * 2;
+        knockBackArea.transform.localScale = Vector3.one * KnockBackRadius * 2;
         knockBackArea.SetActive(false);
         playerSprite = GetComponent<SpriteRenderer>();
         gameObject.SetActive(false);
@@ -106,20 +154,20 @@ public class PlayerController : MonoBehaviour
         inputX = Input.GetAxis("Horizontal");
         inputY = Input.GetAxis("Vertical");
         direction = new Vector2(inputX, inputY);
-        playerRb.AddForce(direction.normalized * speed * Time.deltaTime, ForceMode2D.Force);
+        playerRb.AddForce(direction.normalized * Speed * Time.deltaTime, ForceMode2D.Force);
     }
 
     void LimitMoveSpeed()
     {
-        if(playerRb.velocity.x > maxSpeed) playerRb.velocity = new Vector2(maxSpeed, playerRb.velocity.y);
-        if (playerRb.velocity.x < -maxSpeed) playerRb.velocity = new Vector2(-maxSpeed, playerRb.velocity.y);
-        if (playerRb.velocity.y > maxSpeed) playerRb.velocity = new Vector2(playerRb.velocity.x, maxSpeed);
-        if (playerRb.velocity.y < -maxSpeed) playerRb.velocity = new Vector2(playerRb.velocity.x, -maxSpeed);
+        if(playerRb.velocity.x > MaxSpeed) playerRb.velocity = new Vector2(MaxSpeed, playerRb.velocity.y);
+        if (playerRb.velocity.x < -MaxSpeed) playerRb.velocity = new Vector2(-MaxSpeed, playerRb.velocity.y);
+        if (playerRb.velocity.y > MaxSpeed) playerRb.velocity = new Vector2(playerRb.velocity.x, MaxSpeed);
+        if (playerRb.velocity.y < -MaxSpeed) playerRb.velocity = new Vector2(playerRb.velocity.x, -MaxSpeed);
     }
 
     void InRangeCheck()
     {
-        enemyInRange = Physics2D.OverlapCircleAll(transform.position, knockBackRadius, LayerMask.GetMask("Enemy"));
+        enemyInRange = Physics2D.OverlapCircleAll(transform.position, KnockBackRadius, LayerMask.GetMask("Enemy"));
     }
 
     void Warp()
@@ -127,7 +175,7 @@ public class PlayerController : MonoBehaviour
         if (gameManager.State != GameManager.GameState.Night) return;
 
         transform.position = warpPos.transform.position;
-        playerRb.velocity *= warpSpeed;
+        playerRb.velocity *= WarpSpeed;
     }
 
     /// <summary>
@@ -173,7 +221,7 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(KnockBackAreaFeedback());
         foreach(Collider2D collider in enemyInRange)
         {
-            collider.gameObject.GetComponent<Rigidbody2D>().AddForce((collider.gameObject.transform.position - transform.position).normalized * knockBackPower , ForceMode2D.Impulse);
+            collider.gameObject.GetComponent<Rigidbody2D>().AddForce((collider.gameObject.transform.position - transform.position).normalized * KnockBackPower , ForceMode2D.Impulse);
         }
     }
 

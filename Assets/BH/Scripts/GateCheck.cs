@@ -13,7 +13,7 @@ public class GateCheck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _gameManager = GameManager.instance;
+        _gameManager = GameManager.Instance;
         _gameManager.GateCheck = this;
         isComplete = false;
         ResetKey();
