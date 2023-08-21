@@ -79,7 +79,6 @@ public class EnemyController : MonoBehaviour
                     else
                     {
                         transform.position += newPosition.normalized * Speed * Time.deltaTime;
-
                     }
                 }
             }

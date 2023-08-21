@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 /// <summary>
@@ -29,7 +31,6 @@ public class GameManager : MonoBehaviour
     }
 
     public List<ItemBox> boxes = new List<ItemBox>();
-    public GameObject keyPrefab;
 
     public GameObject PlayerObj;
     public GateCheck GateCheck { get; set; }
@@ -121,12 +122,23 @@ public class GameManager : MonoBehaviour
             UIManager?.UpdateTimerText(_timer);
         }
     }
-    private int _backupCoin;
+    public int RoundCoin
+    {
+        get
+        {
+            return StatManager.Instance.RoundCoin;
+        }
+        set
+        {
+            StatManager.Instance.RoundCoin = value;
+        }
+    }
     
     float timeLeft;
 
-    public PostProcessVolume postProcess;
+    [HideInInspector] public PostProcessVolume postProcess;
     Vignette vignette;
+    bool isPPOn = true;
 
     public int DefaultPlayerHp
     {
@@ -139,6 +151,8 @@ public class GameManager : MonoBehaviour
             StatManager.Instance.DefaultPlayerHP = value;
         }
     }
+
+    [HideInInspector] public Button BtnPostProcess;
 
     // Start is called before the first frame update
     void Start()
@@ -244,7 +258,6 @@ public class GameManager : MonoBehaviour
 
         // 데이터 설정
         Stage = 2;
-        _backupCoin = Inventory.Coin;
     }
 
     public void CompleteLoadShop() => ChangeState(GameState.Shop);
@@ -322,7 +335,8 @@ public class GameManager : MonoBehaviour
 
     public void B_Retry()
     {
-        Inventory.Coin = _backupCoin;
+        Inventory.Coin = RoundCoin;
+        StatManager.Instance.HP = DefaultPlayerHp;
         ChangeState(GameState.Shop);
         SceneManager.LoadScene("DayN");
     }
@@ -493,8 +507,25 @@ public class GameManager : MonoBehaviour
     {
         Inventory.Coin = 0;
         Instance = null;
-        Destroy(this.gameObject);
         State = GameState.Title;
+        Destroy(GameObject.Find("WwiseGlobal"));
         SceneManager.LoadScene("Title");
+        Destroy(this.gameObject);
+    }
+
+    public void PostProcessOption()
+    {
+        if (isPPOn)
+        {
+            postProcess.enabled = false;
+            BtnPostProcess.GetComponentInChildren<TextMeshProUGUI>().SetText("VFX OFF");
+            isPPOn = false;
+        }
+        else
+        {
+            postProcess.enabled = true;
+            BtnPostProcess.GetComponentInChildren<TextMeshProUGUI>().SetText("VFX ON");
+            isPPOn = true;
+        }
     }
 }

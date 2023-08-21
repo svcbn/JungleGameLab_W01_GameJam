@@ -39,7 +39,7 @@ public abstract class EnemyDurationTrap : Item<EnemyController>
 
     IEnumerator Expire()
     {
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.transform.GetChild(2).gameObject.SetActive(false);
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
 
         yield return new WaitForSeconds(Duration);

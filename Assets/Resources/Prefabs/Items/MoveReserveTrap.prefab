@@ -259,6 +259,14 @@ PrefabInstance:
       value: "\uC801\uC744 \uBC18\uB300 \uBC29\uD5A5\uC73C\uB85C \uC774\uB3D9\uC2DC\uD0A4\uB294
         \uB36B"
       objectReference: {fileID: 0}
+    - target: {fileID: 7741027389010530717, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741027389010530717, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7741027389447059861, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -282,6 +290,18 @@ PrefabInstance:
     - target: {fileID: 7741027389625257530, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741027389625257530, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741027389625257530, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741027389625257530, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7741027389625257530, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -323,6 +343,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7741027389625257530, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
 --- !u!1 &2640081101630334191 stripped
@@ -342,7 +366,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82337f69f3c44987ae59662a45f47641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 3
 --- !u!4 &2640081101804311388 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7741027389447059850, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}

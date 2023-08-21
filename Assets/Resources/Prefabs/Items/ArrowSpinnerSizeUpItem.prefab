@@ -366,6 +366,14 @@ PrefabInstance:
       value: "\uB098\uCE68\uBC18\uC758 \uD06C\uAE30\uB97C \uC0C1\uC2B9\uC2DC\uD0A4\uB294
         \uC544\uC774\uD15C"
       objectReference: {fileID: 0}
+    - target: {fileID: 7741027389010530717, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741027389010530717, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7741027389625257529, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
       propertyPath: m_Name
       value: ArrowSpinnerSizeUpItem
@@ -373,6 +381,18 @@ PrefabInstance:
     - target: {fileID: 7741027389625257530, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741027389625257530, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741027389625257530, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741027389625257530, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7741027389625257530, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -414,6 +434,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7741027389625257530, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22e36b30eae5b254783b08367d9cf8c5, type: 3}
 --- !u!4 &7188453452419909645 stripped
@@ -438,7 +462,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c325b6904a144ef09dc259c1da73657f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 1.2
 --- !u!1001 &625757569718158733
 PrefabInstance:
   m_ObjectHideFlags: 0

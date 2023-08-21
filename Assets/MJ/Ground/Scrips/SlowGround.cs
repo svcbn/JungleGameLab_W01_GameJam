@@ -27,7 +27,7 @@ public class SlowGround : MonoBehaviour
         if (obj.tag.Equals("Player"))
         {
             var player = obj.GetComponent<PlayerController>();
-            player.MaxSpeed -= Value;
+            player.MaxSpeed = Value;
         }
         else if (obj.tag.Equals("Enemy"))
         {
@@ -42,7 +42,7 @@ public class SlowGround : MonoBehaviour
         if (obj.tag.Equals("Player"))
         {
             var player = obj.GetComponent<PlayerController>();
-            player.MaxSpeed += Value;
+            player.MaxSpeed = StatManager.Instance.playerOriginMaxSpeed;
         }
         else if (obj.tag.Equals("Enemy"))
         {
