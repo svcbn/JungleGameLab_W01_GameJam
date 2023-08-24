@@ -25,7 +25,7 @@ TagManager:
   - ItemArea
   - Ground
   - Infinite
-  - 
+  - Wall
   - 
   - 
   - 
@@ -50,6 +50,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: New Layer 1
+  - name: Ground
     uniqueID: 1047791011
+    locked: 0
+  - name: Item
+    uniqueID: 4081024519
+    locked: 0
+  - name: Player, Enemy
+    uniqueID: 1920515405
     locked: 0

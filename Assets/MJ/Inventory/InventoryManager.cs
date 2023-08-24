@@ -53,6 +53,15 @@ public class InventoryManager
     {
         Items.Add(type);
         UIManager.instance?.AddItemOnView(type);
+        if (Items.Count > 0)
+        {
+            UIManager.instance.nextItemGrid.SetActive(true);
+        }
+        if(GameManager.Instance.State == GameManager.GameState.Night)
+        {
+            UIManager.instance.ShowItemInfoText(ResourceManager.Instance.ItemPrefabDict[type].GetComponent<ItemInfo>().ShortName);
+            
+        }
     }
 
     /// <summary>
@@ -62,6 +71,10 @@ public class InventoryManager
     {
         UIManager.instance?.RemoveItemOnView();
         Items.RemoveAt(0);
+        if (Items.Count < 1)
+        {
+            UIManager.instance.nextItemGrid.SetActive(false);
+        }
     }
     
     /// <summary>

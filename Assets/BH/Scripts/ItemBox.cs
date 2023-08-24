@@ -6,6 +6,8 @@ using UnityEngine;
 public class ItemBox : MonoBehaviour
 {
     public List<ItemType> item = new List<ItemType>();
+    public GameObject key;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,5 +27,24 @@ public class ItemBox : MonoBehaviour
                 gameObject.SetActive(false);
             }
         }
+    }
+
+    private void Update()
+    {
+        if (GameManager.Instance.State != GameManager.GameState.Day) return;
+
+        if (item[0] == ItemType.Key && !key.activeSelf)
+        {
+            key.SetActive(true);
+            GameManager.Instance.HideKey += HideKey;
+        }
+    }
+
+    void HideKey()
+    {
+        if (key.activeSelf)
+        {
+            key.SetActive(false);
+        } 
     }
 }

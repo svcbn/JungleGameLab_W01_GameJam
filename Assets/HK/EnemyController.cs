@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    float localSpeed;
     private GameObject player; // 플레이어 오브젝트
 
     public GameObject Look;
@@ -26,8 +27,8 @@ public class EnemyController : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         Stop = false;
-        Speed = UnityEngine.Random.Range(4f, 6f);
-        Speed += GameManager.Instance.Stage * 0.5f;
+        localSpeed = UnityEngine.Random.Range(Speed, Speed+1);
+        localSpeed += GameManager.Instance.Stage * 0.3f;
     }
 
 

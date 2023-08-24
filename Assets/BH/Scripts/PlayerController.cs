@@ -183,7 +183,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void OnBarrier()
     {
-        StartCoroutine(Immune(2f));
+        StartCoroutine(Immune(3f));
         barrier.SetActive(true);
     }
 

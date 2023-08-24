@@ -38,6 +38,7 @@ public class UIManager : MonoBehaviour
             _gameManager.CompleteLoadShop();
             UpdateAllText();
             shopConfirmButton.onClick.AddListener(_gameManager.B_ShopConfirm);
+            shopConfirmButton.onClick.AddListener(CompleteShopping);
         }
         
     }
@@ -60,6 +61,7 @@ public class UIManager : MonoBehaviour
     [Header("Item Info")]
     public Transform itemCreatePosTr;
     public GameObject itemPrefab;
+    public GameObject nextItemGrid;
     
     [Header("Day or Night Text")]
     public TextMeshProUGUI goalText;
@@ -69,10 +71,13 @@ public class UIManager : MonoBehaviour
     public GameObject noMoneyObject;
 
     public Button shopConfirmButton;
+    public Button readyButton;
 
     [Header("Clear")]
     public TextMeshProUGUI stageClearText;
 
+
+    public GameObject itemInfoText;
 
     #region Method by GameState
     public void SetGameViewShop()
@@ -155,7 +160,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateTimerText(float time)
     {
-        timerText.SetText($"{time:F2}");
+        timerText.SetText($"{(int)time}");
     }
     #endregion
     
@@ -186,9 +191,14 @@ public class UIManager : MonoBehaviour
 
     public void CompleteShopping()
     {
-        
+        readyButton.gameObject.SetActive(true);
     }
 
+    public void B_Ready()
+    {
+        _gameManager.timeLeft = 0.3f;
+        readyButton.gameObject.SetActive(false);
+    }
 
     #region 구매 실패 관련 변수 및 함수
     private int noMoneyTextShowTime = 0;
@@ -240,9 +250,9 @@ public class UIManager : MonoBehaviour
 
     #endregion
 
-    public void B_GotoMain()
+    public void B_Quit()
     {
-        _gameManager.Reset();
+        Application.Quit();
     }
 
     public void B_Retry()
@@ -257,5 +267,11 @@ public class UIManager : MonoBehaviour
             var tr = itemCreatePosTr.GetChild(i);
             Destroy(tr.gameObject);
         }
+    }
+
+    public void ShowItemInfoText(string desc)
+    {
+        GameObject go = GameObject.Instantiate(itemInfoText, this.transform.parent);
+        go.GetComponent<TextMeshProUGUI>().SetText(desc + " 획득");
     }
 }

@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 
@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour
         set
         {
             _timer = value;
-            UIManager?.UpdateTimerText(_timer);
+            UIManager?.UpdateTimerText(MathF.Ceiling(_timer));
         }
     }
     public int RoundCoin
@@ -133,11 +133,16 @@ public class GameManager : MonoBehaviour
             StatManager.Instance.RoundCoin = value;
         }
     }
-    
-    float timeLeft;
+
+    public Action HideKey { get; set; }
+
+    public float timeLeft;
 
     [HideInInspector] public PostProcessVolume postProcess;
     Vignette vignette;
+    LensDistortion lensDistortion;
+    Bloom bloom;
+
     bool isPPOn = true;
 
     public int DefaultPlayerHp
@@ -154,6 +159,7 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public Button BtnPostProcess;
 
+    StatManager _statManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -162,28 +168,27 @@ public class GameManager : MonoBehaviour
         Inventory = new InventoryManager();
 
         vignette = postProcess.profile.GetSetting<Vignette>();
+        lensDistortion = postProcess.profile.GetSetting<LensDistortion>();
+        bloom = postProcess.profile.GetSetting<Bloom>();
+
         ChangeState(GameState.Title);
+        _statManager = StatManager.Instance;
     }
 
     // Update is called once per frame
     void Update()
     {
         #region 디버그용
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SceneManager.LoadScene("DayN");
-            ChangeState(GameState.Shop);
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    SceneManager.LoadScene("DayN");
+        //    ChangeState(GameState.Shop);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            timeLeft = 1f;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            ChangeState(GameState.Die);
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha3))
+        //{
+        //    ChangeState(GameState.Die);
+        //}
 
         #endregion
 
@@ -224,11 +229,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void B_GameStart()
+    public void B_Story()
     {
         Stage = 1;
         ChangeState(GameState.Tutorial);
         SceneManager.LoadScene("01.Scenes/Day1");
+    }
+
+    public void B_Start()
+    {
+        Stage = 1;
+        ChangeState (GameState.Tutorial);
+        SceneManager.LoadScene("Tutorial");
+
     }
 
     public void CompleteLoadTutorialUI()
@@ -265,9 +278,7 @@ public class GameManager : MonoBehaviour
     {
         Inventory.ResetItems();
         UIManager.SetGameViewShop();
-        postProcess.profile.GetSetting<LensDistortion>().active = false;
-        postProcess.profile.GetSetting<Vignette>().active = false;
-
+        PostProcessOff();
     }
 
     public void B_ShopConfirm() => ChangeState(GameState.Day);
@@ -277,7 +288,8 @@ public class GameManager : MonoBehaviour
         GoalCnt = Stage;
         UIManager?.SetGameViewDay(GoalCnt);
         
-        CameraSetting(false, null, 40f);
+        CameraSetting(null, 40f);
+        RandomBoxSetting(GoalCnt);
 
         StartCoroutine(DayTimer());
     }
@@ -299,10 +311,11 @@ public class GameManager : MonoBehaviour
     void NightPhase()
     {
         Inventory.ResetItems();
-        RandomBoxSetting(GoalCnt);
         UIManager?.SetGameViewNight();
+        HideKey();
+        HideKey = null;
+        PostProcessOn();
 
-       
         // Player 랜덤 위치 지정 
         var randomPosArr = GameObject.FindGameObjectsWithTag("SpawnPosition");
         var index = Random.Range(0, randomPosArr.Length);
@@ -312,20 +325,30 @@ public class GameManager : MonoBehaviour
         GameObject.Find("SpawnManager").GetComponent<SpawnManager>().SpawnStart();
         
         // 카메라 Player 추적하도록 설정
-        CameraSetting(true, PlayerObj.transform, 10f, true);
-        postProcess.profile.GetSetting<LensDistortion>().active = true;
+        CameraSetting(PlayerObj.transform, 10f, true);
     }
 
-    void CameraSetting(bool isVignette, Transform transform, float size, bool isAttached = false)
+    void CameraSetting(Transform transform, float size, bool isAttached = false)
     {
-        vignette.active = isVignette;
         Camera.main.transform.SetParent(transform, false);
         if (!isAttached)
         {
             Camera.main.transform.position = new Vector3(0, 0, -10); // 현재 스테이지 카메라 위치로 변경할것
         }
-
         Camera.main.orthographicSize = size;
+    }
+
+    void PostProcessOn()
+    {
+        vignette.active = true;
+        lensDistortion.active = true;
+        bloom.active = true;
+    }
+    void PostProcessOff()
+    {
+        vignette.active = false;
+        lensDistortion.active = false;
+        bloom.active = false;
     }
 
     void Die()
@@ -341,9 +364,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("DayN");
     }
 
-    public void B_Main()
+    public void B_Quit()
     {
-        // Reload Scene
+        Application.Quit();
     }
 
     /// <summary>
@@ -358,6 +381,11 @@ public class GameManager : MonoBehaviour
         nextStageWaitFlag = true;
         UIManager?.SetFinalClearView();
         Inventory.AddCoin(5);
+        _statManager.RotateSpeed = _statManager.OriginRotateSpeed;
+        _statManager.PlayerMaxSpeed = _statManager.playerOriginMaxSpeed;
+        _statManager.HP = _statManager.DefaultPlayerHP;
+        Camera.main.fieldOfView = _statManager.OriginFieldOfView;
+
         // [TODO] 플레이어 SetActive(false) 필요 할 듯
         UIManager.instance.SetClearView();
         yield return new WaitForSeconds(2f); // 대기 (여운)
@@ -424,19 +452,22 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log(hit.collider.tag);
             
-            if (hit.collider.CompareTag("ItemArea"))
+            if (hit.collider.CompareTag("Ground"))
+            {
+                canSetItem = true;
+            }
+            else
             {
                 canSetItem = false;
+            }
+            if (hit.collider.CompareTag("ItemArea"))
+            {
                 GameObject go = hit.collider.transform.parent.GetChild(1).gameObject;
                 if(go.gameObject.activeSelf == false)
                 {
                     go.SetActive(true);
                     StartCoroutine(ActiveFalse(go));
                 }
-            }
-            if (hit.collider.CompareTag("Ground"))
-            {
-                canSetItem = true;
             }
         }
     }
@@ -508,7 +539,6 @@ public class GameManager : MonoBehaviour
         Inventory.Coin = 0;
         Instance = null;
         State = GameState.Title;
-        Destroy(GameObject.Find("WwiseGlobal"));
         SceneManager.LoadScene("Title");
         Destroy(this.gameObject);
     }

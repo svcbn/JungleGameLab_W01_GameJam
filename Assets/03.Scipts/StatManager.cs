@@ -26,9 +26,9 @@ public class StatManager : MonoBehaviour
 
     [Header("Player")]
     public int HP = 5;
-    public float PlayerSpeed = 1000f;
-    public float playerOriginMaxSpeed = 8f;
-    public float PlayerMaxSpeed = 8f;
+    public float PlayerSpeed = 1500f;
+    public float playerOriginMaxSpeed = 5f;
+    public float PlayerMaxSpeed = 4f;
     public float PlayerWarpSpeed = 0.05f;
     public float PlayerKnockBackPower = 7f;
     public float PlayerKnockBackRadius = 7.5f;
@@ -39,14 +39,16 @@ public class StatManager : MonoBehaviour
     [Header("ArrowSpinner")]
     public int RotateDirection = 1;
     public float RotateSpeed = 200f;
+    public float OriginRotateSpeed = 200f;
     public float SpinnerSize = 1f;
+    public float OriginSpinnerSize = 1f;
 
     [Header("EnemySpawnManager")]
     public float SpawnPosX = 30f;
     public float SpawnPosY = 20f;
 
     [Header("Enemy")]
-    public float EnemySpeed = 3f;
+    public float EnemySpeed = 4.5f;
 
     [Header("Item")]
     public float ItemSetRadius = 5f;
@@ -54,7 +56,8 @@ public class StatManager : MonoBehaviour
     [Header("PlayerItem")]
     public int FieldOfViewEnlarger = 3;
     public int FieldOfViewMax = 20;
-    public float ArrowSpeedUp = 1.5f;
+    public int OriginFieldOfView = 10;
+    public float ArrowSpeedUp = 1.3f;
     public float SpinnerSizeUp = 1.2f;
     public float SpinnerSizeMax = 2f;
 
@@ -63,7 +66,7 @@ public class StatManager : MonoBehaviour
     public float SpeedDown = 4f;
 
     [Header("GroundEffect")]
-    public float SlowGround = 4f;
+    public float SlowGround = 2f;
 
 
 }

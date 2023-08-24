@@ -57,15 +57,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 838968187386585959, guid: 8d3604c009a71d540b30bf79bcbe401e, type: 3}
       propertyPath: m_Color.b
-      value: 0.2791355
+      value: 0.02067335
       objectReference: {fileID: 0}
     - target: {fileID: 838968187386585959, guid: 8d3604c009a71d540b30bf79bcbe401e, type: 3}
       propertyPath: m_Color.g
-      value: 0.3490566
+      value: 0.019607844
       objectReference: {fileID: 0}
     - target: {fileID: 838968187386585959, guid: 8d3604c009a71d540b30bf79bcbe401e, type: 3}
       propertyPath: m_Color.r
-      value: 0.26837844
+      value: 0.078431375
       objectReference: {fileID: 0}
     - target: {fileID: 838968187386585959, guid: 8d3604c009a71d540b30bf79bcbe401e, type: 3}
       propertyPath: m_SortingOrder
@@ -90,4 +90,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33852a215ec5024d86ba4afc95f48bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 0
