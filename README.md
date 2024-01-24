@@ -1,5 +1,5 @@
-# JungleJam 01  
-##### Krafton Jungle GameLab Jam Project 01  
+# JungleGameLab W01  
+##### Krafton Jungle GameLab Jam Project W01  
    
 - 프로젝트명 : JungleJam01
 - 장르 : 2D 생존, 탈출
