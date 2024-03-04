@@ -4,7 +4,7 @@
 <img src="Thumbnail.gif" width="70%"> 
 <br/>
    
-- 프로젝트명 : JungleJam01
+- 프로젝트명 : Photographer
 - 장르 : 2D 생존, 탈출
 - 개발 환경 : Unity, C#, Ableton Live  
 - 작업 인원 : 3명
