@@ -15,4 +15,4 @@
 
 프로젝트 영상 - [YouTube](https://youtu.be/rDIJJjSkkMk)  
 
-프로젝트 다운로드 - [Download ZIP](https://github.com/svcbn/JungleJam01/raw/main/Build.zip)
+프로젝트 다운로드 - [Download ZIP](https://github.com/svcbn/JungleGameLab_W01_Photographer/raw/main/Build.zip)
